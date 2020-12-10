@@ -1,0 +1,42 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Aumann}{Aumann}{1976}]{Aumann1976}
+Aumann, R.~J. (1976).
+\newblock Agreeing to disagree.
+\newblock {\em The Annals of Statistics\/}~{\em 4\/}(6), 1236--1239.
+
+\bibitem[\protect\citeauthoryear{Bratman}{Bratman}{2014}]{Bratman2014}
+Bratman, M. (2014).
+\newblock {\em {Shared agency: A planning theory of acting together}}.
+
+\bibitem[\protect\citeauthoryear{Geanakoplos}{Geanakoplos}{1989}]{Geanakoplos1989}
+Geanakoplos, J. (1989).
+\newblock Game theory without partitions, and applications to speculation and
+  consensus.
+\newblock Technical report, Cowles Foundation Discussion Paper 914.
+
+\bibitem[\protect\citeauthoryear{Harsanyi}{Harsanyi}{1967}]{Harsanyi1967}
+Harsanyi, J.~C. (1967).
+\newblock Games with incomplete information played by ``bayesian'' players,
+  i--iii: Part i. the basic model.
+\newblock {\em Management Science\/}~{\em 14\/}(3), 159--182.
+
+\bibitem[\protect\citeauthoryear{Mertens and Zamir}{Mertens and
+  Zamir}{1985}]{Mertens1985a}
+Mertens, J.~F. and S.~Zamir (1985).
+\newblock {Formulation of Bayesian analysis for games with incomplete
+  information}.
+\newblock {\em International Journal of Game Theory\/}~{\em 14\/}(1), 1--29.
+
+\bibitem[\protect\citeauthoryear{Monderer and Samet}{Monderer and
+  Samet}{1989}]{Monderer1989a}
+Monderer, D. and D.~Samet (1989).
+\newblock Approximating common knowledge with common beliefs.
+\newblock {\em Games and Economic Behavior\/}~{\em 1\/}(2), 170--190.
+
+\bibitem[\protect\citeauthoryear{Samet}{Samet}{1990}]{Samet1990}
+Samet, D. (1990).
+\newblock Ignoring ignorance and agreeing to disagree.
+\newblock {\em Journal of Economic Theory\/}~{\em 52\/}(1), 190--207.
+
+\end{thebibliography}
