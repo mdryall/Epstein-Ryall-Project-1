@@ -18,7 +18,7 @@ reqno,
 %\usepackage{pdfsync}
 %\usepackage{upref}
 %\usepackage{amsidx}
-\usepackage{stmaryrd} %This adds small left arrows for accents that more closely mirror the \vec command
+%\usepackage{stmaryrd} %This adds small left arrows for accents that more closely mirror the \vec command
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{latexsym}
@@ -29,7 +29,7 @@ reqno,
 \usepackage{dcolumn} %to get decimal places aligned in tables
 \usepackage{array}
 \usepackage{tabularx}
-\usepackage{MnSymbol} %dashed arrows and more - see documentation
+%\usepackage{MnSymbol} %dashed arrows and more - see documentation
 \usepackage[mathscr]{eucal}
 \usepackage[english]{babel}
 \usepackage[pdftex]{graphicx}
@@ -163,7 +163,7 @@ reqno,
 	Then, for example, the event ``the die roll is even'' is represented by $X\equiv\{s\in S|s=2,4\text{ or }6\}$ or, more simply, $X\equiv\{2,4,6\}$. 
 	In our context, the event ``Mike intends to get a cup of coffee''  includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
 	In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property. 
-	I THINK THIS STILL NEEDS WORK. IN PARTICULAR, I'M NOT SURE WHETHER A STATE IS REALLY A MOMENT OR TIME-SLICE OF THE WORLD. IF SO, I CAN TALK MORE PRECISELY ABOUT HOW 'EVENTS' ARE EXPRESSIBLE AS PROPERTIES FOR THE PHILOSOPHER. THE PROBLEM I'M HAVING WITH THE IDEA OF A STATE AS A TIME-SLICE OF THE WORLD IS THAT SOME PROPERTIES OF THE WORLD DEPEND ON HISTORICAL FACTS. FOR INSTANCE, A FOOTPRINT IS ONLY A FOOTPRINT IF IT WAS MARKED IN THE PAST BY A FOOT. SIMILARLY FOR LOTS OF INSTITUTIONS AND SOCIAL FACTS. SO IT'S A LITTLE PROBLEMATIC TO THINK OF STATES AS ACTUALIZED AT A PARTICULAR TIME. EVEN IF WE INCLUDE MEMORIES OF HISTORY AMONG THE PRESENT STATES, THAT IS NOT REALLY ADEQUATE TO CAPTURE THE CONSTITUTIVE ROLE OF HISTORICAL FACTS IN THE PRESENT.
+	
 	
 	An \textit{event}, then, is a subset of $S$.  
 	Let $\mathcal{S}\equiv 2^S$ be the set of \textit{events}, with typical element $E\in \mathcal{S}$. 
@@ -183,10 +183,6 @@ reqno,
 	\subsection{Acts\label{sec:dynamics}}
 	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the changes that, in addition to the acts of the individuals, determine actualizations of one state from a previous state). 
 	
-	*** I'M FINDING THIS TERMINOLOGY A BIT AMBIGUOUS, BECAUSE ACTS ARE DIFFERENT FROM ACTIONS. (ACTIONS SEEM TO BE A NARROWER CATEGORY.)ARE WE TO UNDERSTAND ACTS AS BEHAVIORS? THAT SEEMS TOO NARROW IN A DIFFERENT WAY. I'M ALSO UNCLEAR WHETHER AN INVOLUNTARY CHANGE IN AN INDIVIDUAL (LIKE HAIR GROWING) IS AN ACT OF AN INDIVIDUAL OR OF NATURE. 
-	
-	
-	
 	For all individuals $i$,  the set of available acts is a state-contingent set: $A_i^s$ indicates the set of $s$-\textit{feasible acts available to $i$} with typical element $a_i\in A_i^s$.\footnote
 	{
 		Since $A_i^s$ is a set-valued function on $S$, we could use a more standard convention such as $A_i(s)$.  
@@ -205,9 +201,7 @@ reqno,
 	Objectively, the action starts at  $s_0^\ast\in S_0$, where the asterisk indicates the objective starting state.  
 	Beginning in $s_0^\ast$, agents choose some profile of acts $a\in A^{s_0^\ast}$ which then actualizes the next state $s_1$. 
 	
-	I THINK THE PRECEDING PARAGRAPH NEEDS MORE INTRODUCTION/CONTEXT. WHICH ACTION? ALSO NEED TO INTRODUCE THAT THERE'S GOING TO BE A SBUJECTIVE/OBJECTIVE DISTINCTION HERE AND WHY. AND WHY ARE THE "POTENTIAL PERIOD-0 STATES" ONES THAT PERTAIN TO INDIVIDUALS' BELIEFS? "POTENTIAL" SEEMS LIKE AN OBJECTIVE FEATURE. AND IS IT JUST ANY INDIVIDUAL, OR ALL INDIVIDUALS OF SOME SORT? (THAT IS, I DON'T REALLY UNDERSTAND WHAT S0 IS SUPPOSED TO BE.)
-	
-	As indicated above, $a$ summarizes all the contingencies(???TERMINOLOGY) required to determine the next state. 
+	As indicated above, $a$ summarizes all the contingencies required to determine the next state. 
 	Let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega^{s_t}(a)=s_{t+1}$ indicates that if the act profile at state $s_t\in S$ is $a\in A^s\subset A$, then the next state actualized is $s_{t+1}$.
 	Given the true starting state $s_0^\ast$ and a sequence of action profiles, this setup allows us to identify the sequences of states that  actually happen according to $\omega$. 
 	Given a state $s_t$, if there exists an act profile $a\in A^s$ such that $\omega^{s_t}(a)=s_{t+1}$, we use a directed edge $s_t\rightarrow s_{t+1}$ to indicate that $s_{t+1}$ is actualized by \textit{some} feasible act profile available at $s_t$. 
@@ -225,7 +219,7 @@ reqno,
 	Given that states encode mental features, such as memory of previous states,  \textit{it is reasonable to assume that, whereas one state can branch into many  children, it is never the case that a state has multiple parents.} 
 	For example, suppose it were that case that $s_1\rightarrow s_3\leftarrow s_2$. 
 	Then, being at $s_3$ would imply the possiblity of some individuals experiencing an inconsistent mental state due to knowing two mutually exclusive histories simultaneously. 
-	I WONDER WHY THIS IS REQUIRED. IT DOES SEEM PROBLEMATIC TO THINK THAT NECESSARILY THERE WAS ONLY ONE HISTORY THAT COULD BRING US TO THE STATE OF THE WORLD TODAY. SURELY THERE ARE AT LEAST SOME STATES IN THE PAST THAT ARE IRRELEVANT TO THE PRESENT STATE OF THE WORLD. TO SAY THAT s1 -> s3 <- s2 IS TO SAY THAT THERE IS SOME FEASIBLE PATH FROM S1 TO S3 AND SOME FEASIBLE PATH FROM S2 TO S3. WHAT IF S1 AND S2 JUST DIFFER WITH RESPECT TO SOME PARTICLE THAT FLEETINGLY APPEARS IN S2 AND THEN DISAPPEARS? SO S1 AND S2 ARE DIFFERENT STATES, BUT BOTH ARE EQUALLY ELIGIBLE TO BE PARENTS OF S3.
+	
 	
 	The preceding implies that  $\Gamma$ is a collection of trees, one for each $s_0\in S_0$. 
 	Let $Z\subset S$ denote the subset of terminal states (the leaves of the trees) in $S$, with typical element $z$.
@@ -243,13 +237,9 @@ reqno,
 	In this approach, an individual is \textit{certain} of an event when her belief assigns probability = 1 to it.\footnote
 	{
 		Some scholars equate ``knowledge'' and certainty in the probabilistic sense defined here. 
-		We leave open the possibility of defining knowledge according to some other criteria but maintain that, however one defines it, certainty of an event is an implication of knowing it. 
-		I THINK WE SHOULD SKIP THIS LAST SENTENCE. I DON'T THINK KNOWLEDGE DOES IMPLY CERTAINTY, AND ANYWAY EVEN IF IT DID, THAT WOULD NOT IMPLY THAT PROB=1 IMPLIES KNOWLEDGE.
 	} 
 	Second, \textit{desires} are the individual's attitudes toward events, represented as a partial order relation on the set of paths in $\Gamma$, $P$. 
-	IN PHILOSOPHICAL TERMINOLOGY, ALL OF THESE ARE ATTITUDES, SO IT ISN'T ENOUGH TO SAY THAT DESIRES ARE ATTITUDES. CAN WE JUST SAY THAT DESIRES ARE MODELED OR REPRESENTED AS A PARTIAL ORDER RELATION, RATHER THAN SAYING THAT THEY ARE ATTITUDES TOWARD EVENTS? 
 	Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event. 
-	HERE YOU USE THE TERM 'REPRESENT', WHICH IS DIFFERENT THAN YOUR USE OF 'REPRESENT' IN THE PREVIOUS SENTENCE. HOW ABOUT: WE UNDERSTAND AN INTENTION TO BE AN AGENT'S COMMITMENT TO UNDERTAKE A PLAN OF ACTION DESIGNED TO ACTUALIZE AN EVENT. BELOW WE WILL DISCUSS HOW THESE ARE TO BE REPRESENTED. 
 	Thus, the object of an intention is an event. Individual consistency conditions are required to align beliefs, desires, intentions and action plans. 
 	
 	\paragraph*{Beliefs \label{para: beliefs}}
@@ -259,12 +249,10 @@ reqno,
 	This distribution induces a distribution on history events, $\mathcal{H}\equiv 2^H$. 
 	Note that each $\mu_i^s$ induces a probability distribution on $S$.
 	For example, the probabilities of the elements of $Z$ (terminal nodes) are equal to the probabilities of the complete histories they terminate. 
-	I'M FINDING THIS RATHER DIFFICULT TO FOLLOW. 
 	The probability of some arbitrary state $s_t$ is equal to the sum of the probabilities of the complete histories running through it, and so on.
 	Since all of this is implied by $\mu_i$, we will slightly abuse notation and write, e.g.,  $\mu_i^s(Z)=\mu_i^s(H)$, even though $Z\in \mathcal{S}$ while $H\in \mathcal{H}$.
 	
 	It is important to note that the existence of more than one element in $S_0$ means that individuals may be uncertain about which tree is the objective one and, hence, the true history they have experienced. 
-	DOES THE DEFINITION OF BELIEF IMPLY THAT WE HAVE BELIEFS ABOUT EVERY PAST STATE OF THE WORLD? WE SHOULD DISCUSS THIS.
 	If so, they will be uncertain about which state they are in. 
 	In addition, there will be uncertainty about how the future unfolds. 
 	At the moment, we have the objective world starting at $s_0^\ast$ and unfolding in accordance with $\omega$ and the sequence of everyone's act choices. 
@@ -282,20 +270,16 @@ reqno,
 	However, even if the kitchen specs are provided in extensive detail (so the owner knows exactly what the end will be), there may be many contractors who can deliver it. 
 	In this case, assuming there are several contractors from which to choose, each of which identify with a different path with states encoding costs  at each step of the way and the final quality of the work, the owner's choice will be based upon the path (costs) as well as the final state (quality). 
 	Similarly, an individual sensitive to the time value of money will prefer shorter paths to longer ones, other things equal. 
-	WOULDN'T THIS BE TAKEN CARE OF BY THE HISTORY ENCODED IN THE PRESENT STATE, WITH THE CURRENT MODEL? I AGREE THAT IT WOULD BE BETTER TO TREAT THIS AS PATH PREFERENCE RATHER THAN PREFERENCE OF ONE STATE OVER ANOTHER, BUT IT SEEMS AS THOUGH WE MAY HAVE TWO REDUNDANT WAYS OF TREATING THIS PREFERENCE. 
 	Or, individuals may value portions of the paths themselves.
 	For example, even though a student drops out of school (thereby, not completing the degree), he or she may nevertheless value the portion of the education that was completed. 
-	INTERESTINGLY, GABRIEL IS NOW GOING THROUGH A STAGE WHERE HE INDIVIDUATES THE THINGS HE DESIRES NOT BY THE END STATE BUT BY THE PAIR OF THE END-STATE AND THE AGENT DOING IT. I CLOSE THE BLINDS, AND HE SAYS, "NO, MOMMY DO IT!" SO SHE HAS TO OPEN THE BLINDS AND THEN RE-CLOSE THEM.
 	Our approach allows for special cases in which all these details are elaborated as primitives of the situation. For our discussion, we simply assume preferences are over paths.    %When $s$ is understood from the context, we simply write, e.g., $E^\prime\preceq_i E^{\prime\prime}$, dropping the superscript. 
 	
 	\paragraph*{Intentions \label{para: intentions}}
 	
-	INTENTIONS AS ATTENTION? PLANS NEED TO ALLOCATE TIME FOR THINKING ABOUT INTENTIONS THEMSELVES. MAY ALSO INTERACT WITH AWARENESS. THINK OF SOME STATES AS TRANSITIONAL: YOU CHANGE YOUR AWARENESS IN THESE STATES. THEN, IF YOU ARE AWARE OF THESE STATES, YOU CAN AIM (AS PART OF YOUR PLAN) FOR TRANSITIONAL STATES TO BECOME AWARE OF NEW THINGS OR THINGS OF WHICH YOU WANT TO BE AWARE. INTENTIONS TRIGGER PLANS.
+	
 	
 	Finally, define the state-contingent \textit{intention} for individual $i$ as a function $\gamma_i:S\rightarrow \mathcal{S}$, where $\gamma_i^s=E$ means that in state $s$ individual $i$ intends event $E$. 
-	CAN'T AN INDIVIDUAL HAVE MULTIPLE INTENTIONS IN A GIVEN STATE?
 	We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
-	I'M NOT CLEAR ON WHETHER YOU'RE SAYING THAT INDIVIDUALS NEED NOT HAVE INTENTIONS AT ALL IN A GIVEN STATE, OR WHETHER YOU'RE TALKING ABOUT DESIRES, BELIEFS, AND INTENTIONS AS APPLIED TO ALL STATES. IT SEEMS THAT IN THE MODEL, EVERYONE HAS A COMPLETE SET OF DESIRES AND BELIEFS REGARDING ALL STATES, RIGHT?
 	The idea here is that, e.g., in some states Mike intends the end ``Mike has a cup of coffee'' and in others, Mike has yet to form intentions.
 	We adopt the convention that $\gamma_i^s=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
 	We highlight that states may be differentiated only by changes in mental attitudes. 
@@ -316,6 +300,7 @@ reqno,
 	
 	
 	\subsection{Consistency conditions\label{sec:consistencies}}
+	
 	Having structured the objects of interest, we now explore various conditions required to impose the regularities between the various mental attitudes and between those attitudes and the external world that are appropriate to a rational human being. 
 	
 	\paragraph{Reality Alignment\label{para: reality alignment}} 
@@ -398,7 +383,6 @@ reqno,
 	When this condition is met, it may nevertheless be the case that the world is driven to such a state. 
 	However, this will need to be the result of the acts of others and/or Nature and nothing to do with the acts of individual $i$. 
 	The strong form, Condition \ref{cond:strong M-E}, says that individual $i$ has a plan of action by which he can gaurantee his intended even regardless of what anyone else does.
-	
 	There is another case which is this: no matter what $i$ does, the intended $X$ will happen. 
 	In this case, I do not think we would properly call $X$ intention. 
 	
