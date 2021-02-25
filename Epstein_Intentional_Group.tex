@@ -183,44 +183,40 @@ reqno,
 	  
 	As indicated above, the act profiles summarize all the contingencies required to actualize one state from the next. 
 	To formalize this, let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega(a_t|s_t)=s_{t+1}$ indicates that if the act profile at state $s_t\in S_{t}$ is $a_t\in A(s_t)$, then the next state actualized is $s_{t+1}$.
+	Assume that, for all $s_t$, $\omega:\{s_t\}\times A_t(s_t)\rightarrow \cup_{a_t\in A_t(s_t)} \omega(a_t|s_t)$ is a bijection.
+	In other words, each feasible  act profile in a given state leads to a unique state and each state can be traced back to its immediate predecessor by the unique act profile that would lead to its actualization.
+	
+
+	Suppose, for example, that two distinct sequences of acts could lead to an identical footprint in the snow.
+	In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it. One way of thinking about this is to imagine that a state also encodes the distinct history of acts that lead to it.
 
 	The world begins at state $s_0$.
 	To allow for uncertainty or partial knowledge with respect to various aspects of the world at the beginning of time, we assume Nature's acts entirely determine $s_{1}$. 
 	That is, $a_{0}=(a_0,\emptyset,\ldots,\emptyset)$, where $a_0$ represents all the factors that lead individuals to their  first decision state, $s_1=\omega(a_0|s_0)$.
 	Uncertainty with respect to the state of the world in $t=1$ (e.g., about the intentions or other individuals) is, thus, formalized as uncertainty about ``Nature's act'' prior to the start of the focal time period.
 	
-	Given the starting state $s_0$ and a sequence of feasible action profiles, this setup allows us to identify the sequences of states that  actually happen according to $\omega$. 
-	We indicate the states that could arise from a specific, immediately preceding state with directed edges.
-	That is, $s_t\rightarrow s_{t+1}$ means that there exists an act profile $a_t\in A(s_t)$ such that $\omega^{a_t|s_t}=s_{t+1}$. 
-	
-	A \textit{feasible path} is any sequence of nodes $p=(s_t,s_{t+1},\ldots,s_{t+x})$ such that $s_t\rightarrow s_{t+1}\rightarrow \cdots\rightarrow s_{t+x}$ according to $\omega$. 
-	We refer to the \textit{history at state $s_t$} as the feasbile path that starts at $s_0$ and ends at $s_t$, denoted $h(s_t)=(s_0,\ldots,s_t)$.\footnote
-	{
-		Where, $s_0\rightarrow\ldots\rightarrow s_t$.
-	}
+	We define the \textit{history at state $s_t$} as a profile that starts at $s_0$ and ends at $s_t$ along with the  acts that determine the sequence of states according to $\omega$, denoted $h(s_t)=(s_0,a_0,\ldots,a_{t-1},s_t)$, where $s_1=\omega(a_0|s_0)$, etc.
 	The set of all histories at time $t$ is $H_t$.
-	Let $T$ be the number of periods under consideration for our analysis.
-	Then,  the set of all possible histories is $H_T$.
-	An arbitrary \textit{history at time $t$} is denoted $h_t\in H_t$, where we start with the \textit{null history} $h_0=(s_0)$ at the beginning of time (so, $H_0=\{h_0\}$ and  $S_0=\{s_0\}$). 
-	A \textit{complete history} in $\Gamma$ is a sequence starting at some $s_0$ and ending in a terminal state, $s_T$.
-	
-	This setup allows us to represent all possible histories as a \textit{directed graph}, denoted $\Gamma=(S,\omega)$, with nodes $S$ and edges as determined by  $\omega$.  
-	Because there is a single root node and $\omega$ is a function, $\Gamma$ is a tree.
-	Then, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots\cap S_T$ and $S=S_0\cap S_1\cap \cdots\cap S_T = \emptyset$.
+	Let $T$ be the number of time periods under consideration for the analysis.
+	Then,  the set of all possible histories is $H_T$ and the set of all subsets of histories is $\mathcal{H}_T$.
+	An arbitrary \textit{history at time $t$} is denoted $h_t\in H_t$, where we start with the \textit{null history} $h_0=(s_0)$ at the beginning of time (so, $H_0=\{h_0\}$ and  $S_0=\{s_0\}$).   
+	Because there is a single root node and $\omega$ is a bijection, the set of paths in $H_T$ form a tree.
+	Thus, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots\cap S_T$ and $S=S_0\cap S_1\cap \cdots\cap S_T = \emptyset$.
+	Note also that each $S_t$ implies a partition of $H_T$ according to the sets of paths intersecting the states in $S_t$.
 	 
 	
-	
-	
 	\subsection{Mental attitudes\label{sec:attitudes}}
-	Let us consider the following mental features of individuals, which are encoded in each state. 
-	First, WE MODEL \textit{beliefs} AS subjective probabilistic conjectures about the likelihood of the objective history, one's present state, and future events, represented by a probability distribution on states. 
-	In this approach, an individual is \textit{certain} of an event when her belief assigns probability = 1 to it.\footnote
-	{
-		Some scholars equate ``knowledge'' and certainty in the probabilistic sense defined here. 
-	} 
-	Second, \textit{desires} are the individual's attitudes toward events, represented as a partial order relation on the set of paths in $\Gamma$, $P$. 
-	Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event. 
-	Thus, the object of an intention is an event. Individual consistency conditions are required to align beliefs, desires, intentions and action plans. 
+	In what follows, we develop a belief-desire-intention model. 
+	As we elaborate below, we assume that the status of one's mental attitudes at time $t$ is a feature of the actualized state $s_t$. 
+	First, we define \textit{beliefs} as subjective conjectures about the likelihood of past events, the present state, and future events. 
+	Second, \textit{desires} are the individual's attitudes toward histories, represented as a partial order relation on $\mathcal{H}_T$. 
+	In other words, individuals consider both the sequences of states they experience as well as the acts that induce them.
+	For example, even though a junior faculty member may have the same degree of desire for tenure at her present institution in all states of the world in which that happens, some paths to tenure may be more costly than others depending upon the acts required to get there (both her own and others, including those by Nature).
+	Making  the desire relation a partial order on $\mathcal{H}_T$ implies a partial order on $H_T$ but also allows individuals to compare events in $\mathcal{H}_T$ (e.g., the event of gaining tenure vs.\ not).
+	Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event in $\mathcal{H}_T$. 
+	As we will see, others' perceptions of one's intentions will play a social role in our framework.
+	 
+	 ++++++++++++++++++++++++++++++++++++++++++
 	
 	\paragraph*{Beliefs \label{para: beliefs}}
 	Beginning with beliefs, let $\Delta(H)$ denote the set of all probability distributions on the set of histories. 
