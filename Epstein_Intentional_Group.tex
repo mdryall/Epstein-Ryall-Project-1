@@ -111,15 +111,10 @@ reqno,
 	
 	\newpage
 	\section{Overview}
+
 	This version begins with a model of individual agency in Section \ref{sec: Individuals}, then moves on to groups and group agency in the remaining sections. 
 	We are aiming for a  formal framework that is fairly general, thereby allowing for a substantial degree of flexibility in the sorts of phenomena it can represent.  
 	The formalism for groups builds on the individual setup. 
-	
-	Our primary concern is to model groups and group agency. 
-	We begin with individuals and individual agency first of all because it is helpful to understand key aspects of group agency by way of analogy to the agency of individual people. 
-	Equally important is to be clear where group agency differs from individual agency. 
-	With formal models of both individual and group agency, these differences can be highlighted. 
-	
 	
 	\section{Notational conventions}
 	Capital letters ($G$, $N$, etc.) refer to sets.  
@@ -134,100 +129,85 @@ reqno,
 	All sets are assumed to be finite unless otherwise indicated.
 	
 	
-	\section{Individuals}\label{sec: Individuals}
-	
-	Begin with a \textit{population of individuals}, indexed by $N\equiv \{1,\ldots,n\}$ with typical element $i\in N$ and $\mathcal{N}\equiv 2^N$. 
-	When a group is formed, its members will be from this population. 
-	As we explain below, we assume the population is sufficiently large to accommodate many potential groups, not all of which will form. Moreover, not all individuals in the population need be in a group. 
-	This allows us, for example, to consider groups whose existence depends on individuals being in certain mental states. 
-	
+	\section{Individual Agency}\label{sec: Individuals}
+
+	Begin with a \textit{population of individuals}, indexed by $N\equiv \{0,\ldots,n\}$ with typical element $i\in N$ and $\mathcal{N}\equiv 2^N$. For now, we focus on an individual actor. Later, we consider groups. The evolution of the world through time is driven by the actions of individuals as well as of the onset of natural phenomena. We account for natural phenomena as the ``actions'' of a ``Nature'' which we assign to population index 0.b 
 	
 	
 	\subsection{States\label{sec:states}}
-	An important element of our analysis is a \textit{state space}, denoted $S$, with typical element $s\in S$.\footnote
+
+	A \textit{state}, denoted $s$, is a snapshot of the world at a moment in time. 
+	States summarize the status \textit{of all features of the world that are relevant to all individuals} in that moment. 
+	This includes the relevant ``mind-independent'' features of a particular world as well as the ``mind-dependent'' features of the individuals acting in that world. 
+	The finite \textit{state space at time} $t$, denoted $S_t$, with typical element $s_t\in S_t$, contains all the possible states that could occur at $t$.\footnote
 	{
-		Again, this setup can be generalized to include countably or uncountably infinite state spaces. Limiting attention to finite sets allows us to sidestep the mathematical complexities associated with measurability concerns.
+		This setup can be generalized to include countably or uncountably infinite state spaces. Limiting attention to finite sets allows us to sidestep some mathematical complexities which are not necessary for the purposes of this analysis.
 	} 
-	In our analysis,  each element in $S$ elaborates the status \textit{of all features of the world that are relevant to all individuals and groups.} 
-	This includes all the relevant ``mind-independent'' features of a particular situation as well as of such ``mind-dependent'' features of the individuals in those states. 
 	
 	A note on terminology: the term `event', which we define in the next paragraph, is used differently by philosophers than it is by game theorists. 
 	We will use the game-theorist's use of the term, but since we are writing to both audiences, it is important to clarify this difference. 
 	In game theory, `event' is used similarly to the term `property' in philosophy, where properties are understood intensionally. 
 	Philosophers typically use `event' to mean a spatiotemporal particular extended over time. 
-	But in game theory (and in our usage), an event is a set of states. 
+	In game theory (and in our usage), an event is a set of states. 
 	Because an individual state encodes all relevant features of the world, events provide a way of identifying all the states consistent with a particular feature of interest.
-	
-	The canonical example is rolling a six-sided die. 
-	The state space is $S\equiv\{1,2,3,4,5,6\}$. 
-	Then, for example, the event ``the die roll is even'' is represented by $X\equiv\{s\in S|s=2,4\text{ or }6\}$ or, more simply, $X\equiv\{2,4,6\}$. 
-	In our context, the event ``Mike intends to get a cup of coffee''  includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
-	In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property. 
-	
-	
+	For example, in our context, the event ``Mike intends to get a cup of coffee''  includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
+	In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property.
+
 	An \textit{event}, then, is a subset of $S$.  
-	Let $\mathcal{S}\equiv 2^S$ be the set of \textit{events}, with typical element $E\in \mathcal{S}$. 
+	Let $\mathcal{S}\equiv 2^S$ be the set of \textit{events}, with typical element $E\in \mathcal{S}$.
 	
-	%In what follows, we sometimes simply wish to distinguish states from one another. Therefore, assume there are $k$ states in $S$ and let them be indexed by $K\equiv\{0,\ldots,k\}$. Then, we use superscripts to indicate these index numbers: $S=\{s^0,\ldots,s^k\}$. At other times, we wish to refer to states according to when they are actualized in time. In these cases, we use time subscripts; e.g., $s_0^\ast,\ldots,s_t$ to indicate a sequence of states in time. Thus, ``$s_t=s^y$''  means that the state actualized in period $t$ was state $s^y$ or, alternatively, that state $s^y$ is actualized in period $t$.
+	To see how we use states and understand how these objects work, consider the canonical example of rolling a six-sided die. 
+	We use functions on $S$ to ``extract'' information from the states. 
+	Here, for example, we can let $d(s)$ indicate the die roll outcome in state $s$.
+	Thus, given $s\in S$, $d(s)\in\{1,2,3,4,5,6\}$, assuming the die never lands on an edge. 
+	To clarify the domain and the range to which the function maps, we write $d:S\rightarrow \{1,2,3,4,5,6\}$.
+	Now, the event ``the die roll is even'' is described by $E\in\mathcal{S}$ such that $E\equiv\{s\in S|d(s)=2,4\text{ or }6\}$. 
 	
-	States are assumed to be actualized through time in a fashion to be discussed below. 
-	At time $t$, the individuals in $N$ find themselves in some \textit{actualized} state of the world, $s_t$. 
-	An event $X\in\mathcal{S}$ is said to be \textit{actualized} at time $t$ if $s_t\in X$. 
-	For example, if $s_0$ is the state prior to the roll of the die and $s_1$ is the state in which the die roll is revealed, the event ``the die roll is even'' is actualized in $t=1$ if $s_1=4$ (as is the state $s_1=4$).
-	Except under conditions of extreme rationality, individuals  have an imperfect grasp of the details of their actual state.
-	For example, they generally will not know the mental states of the other individuals and may have an imperfect understanding of the consequences of their actions.
-	Hence, they will know events but not the true state  itself (like knowing the die roll was, in fact, even without knowing the exact number that made it so).
-	
-	
-	
-	\subsection{Acts\label{sec:dynamics}}
-	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the changes that, in addition to the acts of the individuals, determine actualizations of one state from a previous state). 
-	
-	For all individuals $i$,  the set of available acts is a state-contingent set: $A_i^s$ indicates the set of $s$-\textit{feasible acts available to $i$} with typical element $a_i\in A_i^s$.\footnote
+	\subsection{Acts and actions\label{sec:dynamics}}
+	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the changes that, in addition to the acts of the individuals, determine actualization of a particular state from an immediately preceding, previously actualized state).
+	We assume the world begins in a null state, denoted $s_0$. 
+	For all individuals $i\in N$,  $A_i(s)$ indicates the set of \textit{feasible acts available to $i$ in state $s$} with typical element $a_i\in A_i(s)$.\footnote
 	{
-		Since $A_i^s$ is a set-valued function on $S$, we could use a more standard convention such as $A_i(s)$.  
-		Conceptually, the actions available to $i$ comprise part of the information encoded in the description of the world represented by $s$. 
-		The function $A_i^s$ can be thought of as ``pulling out'' this subset of information from $s$. We have several functions that serve this purpose for various state-related features. 
-		Therefore, we use the state superscript convention to highlight these special funcions (and, simultaneiously, reduce notational clutter).
+		Notice that we use a capital letter to indicate that $A_i(s)$ is a set-valued function. 
+		Also, because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
+		We think of ``action'' as describing the narrower category of act associated with physical movement.
 	} 
 	
-	We adopt the convention that $A_i^s=\emptyset$ indicates individual $i$ has no available acts in state $s$.
-	An \textit{act profile} is a list of acts, one for each individual, denoted  $a\equiv(a_0,a_1,\ldots,a_n)$. 
-	Here, we add Nature as ``Individual 0'' so that $a_0$ summarizes the relevant contingencies that, in conjunction with the individuals' acts, determine which state is actualized following $s$. 
-	The set of \textit{all act profiles at state $s$} is $A^s\equiv \times_{i=0}^n A_i^s$. The set of \textit{all possible act profiles} is $A\equiv \cup_{s\in S} A^s$.
+	We adopt the convention that $A_i(s)=\emptyset$ indicates that individual $i$ has no available acts in state $s$.
+	An \textit{act profile} is a list of acts, one for each individual, denoted  $a\equiv(a_0,a_1,\ldots,a_k)$. 
+	Recall, Nature is ``Individual 0'' so that $a_0$ summarizes all the relevant natural developments that, in conjunction with the individuals' acts, determine which state is actualized following $s$. 
+	The set of \textit{all act profiles at state $s$} is $A(s)\equiv \times_{i=0}^n A_i(s)$. 
+	The set of \textit{all possible act profiles} is $A\equiv \cup_{s\in S} A(s)$. 
 	
 	\subsection{Dynamics  } 
-	Let $S_0\subset S$ be the subset of potential period-0 states; i.e., those candidate states from which individuals believe the action \textit{might} begin. 
-	Objectively, the action starts at  $s_0^\ast\in S_0$, where the asterisk indicates the objective starting state.  
-	Beginning in $s_0^\ast$, agents choose some profile of acts $a\in A^{s_0^\ast}$ which then actualizes the next state $s_1$. 
+	  
+	As indicated above, the act profiles summarize all the contingencies required to actualize one state from the next. 
+	To formalize this, let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega(a_t|s_t)=s_{t+1}$ indicates that if the act profile at state $s_t\in S_{t}$ is $a_t\in A(s_t)$, then the next state actualized is $s_{t+1}$.
+
+	The world begins at state $s_0$.
+	To allow for uncertainty or partial knowledge with respect to various aspects of the world at the beginning of time, we assume Nature's acts entirely determine $s_{1}$. 
+	That is, $a_{0}=(a_0,\emptyset,\ldots,\emptyset)$, where $a_0$ represents all the factors that lead individuals to their  first decision state, $s_1=\omega(a_0|s_0)$.
+	Uncertainty with respect to the state of the world in $t=1$ (e.g., about the intentions or other individuals) is, thus, formalized as uncertainty about ``Nature's act'' prior to the start of the focal time period.
 	
-	As indicated above, $a$ summarizes all the contingencies required to determine the next state. 
-	Let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega^{s_t}(a)=s_{t+1}$ indicates that if the act profile at state $s_t\in S$ is $a\in A^s\subset A$, then the next state actualized is $s_{t+1}$.
-	Given the true starting state $s_0^\ast$ and a sequence of action profiles, this setup allows us to identify the sequences of states that  actually happen according to $\omega$. 
-	Given a state $s_t$, if there exists an act profile $a\in A^s$ such that $\omega^{s_t}(a)=s_{t+1}$, we use a directed edge $s_t\rightarrow s_{t+1}$ to indicate that $s_{t+1}$ is actualized by \textit{some} feasible act profile available at $s_t$. 
-	%If including an elaboration of  the acts required to drive future  sequences, them we elaborate the notation to show the acts (e.g.,  $s_t\xrightarrow[]{a} s_{t+1}$).   
+	Given the starting state $s_0$ and a sequence of feasible action profiles, this setup allows us to identify the sequences of states that  actually happen according to $\omega$. 
+	We indicate the states that could arise from a specific, immediately preceding state with directed edges.
+	That is, $s_t\rightarrow s_{t+1}$ means that there exists an act profile $a_t\in A(s_t)$ such that $\omega^{a_t|s_t}=s_{t+1}$. 
 	
 	A \textit{feasible path} is any sequence of nodes $p=(s_t,s_{t+1},\ldots,s_{t+x})$ such that $s_t\rightarrow s_{t+1}\rightarrow \cdots\rightarrow s_{t+x}$ according to $\omega$. 
-	We refer to a feasbile path that starts at some initial state $s_0\in S_0$ as a \textit{history}. 
-	The  \textit{history at time $t$} is denoted $h_t=(s_0,\ldots,s_t)$.
-	An \textit{objective history at $t$} is a path consistent with $\omega$ starting with $s_0^\ast$, denoted $h^\ast_t$. 
-	At the beginning of time, we start with some \textit{null history} $h_0=(s_0)$. 
-	Let $H$ be the set of all possible histories, with $H^\ast\subseteq H$ denoting the set of all possible objective histories.
+	We refer to the \textit{history at state $s_t$} as the feasbile path that starts at $s_0$ and ends at $s_t$, denoted $h(s_t)=(s_0,\ldots,s_t)$.\footnote
+	{
+		Where, $s_0\rightarrow\ldots\rightarrow s_t$.
+	}
+	The set of all histories at time $t$ is $H_t$.
+	Let $T$ be the number of periods under consideration for our analysis.
+	Then,  the set of all possible histories is $H_T$.
+	An arbitrary \textit{history at time $t$} is denoted $h_t\in H_t$, where we start with the \textit{null history} $h_0=(s_0)$ at the beginning of time (so, $H_0=\{h_0\}$ and  $S_0=\{s_0\}$). 
+	A \textit{complete history} in $\Gamma$ is a sequence starting at some $s_0$ and ending in a terminal state, $s_T$.
 	
 	This setup allows us to represent all possible histories as a \textit{directed graph}, denoted $\Gamma=(S,\omega)$, with nodes $S$ and edges as determined by  $\omega$.  
-	The root nodes of $\Gamma$ are the states contained in $S_0$. 
-	Given that states encode mental features, such as memory of previous states,  \textit{it is reasonable to assume that, whereas one state can branch into many  children, it is never the case that a state has multiple parents.} 
-	For example, suppose it were that case that $s_1\rightarrow s_3\leftarrow s_2$. 
-	Then, being at $s_3$ would imply the possiblity of some individuals experiencing an inconsistent mental state due to knowing two mutually exclusive histories simultaneously. 
-	
-	
-	The preceding implies that  $\Gamma$ is a collection of trees, one for each $s_0\in S_0$. 
-	Let $Z\subset S$ denote the subset of terminal states (the leaves of the trees) in $S$, with typical element $z$.
-	Then, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots Z$.
-	Now, we represent a \textit{complete history} in $\Gamma$ as a sequence starting at some $s_0$ and ending in a terminal state,  $h_t=(s_0^\ast,\ldots,z_t)$ where $t$ is the $t^{th}$ time increment required to reach $z$. 
-	This notation allows us to distinguish full histories from partial histories from paths. 
-	For example, $h_t=(s_0^\ast,\ldots,s_t)$ is a partial history.
-	Alternatively,  $p=(s_3,\ldots,s_9)$ is a path; it is not a history since it does not start with an $s_0$, though it is  part of \textit{some} complete history in $\Gamma$.
+	Because there is a single root node and $\omega$ is a function, $\Gamma$ is a tree.
+	Then, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots\cap S_T$ and $S=S_0\cap S_1\cap \cdots\cap S_T = \emptyset$.
+	 
 	
 	
 	
@@ -278,10 +258,10 @@ reqno,
 	
 	
 	
-	Finally, define the state-contingent \textit{intention} for individual $i$ as a function $\gamma_i:S\rightarrow \mathcal{S}$, where $\gamma_i^s=E$ means that in state $s$ individual $i$ intends event $E$. 
+	Finally, define the state-contingent \textit{intention} for individual $i$ as a function $\gamma_i:S\rightarrow \mathcal{S}$, where $\gamma_i(s)=E$ means that in state $s$ individual $i$ intends event $E$. 
 	We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
 	The idea here is that, e.g., in some states Mike intends the end ``Mike has a cup of coffee'' and in others, Mike has yet to form intentions.
-	We adopt the convention that $\gamma_i^s=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
+	We adopt the convention that $\gamma_i(s)=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
 	We highlight that states may be differentiated only by changes in mental attitudes. 
 	For example, it may be that the only change from $s_t$ to $s_{t+1}$ is $\gamma_i^{s_t}=\emptyset$ to $\gamma_i^{s_{t+1}}=E$.
 	This suggests that the interval between time periods may be very short (measured in milliseconds).
@@ -295,7 +275,7 @@ reqno,
 		In setting up mental features in this way, we are following a version of the familiar ``type-space'' approach used in game theory \citep[See][]{Harsanyi1967, Mertens1985a}. 
 	} 
 	A \textit{profile of mental features} for all the individuals is given by the profile $\theta\equiv(\theta_1,\ldots,\theta_n)$. 
-	Given our conventions, we can write $\theta_i^s$ and $\theta^s$ without ambiguity.
+	Given our conventions, we can write $\theta_i(s)$ and $\theta^s$ without ambiguity.
 	%The set of all such profiles is $\Theta$.
 	
 	
@@ -359,23 +339,23 @@ reqno,
 	It is not enough for an individual to simply intend some outcome. 
 	Rather, we assume that at the time an intention is formed, it is coupled with a concrete plan of action designed to achieve the desired end. 
 	
-	To formalize this, for each individual $i$, define an \textit{action plan} as a function $\sigma_i:S\rightarrow A$ where $\sigma_i^s=a_i\in A_i^s$ indicates that when individual $i$ arrives at state $s$ she selects an act $a_i$ from the set of acts $A_i^s$ available at that state. 
+	To formalize this, for each individual $i$, define an \textit{action plan} as a function $\sigma_i:S\rightarrow A$ where $\sigma_i(s)=a_i\in A_i(s)$ indicates that when individual $i$ arrives at state $s$ she selects an act $a_i$ from the set of acts $A_i(s)$ available at that state. 
 	Since every state has a single history leading to it, action plans may be history-contingent.
 	Notice that, as defined, the action plan indicates what act the individual will implement at every state. 
 	Of course, we do not expect the individual to have thought through a contingency plan for every state in the state space. 
 	Rather, we impose a means-ends consistency condition on $\sigma_i$ that joins the action plan to the intention.
 	
 	\begin{condition}[Weak Means-Ends Consistency]\label{cond:weak M-E}
-		Suppose individual $i$'s intention is given by $\gamma_i^s=X\in\mathcal{S}$. 
+		Suppose individual $i$'s intention is given by $\gamma_i(s)=X\in\mathcal{S}$. 
 		Let $P^s_X\subset P$ denote all the paths in $\Gamma$ that begin at $s$ and terminate in $X$. 
-		Then $\sigma_i$ is said to be \textit{weak means-ends consistent with $\gamma_i^s$} if at no state $s^\prime$ along any path in $P^s_X$ does $\sigma_i^{s^\prime}$ force actualization of a state $s^{\prime\prime}$ that is not on any path in $P^s_X$. 
+		Then $\sigma_i$ is said to be \textit{weak means-ends consistent with $\gamma_i(s)$} if at no state $s^\prime$ along any path in $P^s_X$ does $\sigma_i^{s^\prime}$ force actualization of a state $s^{\prime\prime}$ that is not on any path in $P^s_X$. 
 		By ``force'' we mean that $\sigma_i^{s^\prime}$ indicates an act that actualizes some state outside of $P^s_X$ regardless of the acts of all the other individuals and Nature. 
 	\end{condition}
 	
 	\begin{condition}[Strong Means-Ends Consistency]\label{cond:strong M-E}
-		Suppose individual $i$'s intention is given by $\gamma_i^s=X\in\mathcal{S}$. 
+		Suppose individual $i$'s intention is given by $\gamma_i(s)=X\in\mathcal{S}$. 
 		Let $P^s_X\subset P$ denote all the paths in $\Gamma$ that begin at $s$ and terminate in $X$. 
-		Then $\sigma_i$ is said to be \textit{strong means-ends consistent with $\gamma_i^s$} if at every state $s^\prime$ along any path in $P^s_X$,  $\sigma_i^{s^\prime}$ forces actualization of a state $s^{\prime\prime}$ that continues along a path in $P^s_X$. 
+		Then $\sigma_i$ is said to be \textit{strong means-ends consistent with $\gamma_i(s)$} if at every state $s^\prime$ along any path in $P^s_X$,  $\sigma_i^{s^\prime}$ forces actualization of a state $s^{\prime\prime}$ that continues along a path in $P^s_X$. 
 		By ``force'' we mean that $\sigma_i^{s^\prime}$ indicates an act that actualizes some state on a path in $P^s_X$ regardless of the acts of all the other individuals and Nature. 
 	\end{condition}
 	
@@ -397,11 +377,8 @@ reqno,
 	
 	
 	\section{Groups}  
-	To begin, let $M\equiv \{1,\ldots,m\}$ be a finite set indexing all possible \textit{groups}.\footnote
-	{
-		Later, we can make all the sets infinite if necessary. In the meantime, remember that $M$ can be very large indeed.	
-	} 
-	Let  $\mathcal{M}\equiv 2^M$. All the  indices correspond to entities that could exist as social groups. Therefore, when $k$ does not exist we refer to it as a \textit{potential group}; when $k$ does exist, we simply refer to it as  an \textit{existing group}. 
+
+	 
 	
 	\subsection{Group composition and existence}
 	Often, we are interested in the individuals that comprise a group. With that in mind, define the \textit{group composition} function $c:M\times S \rightarrow \mathcal{N}$ where $c(k,s)=G$ indicates that in state $s\in S$ the group indexed by $k\in M$ is comprised of those individuals whose indices are contained in $G\in\mathcal{N}$. Notice that, using this approach, group composition can differ across states and  a given individual can belong to multiple groups in the same state. Indeed, the same collection of individuals can comprise the memberships of different  groups; i.e., we can have $c(k,s)=c(k^\prime,s)$ for $k\ne k^\prime$.
@@ -410,7 +387,7 @@ reqno,
 	
 	From the preceding setup, we see that a state elaborates all the groups which exist in it. To keep track of this, let $e:S \rightarrow \mathcal{M}$ be the group \textit{existence} function  $e(s)\equiv\{k\in M|c(k,s)\ne \emptyset\}$.  Essentially, $e$  ``pulls out of $s$'' the groups that exist in that state.   Thus, we can define the ``\textit{no-group-exists}'' event as   $E_\emptyset\equiv\{s\mid e(s)=\emptyset\}$. Assume that $S$ is sufficiently expressive to permit the existence of any combination of groups: for all $H\in\mathcal{M}$, $\exists s\in S$ such that $e(s)=H$. Since states also summarize mental features of individuals, there may be many states corresponding to a particular set of existing groups. %Thus, we can similarly define the \textit{$\Gamma$-group-exists event} as   $E_H\equiv\{s\mid e(s)=H\}$. Referring back to the preceding discussion, we can draw various inferences. For example,  $E_H\ne \emptyset$ implies that for all $k\in H$ and $s\in E_H$, $c(k,s)\ne\{0\}$ and $0\notin c(k,s)$.
 	
-	%Let $k^+$, be the act of joining group $k$ and $0^+$ the act of joining no group. If $i$ is in state $s$, $i\notin c(k,s)$, $a_i^s=k^+$ and the conditions for group existence are met (as yet undefined), then a new state $s^\prime$ obtains in which $i\in c(k,s^\prime)$. If $i$ is in state $s$, $i\in c(k,s)$, $a_i^s=0^+$, then a new state $s^\prime$ obtains in which $c^{-1}(i,s^\prime)=\emptyset$. Notice that leaving a group is implied by choosing the join-no-group act; e.g., if  $i\in c(k,s)$, then $a_i^s=0^+$ takes the world to some new state $s^\prime$ in which $c^{-1}(i,s^\prime)=\emptyset$. Additional notation is needed for slightly more complex cases such as choosing to leave a group and join another group (versus, say, remaining in one group and joining another). Moreover, what happens in these cases will depend upon the conditions for group maintenance, formation, dissolution, etc. We will leave this for a later discussion.
+	%Let $k^+$, be the act of joining group $k$ and $0^+$ the act of joining no group. If $i$ is in state $s$, $i\notin c(k,s)$, $a_i(s)=k^+$ and the conditions for group existence are met (as yet undefined), then a new state $s^\prime$ obtains in which $i\in c(k,s^\prime)$. If $i$ is in state $s$, $i\in c(k,s)$, $a_i(s)=0^+$, then a new state $s^\prime$ obtains in which $c^{-1}(i,s^\prime)=\emptyset$. Notice that leaving a group is implied by choosing the join-no-group act; e.g., if  $i\in c(k,s)$, then $a_i(s)=0^+$ takes the world to some new state $s^\prime$ in which $c^{-1}(i,s^\prime)=\emptyset$. Additional notation is needed for slightly more complex cases such as choosing to leave a group and join another group (versus, say, remaining in one group and joining another). Moreover, what happens in these cases will depend upon the conditions for group maintenance, formation, dissolution, etc. We will leave this for a later discussion.
 	
 	
 	
@@ -460,7 +437,7 @@ reqno,
 	
 	
 	\subsection{Human acts\label{human acts}}
-	To rule out cases of group formation via coercion, like being kidnapped by the mafia and taken to New York in the trunk of a car, we assume that group membership relies upon the classical notion of a \textit{human act}: at the most basic level, $\sigma( s)=a_i$ implies that, in state $ s$, $i$ intends act $a_i$ voluntarily in a fashion ``consistent'' with his or her desires -- i.e., having given his choice some thought and without coercion (we will need to say more about how these features are connected later). One obvious situation that violates this assumption is $i$ finding himself limited to one act at a state $ s$ such that $|A_i^s|=1$. To avoid this and simplify, assume that, in state $s_0^\ast$, all real individuals are free to join any \textit{one} group: for all $k\in M$ and all $i\in N$, $A_i(s_0^\ast)\equiv \{a_i^{1+},\ldots,a_i^{m+}\}$.
+	To rule out cases of group formation via coercion, like being kidnapped by the mafia and taken to New York in the trunk of a car, we assume that group membership relies upon the classical notion of a \textit{human act}: at the most basic level, $\sigma( s)=a_i$ implies that, in state $ s$, $i$ intends act $a_i$ voluntarily in a fashion ``consistent'' with his or her desires -- i.e., having given his choice some thought and without coercion (we will need to say more about how these features are connected later). One obvious situation that violates this assumption is $i$ finding himself limited to one act at a state $ s$ such that $|A_i(s)|=1$. To avoid this and simplify, assume that, in state $s_0^\ast$, all real individuals are free to join any \textit{one} group: for all $k\in M$ and all $i\in N$, $A_i(s_0^\ast)\equiv \{a_i^{1+},\ldots,a_i^{m+}\}$.
 	
 	Note that we have not said anything about the conditions required for group existence. For example individual $i$ intending the act of joining  group $k$, intention $\sigma_i(s_0^\ast)=a_i=k^+$ is, presumably, necessary but not sufficient to cause a state to arise, $ s^\prime$, such that $k\in e(s^\prime)$. 
 	
