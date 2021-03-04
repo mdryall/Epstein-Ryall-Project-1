@@ -185,10 +185,8 @@ reqno,
 	To formalize this, let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega(a_t|s_t)=s_{t+1}$ indicates that if the act profile at state $s_t\in S_{t}$ is $a_t\in A(s_t)$, then the next state actualized is $s_{t+1}$.
 	Assume that, for all $s_t$, $\omega:\{s_t\}\times A_t(s_t)\rightarrow \cup_{a_t\in A_t(s_t)} \omega(a_t|s_t)$ is a bijection.
 	In other words, each feasible  act profile in a given state leads to a unique state and each state can be traced back to its immediate predecessor by the unique act profile that would lead to its actualization.
-	
-
 	Suppose, for example, that two distinct sequences of acts could lead to an identical footprint in the snow.
-	In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it. One way of thinking about this is to imagine that a state also encodes the distinct history of acts that lead to it.
+	In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it. 
 
 	The world begins at state $s_0$.
 	To allow for uncertainty or partial knowledge with respect to various aspects of the world at the beginning of time, we assume Nature's acts entirely determine $s_{1}$. 
@@ -203,22 +201,140 @@ reqno,
 	Because there is a single root node and $\omega$ is a bijection, the set of paths in $H_T$ form a tree.
 	Thus, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots\cap S_T$ and $S=S_0\cap S_1\cap \cdots\cap S_T = \emptyset$.
 	Note also that each $S_t$ implies a partition of $H_T$ according to the sets of paths intersecting the states in $S_t$.
+	Similarly, an event $E\in\mathcal{S}_t$ is associated with a unique subset of $H_T$ defined by all the paths that intersect the states in $E$. 
+	Therefore, we can speak of events in a state space $S_t$  or the history space $H_T$ interchangeably.
 	 
 	
 	\subsection{Mental attitudes\label{sec:attitudes}}
-	In what follows, we develop a belief-desire-intention model. 
-	As we elaborate below, we assume that the status of one's mental attitudes at time $t$ is a feature of the actualized state $s_t$. 
-	First, we define \textit{beliefs} as subjective conjectures about the likelihood of past events, the present state, and future events. 
-	Second, \textit{desires} are the individual's attitudes toward histories, represented as a partial order relation on $\mathcal{H}_T$. 
-	In other words, individuals consider both the sequences of states they experience as well as the acts that induce them.
-	For example, even though a junior faculty member may have the same degree of desire for tenure at her present institution in all states of the world in which that happens, some paths to tenure may be more costly than others depending upon the acts required to get there (both her own and others, including those by Nature).
-	Making  the desire relation a partial order on $\mathcal{H}_T$ implies a partial order on $H_T$ but also allows individuals to compare events in $\mathcal{H}_T$ (e.g., the event of gaining tenure vs.\ not).
-	Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event in $\mathcal{H}_T$. 
-	As we will see, others' perceptions of one's intentions will play a social role in our framework.
-	 
-	 ++++++++++++++++++++++++++++++++++++++++++
+	In what follows, we develop an awareness-belief-desire-intention model of mental attitudes. 
+	The essential aim of this formalism is to take seriously the cognitive constraints we face as finite, material beings.
+	In particular, we proceed from the uncontroversial claim that, at any given moment, an individual can only  attend to some finite number of conscious concerns. 
+	We say that an individual is \textit{aware} of the matters toward which his or her attention is directed.
+	Under constrained awareness, intentions take on an important role that is distinct from beliefs and desires.
 	
-	\paragraph*{Beliefs \label{para: beliefs}}
+	The idea is as follows.
+	To the extent some share of the mind's resources are occupied in solving a problem (e.g., deciding what kind of car to buy), those resources are not available for other conscious operations, such as solving other problems, constructing a feasible plan by which to acquire a car, or actualizing that plan by driving to the car dealer and making the transaction.
+	We conjecture that an individual's finite stock of cognitive resources almost always acts as a hard constraint on his or her decision- and act-making capability.
+	In our model, intentions serve as the pivot from goal assessment to goal acquisition.
+	The formation of an intention moves an individual from a state in which an individual is reckoning what to do to a new state in which the individual is decided what to do and in which he or she has at least some sense of how to proceed -- i.e., a \textit{plan}.\footnote
+	{
+		A more elaborate treatment might well separate each step by an act of intention: first, the move from goal assessment to plan selection; then, from plan selection to plan implementation. For now, we bundle these steps into one.
+	}
+	Thus, forming an intention frees up the mental resources required to determine which goal to pursue and how to pursue it.
+	When events arise consistent with the plan, the individual can act accordingly -- without engaging the mental machinery required to reassess goals and plans.
+	Because deciding to focus attention on some new problem can, itself, be an intentional goal, one's awareness is dynamic and, to some extent, influenced by one's own intentions.
+	As we will see, there are also social implications as individuals become aware of the intentions of others.  
+
+	Beliefs and desires will operate in a familiar way. 
+	The distinction here is that they are restricted to those matters about which an individual is aware.
+	As we show below, because beliefs cannot account for awareness and because intentions shift awareness, a belief-desire model cannot do the work of an awareness-belief-desire-intention model.
+
+
+
+	% As we elaborate below, we assume that the status of one's mental attitudes at time $t$ is a feature of the actualized state $s_t$. 
+	% First, we define \textit{beliefs} as subjective conjectures about the likelihood of past events, the present state, and future events. 
+	% Second, \textit{desires} are the individual's attitudes toward histories, represented as a partial order relation on $\mathcal{H}_T$. 
+	% In other words, individuals consider both the sequences of states they experience as well as the acts that induce them.
+	% For example, even though a junior faculty member may have the same degree of desire for tenure at her present institution in all states of the world in which that happens, some paths to tenure may be more costly than others depending upon the acts required to get there (both her own and others, including those by Nature).
+	% Making  the desire relation a partial order on $\mathcal{H}_T$ implies a partial order on $H_T$ but also allows individuals to compare events in $\mathcal{H}_T$ (e.g., the event of gaining tenure vs.\ not).
+	% Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event in $\mathcal{H}_T$. 
+	% As we will see, others' perceptions of one's intentions will play a social role in our framework.
+	 
+	 
+
+	 \subsubsection{Awareness}
+
+There are two conditions that must be met for an individual to be aware of some information. 
+First, the information must be accessible to the consciousness for active consideration. 
+The sources of accessible information are contemporaneous sense data, active imagination, and knowledge -- essentially, anything an individual can call to mind. 
+Second, the information must be actively brought to mind. 
+For example, an airline pilot may be able to call to mind how to navigate a jetliner but not a container ship. 
+That same pilot may not be aware of how to navigate a jetliner while driving his or her car down the freeway. 
+We cannot bring to mind things we do not know or cannot imagine.
+Of the things we know or can imagine, we are constrained in the number to which we can actively attend. 
+
+Unawareness has long been a tricky problem for decision theorists. 
+A decision maker can only choose between acts of which he or she is aware. 
+Moreover, the decision problem is further compounded by unawareness of future possibilities associated with one's acts. 
+It is simple enough to represent a static decision problem which is constrained by the decision maker's perceptions of feasible acts and their expected consequences.
+The problem is how to model what happens in a dynamic setting in which the decision maker suddenly faces an unexpected consequence. 
+For example, in a standard Bayesian decision problem, unawareness of certain consequences can be modeled as zero-probability states according to the decision maker's subjective beliefs. 
+However, Bayesian decision makers will be immediately confounded should such a state occur.  
+
+\citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. \citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. We adopt a version of the framework used in   \cite{bryan2020value} which itself builds on previous work developed by \citet{Heifetz2006}, \citet{Heifetz2008}, and \citet{Heifetz2013}. This approach solves the problems mentioned above by creating multiple state spaces, each one associated with the awareness of a particular individual. This allows different agents to have different perceptions of the the true state of the world as well as the future states that might obtain in the future. 
+
+In each period $t$, we assume that every individual is associated with a state space of his or her own. 
+Let $\mathcal{S}_t =\{S^0_t, S^1_t,\ldots,S^n_t\}$ be an \textit{awareness structure} in period $t$, where $S^i_t$ is the \textit{individual awarenes space for individual} $i$.
+$S^i_t$ is a state space that represents the aspects of $S^0_t$ of which individual $i$ is aware. 
+Note that $t$ may be a future state -- an individual can bring to mind future possibilities and, for example, relate them to a decision at hand.
+Individuals may also be aware of what they know, what they believe, what they intend, and so on. 
+Importantly, awareness may extend to the mental states of others, for example, whether the leather-clad man in the biker bar intends to hit you.
+Remember, awareness is an awareness of aspects of the world that could be contemporaeneously true or true in the future.
+Beliefs are an individual's subjective assessment of the relative likelihood of which state is presently actualized or of which future state will  occur.  
+Nature's state space, $S^0_t$ always corresponds to the world as it is, in its  finest degree of detail. 
+If Nature were an individual, that person would have God-like awareness of every detail in the universe. 
+At the beginning of time, all individual state spaces are set to $S_0=\{s_0\}$ (recall, the action starts in period $t=1$ following an act of Nature).
+The state spaces within and across the $\mathcal{S}_t$'s are disjoint. 
+ 
+All individual awareness spaces are strict refinements of Nature's actual state space: in every period $t$, there are always aspects of the world described by the states in $S^0_t$ of which no individual is aware.
+We also extend the set of awareness spaces $\mathcal{S}_t$ to include a ``null space,'' denoted $S_\emptyset=\{s_\emptyset\}\in\mathcal{S}_t$, where $s_\emptyset$ represents a state of complete unawareness. 
+Then, for any $t$, the collection of awareness spaces in $\mathcal{S}_t$ can be partially ordered according to the level of detail of the world to which they correspond.
+Specifically, if individual $i$ is aware of at least everything of which individual $k$ is aware in period $t$, then we write $S^i_t\succeq S^k_t$ and refer to $i$ as having a \textit{weakly richer} awareness than $k$.
+If $i$ is aware of everything of which $k$ is aware and then some, then the richness-of-awareness relation is \textit{strict} and we write $S^i_t\succ S^k_t$.
+We assume, for all $t$ and all individuals $i$, $S^0_t\succ S^i_t\succ S_\emptyset$.
+To emphasize, beyond the preceding relation, there is no requirement that individual awareness spaces be relatable -- individuals may simply be aware of different things.
+Mathematically, each $\mathcal{S}_t$ is a bounded lattice with maximum element $S^0_t$ and minimum element $S_\emptyset$.
+Finally, it is also useful to have notation for all states in a period, no matter in which space: let $\Omega_t\equiv S_\emptyset\cup S^0_t \cdots S^n_t$ denote the \textit{union of spaces} in $\mathcal{S}_t$. 
+
+
+As just described, the awareness spaces may be related according to their relative richness. To be able to speak more precisely about these relations, we define projections from richer to coarser awarness spaces of the world:  let $r_t: \Omega_t\times\mathcal{S}_t\longrightarrow\Omega_t$,  where $r_t(s^\prime,S)=s$ means that if $s^\prime\in S^\prime\in\mathcal{S}_t$ and $S^\prime\succeq S$, then $s\in S$ is the coarser state to which $s^\prime$ maps. 
+If $S$ and $S^\prime$ are unordered with respect to their relative richness or if $S\succeq S^\prime$, then $r_t$ is undefined.
+\textit{We can think of $r_t$ as dropping various details from a state in the richer space to yield a more impoverished level of awareness  in the coarser space.}
+Projections are assumed to be onto: every state in the coarser space has a state in the richer space that is related to it. 
+There may be several levels of relations within any set of awareness spaces; e.g., $S'' \succeq S' \succeq S$. 
+Therefore, we require consistency across projectsion: if $S^{\prime\prime} \succeq S^{\prime} \succeq S$, $s^{\prime\prime}\in S^{\prime\prime}$, and $r_t(s^{\prime\prime},S) = s$, then $r_t(r_t(s^{\prime\prime},S^{\prime}),S) = s$.
+
+Since $r_t$ maps states in richer awareness spaces to those in coarser spaces, it is also possible to identify the events in  richer spaces that are related to a state in a coarser space. Given $S, S^\prime \in \mathcal{S}_t$ such that $S^\prime \succeq S$ and state $s\in S$,  let $r^{-1}_t(s,S^\prime)\subseteq S^\prime$  denote the subset of states in $S'$ that project to $s$.
+That is, $r^{-1}_t$ is the inverse image of $s$ under $r_t$. 
+We refer to $r^{-1}_t(s,S^\prime)$  as the \emph{ramifications of $s$ in $S^\prime$}.
+
+\begin{figure}[h!]	
+	\begin{center}
+		\includegraphics[scale=.7]{lattice.png}
+	\end{center}
+\caption{Awareness of Irene and Ken\label{lattice}}
+\end{figure}
+
+
+\begin{figure}[h!]	
+	\begin{center}
+		\includegraphics[scale=.7]{lattice-event.png}
+	\end{center}
+\caption{The awareness structure event ``Irene intends to walk with Ken''\label{lattice-event}}
+\end{figure}
+
+To see a simple example of the setup, consider a situation in which  Irene and Ken form an intention of whether or not to take a walk together in period $t$. 
+Let $I_i$ and $\neg I_i$ indicate that Irene intends or does not intend, respectively, to take a walk and, similarly, for Ken. 
+Then, in this simple world, there are four states that can be true: $(I_i,I_k),(I_i,\neg I_k),(\neg I_i,I_k)$ and $(\neg I_i,\neg I_k)$. 
+In Figure \ref{lattice}, we see the awareness spaces configured in a world in which Irene and Ken are only aware of their own intentions. 
+The projections are shown as dashed lines. 
+Thus, if $(I_i,I_k)$ is the true state of the world, then Irene is only aware of her intention and, similarly, Ken is only aware of his intention. 
+As required, the figure includes the state of complete unawareness, $S_\emptyset$.
+Note that, while $S^0_t\succeq S^i_t\succeq S_\emptyset$ and $S^0_t\succeq S^k_t\succeq S_\emptyset$, $S^i_t$ and $S^k_t$ are not comparable.
+
+As was explained earlier, in a standard state space, events are subsets of states that, typically, correspond to some true aspect of the world -- e.g., ``the price of gold hit a new high'' is the event containing all states of the world in which that description is true. 
+Events can also be described in terms of our awareness structures.
+Given the conditions on $r_t$, every even in Natures state space maps to events in all awareness spaces. 
+The awareness structure event ``Irene intends to take a walk with Ken'' is illustrated by the shaded area in Figure ref{lattice-event}.
+Irene knows whether she intends to walk with Ken, but Ken is unaware of that intention.
+If $E_t\subseteq S^0_t$ is an actual event in period $t$, then we denote by $[E]_t\subseteq \Omega_t$ the states that correspond to $E_t$ in the awareness structure $\mathcal{S}_t$.
+Then, for example, the event within Irene's awareness structure that corresponds to Nature's event $E_t$ is $[E]_t\cup S^i_t$.
+
+\clearpage
+
+++++++++++++++++++++++++++++++++++++++++
+
+\subsubsection{Beliefs \label{para: beliefs}}
 	Beginning with beliefs, let $\Delta(H)$ denote the set of all probability distributions on the set of histories. 
 	Then,  $\mu_i:S\rightarrow \Delta(H)$ is a function that maps from states to individual $i$'s beliefs on histories $H$. 
 	We write  $\mu_i^s$ to indicate $i$'s subjective probability distribution on $H$ at state $s$.
@@ -235,8 +351,31 @@ reqno,
 	Since  acts are free choices by individuals, it is possible they are selected randomly (``now, I will decide what to do by flipping a coin'').
 	This includes acts of Nature.
 	All of individual $i$'s speculation with respect to the history, state and unfolding of events is summarized by $\mu_i$.
+
+
+Like in the case of incomplete information, we proceed by introducing probability distributions on state-spaces. For any state space $S \in \mathcal{S}$, let $\Delta(S)$ be the set of probability distributions on $S$. Even though we consider probability distributions on each space $S \in \mathcal{S}$, we can talk about probability of events that, as we just have seen, are defined across spaces. To extend probabilities to events of our lattice structure, let $S_{\mu}$ denote the space on which $\mu$ is a probability measure. Whenever for some event $E \in \Sigma$ we have $S_{\mu} \succeq S(E)$ (i.e., the event $E$ can be expressed in space $S_{\mu}$) then we abuse notation slightly and write
+\begin{equation*}
+\mu \left( E \right) = \mu \left( E\cap S_{\mu}\right).
+\end{equation*}
+If $S(E) \npreceq S_{\mu}$ (i.e, the event $E$ is not expressible in the space $S_{\mu}$ because either $S_{\mu}$ is strictly poorer than $S(E)$ or $S_{\mu}$ and $S(E)$ are incomparable), then we leave $\mu(E)$ undefined.
+
+To model an agent's awareness of events and beliefs over events and awareness and beliefs of other groups, we introduce type mappings. Given the preceding paragraph, we see how the belief of an agent at state $\omega \in S$ may be described by a probability distribution over states in a less expressive space $S'$ (i.e., $S \succeq S')$. This would represent an agent who is unaware of the events that can be expressed in $S$ but not in $S'$. These events are ``out of mind'' for him in the sense that he does not even form beliefs about them at $\omega$:  his beliefs are restricted to a space that cannot express these events.
+
+More formally, for every agent $i \in N$ there is a \textit{type mapping} $t_{i}: \Omega \longrightarrow \bigcup_{S \in \mathcal{S}} \Delta(S)$. That is, the type mapping of agent $i \in N$ assigns to each state $\omega \in \Omega$ of the lattice a probability distribution over some space. Now a state does not only specify which events affecting value creation may obtain, and which beliefs agents hold over those events, but also which events agents are aware of. Recall that $S_{\mu}$ is the space on which $\mu$ is a probability distribution. Since $t_i(\omega)$ now refers to agent $i$'s probabilistic belief in state $\omega$, we can write $S_{t_i(\omega)}$ as the space on which $t_i(\omega)$ is a probability distribution. $S_{t_i(\omega)}$ represents the \emph{awareness level} of agent $i$ at state $\omega$. This terminology is intuitive because at $\omega$ agent $i$ forms beliefs about \textit{all} events in $S_{t_i(\omega)}$.
+
+For a type mapping to make sense, certain properties must be satisfied. The most immediate one is \textit{Confinement:} if $\omega \in S'$ then $t_{i}(\omega )\in \triangle \left( S \right)$ for some $S \preceq S^{\prime}$. That is, the space over which agent $i$ has beliefs in $\omega$ is weakly less expressive than the space contains that $\omega$. Obviously,  a state in a less expressive space cannot describe beliefs over events that can only be expressed in a richer space.  We also impose Introspection, which played a role in our prior discussion of incomplete information: every agent at every state is certain of her beliefs at that state. In AppendixXX}, we discuss additional properties that guarantee the consistent fit of beliefs and awareness across different state-spaces and rule out mistakes in information processing.
+% \begin{figure}[h!]	
+% 	\begin{center}
+% 		\includegraphics[scale=.4]{lattice3.jpg}
+% 	\end{center}
+% \caption{Unawareness structure\label{lattice3}}
+% \end{figure}
+
+It might be helpful to illustrate type mappings with an example. FigureXX depicts the same lattice of spaces as in FiguresXX and XX. In addition, we depict the type mappings for three different groups. At any state in the upmost space $S_{pq}$, the blue agent is aware of $p$ but unaware of $q$. Moreover, she is certain whether or not $p$ depending on whether or not $p$ obtains. This is modeled by her type mapping that assigns probability 1 to state $p$ in every state where $p$ obtains and probability 1 to state $\neg p$ in every state where $\neg p$ obtains. (The blue circles represent the support of her probability distribution that must assign probability 1 to the unique state in the support.) An analogous interpretation applies to the red agent except that she is an expert in $q$. In contrast, the green agent is aware of both $p$ and $q$ but knows nothing with certainty, modeled by her probabilistic beliefs in the upmost space that assigns equal probability to each state in it.\footnote{The example is taken from \citet{Schipper2016} who shows how a generalist (i.e., the green agent) emerges as an entrepreneur and forms a firm made of specialists (i.e., the blue or red agents) in a knowledge-belief and awareness-based theory of the firm using strategic network formations games under incomplete information and unawareness.}
+
+Unawareness structures allow us to model an agent's awareness and beliefs about another agent's awareness and beliefs, beliefs about that, and so on. This is because, as in the incomplete information case,  beliefs are over states and states also describe the awareness and beliefs of groups.  Return to FigureXX. At state $pq$ the green agent assigns probability $1$ that the blue group is aware of $p$ but unaware of $q$. Moreover, he assigns probability $1$ to the blue agent believing with probability 1 that the red group is unaware of $p$.\footnote{We  note, it has been shown that under appropriate assumptions on spaces $S \in \mathcal{S}$ and the type mapping, unawareness structures are rich enough to model any higher order beliefs of agents (see the working paper version of \citet{Heifetz2013}).}
 	
-	\paragraph*{Desires \label{para: desires}}
+\subsubsection{Desires \label{para: desires}}
 	For all $i\in N$, define the state-dependent \textit{desire relation} such that, for all $s\in S$,   $D_i^s\subset P\times P$ where, $(p^\prime,p^{\prime\prime})\in D_i^s$ means that  individual $i$ in state $s$ desires the path $p^{\prime\prime}$ at least as much as the path $p^\prime$. 
 	Having described the mathematical structure of desires, we use the more intuitive notation $p^\prime\preceq_i^s p^{\prime\prime}$, which is defined to mean $(p^\prime,p^{\prime\prime})\in D_i^s$. 
 	We use $\prec_i^s$ and $\approx_i^s$ to indicate strict preference and indifference, respectively. 
@@ -250,9 +389,8 @@ reqno,
 	For example, even though a student drops out of school (thereby, not completing the degree), he or she may nevertheless value the portion of the education that was completed. 
 	Our approach allows for special cases in which all these details are elaborated as primitives of the situation. For our discussion, we simply assume preferences are over paths.    %When $s$ is understood from the context, we simply write, e.g., $E^\prime\preceq_i E^{\prime\prime}$, dropping the superscript. 
 	
-	\paragraph*{Intentions \label{para: intentions}}
-	
-	
+
+	\subsubsection{Intentions \label{para: intentions}}
 	
 	Finally, define the state-contingent \textit{intention} for individual $i$ as a function $\gamma_i:S\rightarrow \mathcal{S}$, where $\gamma_i(s)=E$ means that in state $s$ individual $i$ intends event $E$. 
 	We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
@@ -330,7 +468,7 @@ reqno,
 	These conditions simply assume that there is a certain degree of consistency in an individual's desires over states. 
 	
 	\paragraph{Intentions\label{para: intentons}} 
-	An intention differs from both beliefs and desires in that this mental attitude implies the individual posessing it has made a commitment to take action toward a desired end. 
+	An intention differs from both beliefs and desires in that this mental attitude implies the individual possessing it has made a commitment to take action toward a desired end. 
 	The desired end is an event, such as ``Mike buys a cup of coffee,'' which may be actualized by a large number of states of the world; e.g., buying at McDonalds, or at Starbucks, or alone, or with friends, or while believing the dark roast is probably sold out. Thus, in state $s$, the object of individual $i$'s intention is an event in $\mathcal{S}$. 
 	It is not enough for an individual to simply intend some outcome. 
 	Rather, we assume that at the time an intention is formed, it is coupled with a concrete plan of action designed to achieve the desired end. 
@@ -512,9 +650,9 @@ reqno,
 	%	\caption{Lattice of Spaces and Projections\label{lattice1}}
 	%\end{figure}
 	%
-	%At this point, it may be helpful to illustrate the formalism introduced so far. Consider Figure~\ref{lattice1}. There are four spaces. In the upmost space, $S_{pq}$, there are states that describe whether or not event $p$ or event $q$ happens. For instance, at state $pq$ both event $p$ and event $q$ happen. At state $p\neg q$ event $p$ happens but $q$ does not happen, and so on.\footnote{The``$\neg$'' symbol stands for ``not''.} The leftmost space $S_p$ is poorer than space $S_{pq}$ because nothing can be expressed with regard to event $q$. Similarly, the rightmost space $S_q$ is poorer than $S_{pq}$ because nothing can be expressed with regard to event $p$. Spaces $S_p$ and $S_q$ are incomparable to each other with respect to their expressiveness:  $S_p$ can express whether or not $p$ happens but $S_q$ cannot; and $S_q$ can express whether or not $q$ happens but $S_p$ cannot. Finally, there is a least expressive space, $S_{\emptyset}$, in which none of these details can be elaborated. This is a simple example of a nontrivial lattice of spaces.\footnote{For illustration purposes, we simply index spaces by primitive events that can be expressed in them.} We also indicate in Figure~\ref{lattice1} the projections from higher to lower spaces by dashed lines. For instance, state $pq$ in space $S_{pq}$ projects to state $p$ in space $S_p$ but also to state $q$ in space $S_q$. In this example, the relationships between states in different spaces are obvious due to the labels we have chosen.
+	%At this point, it may be helpful to illustrate the formalism introduced so far. Consider FigureXX. There are four spaces. In the upmost space, $S_{pq}$, there are states that describe whether or not event $p$ or event $q$ happens. For instance, at state $pq$ both event $p$ and event $q$ happen. At state $p\neg q$ event $p$ happens but $q$ does not happen, and so on.\footnote{The``$\neg$'' symbol stands for ``not''.} The leftmost space $S_p$ is poorer than space $S_{pq}$ because nothing can be expressed with regard to event $q$. Similarly, the rightmost space $S_q$ is poorer than $S_{pq}$ because nothing can be expressed with regard to event $p$. Spaces $S_p$ and $S_q$ are incomparable to each other with respect to their expressiveness:  $S_p$ can express whether or not $p$ happens but $S_q$ cannot; and $S_q$ can express whether or not $q$ happens but $S_p$ cannot. Finally, there is a least expressive space, $S_{\emptyset}$, in which none of these details can be elaborated. This is a simple example of a nontrivial lattice of spaces.\footnote{For illustration purposes, we simply index spaces by primitive events that can be expressed in them.} We also indicate in FigureXX the projections from higher to lower spaces by dashed lines. For instance, state $pq$ in space $S_{pq}$ projects to state $p$ in space $S_p$ but also to state $q$ in space $S_q$. In this example, the relationships between states in different spaces are obvious due to the labels we have chosen.
 	%
-	%In a standard state space, an event corresponds to subset of states. In the current setting with multiple state spaces, if there is a space in which an event obtains in some states, then also at elaborations of those states in more expressive spaces this event obtains (and may be others as well).  This follows from the lattice order of spaces and the projections. For instance, in Figure~\ref{lattice1}, let $p$ stand for ``penicillin has antibiotic properties''. Then also at $pq$ we have $p$, ``penicillin has antibiotic properties'' and some $q$ like ``penicillin can be synthesized for mass production''. Formally, take any subset of states $D \subseteq S$ in some space $S \in \mathcal{S}$. Denote by $D^{\uparrow} \equiv \bigcup_{S' \succeq S} \rho^{S'}_{S}(D)$ the union of elaborations of $D$ in more expressive spaces. This is the union of elaborations of $D$ over all spaces (weakly) more expressive than $S$ (i.e., all states in spaces where what is implicitly described in $D \subseteq S$ can also be described). An \emph{event} $E$ in the lattice structure has the form $E = D^{\uparrow}$ for some set of states $D$ in some space $S$. We call $D$ the \emph{base} of the event $E$ and $S$ the \emph{base-space} of the event. The base space of an event $E$ is denoted by $S(E)$.
+	%In a standard state space, an event corresponds to subset of states. In the current setting with multiple state spaces, if there is a space in which an event obtains in some states, then also at elaborations of those states in more expressive spaces this event obtains (and may be others as well).  This follows from the lattice order of spaces and the projections. For instance, in FigureXX, let $p$ stand for ``penicillin has antibiotic properties''. Then also at $pq$ we have $p$, ``penicillin has antibiotic properties'' and some $q$ like ``penicillin can be synthesized for mass production''. Formally, take any subset of states $D \subseteq S$ in some space $S \in \mathcal{S}$. Denote by $D^{\uparrow} \equiv \bigcup_{S' \succeq S} \rho^{S'}_{S}(D)$ the union of elaborations of $D$ in more expressive spaces. This is the union of elaborations of $D$ over all spaces (weakly) more expressive than $S$ (i.e., all states in spaces where what is implicitly described in $D \subseteq S$ can also be described). An \emph{event} $E$ in the lattice structure has the form $E = D^{\uparrow}$ for some set of states $D$ in some space $S$. We call $D$ the \emph{base} of the event $E$ and $S$ the \emph{base-space} of the event. The base space of an event $E$ is denoted by $S(E)$.
 	%\begin{figure}[h!]	
 	%	\begin{center}
 	%		\includegraphics[scale=.4]{lattice2.jpg}
@@ -522,7 +660,7 @@ reqno,
 	%	\caption{Event $[p]$\label{lattice2}}
 	%\end{figure}
 	%
-	%We illustrate the notion of event in Figure~\ref{lattice2}. It depicts the same lattice of spaces as in Figure~\ref{lattice1}. Consider now all states in space $S_p$ in which $p$ obtains. This is only the state $p$ in space $S_p$. We indicate it with the dotted area in space $S_p$. Now consider the elaboration of this set in the more expressive space $S_{pq}$ using the projections. This collects states $pq$ and $p\neg q$, the dotted area in space $S_{pq}$. The union of these two dotted areas  represents the event $p$ (we may write it as $[p]$ in order to distinguish it from the state or the description). It comprises of all the states in all spaces in which $p$ obtains. For this event, $\{p\} \subset S_{p}$ is the base and $S_{p}$ is the base space.
+	%We illustrate the notion of event in FigureXX. It depicts the same lattice of spaces as in FigureXX. Consider now all states in space $S_p$ in which $p$ obtains. This is only the state $p$ in space $S_p$. We indicate it with the dotted area in space $S_p$. Now consider the elaboration of this set in the more expressive space $S_{pq}$ using the projections. This collects states $pq$ and $p\neg q$, the dotted area in space $S_{pq}$. The union of these two dotted areas  represents the event $p$ (we may write it as $[p]$ in order to distinguish it from the state or the description). It comprises of all the states in all spaces in which $p$ obtains. For this event, $\{p\} \subset S_{p}$ is the base and $S_{p}$ is the base space.
 	%
 	%Note well that, according to the preceding definition, not every subset of states is an event. For instance, the (singleton) set of states $\{p\}$ is not an event because it misses the elaborations in more expressive spaces. Alternatively, the union of $\{p\}$ and $\{q\}$ is not an event because there is no unique base space that contains $p$ and $q$. Let $\Sigma$ denote the \textit{set of events}.
 	%
@@ -544,12 +682,12 @@ reqno,
 	%	\caption{Unawareness structure\label{lattice3}}
 	%\end{figure}
 	%
-	%It might be helpful to illustrate type mappings with an example. Figure~\ref{lattice3} depicts the same lattice of spaces as in Figures~\ref{lattice1} and~\ref{lattice2}. In addition, we depict the type mappings for three different groups. At any state in the upmost space $S_{pq}$, the blue agent is aware of $p$ but unaware of $q$. Moreover, she is certain whether or not $p$ depending on whether or not $p$ obtains. This is modeled by her type mapping that assigns probability 1 to state $p$ in every state where $p$ obtains and probability 1 to state $\neg p$ in every state where $\neg p$ obtains. (The blue circles represent the support of her probability distribution that must assign probability 1 to the unique state in the support.) An analogous interpretation applies to the red agent except that she is an expert in $q$. In contrast, the green agent is aware of both $p$ and $q$ but knows nothing with certainty, modeled by her probabilistic beliefs in the upmost space that assigns equal probability to each state in it.\footnote{The example is taken from \citet{Schipper2016} who shows how a generalist (i.e., the green agent) emerges as an entrepreneur and forms a firm made of specialists (i.e., the blue or red agents) in a knowledge-belief and awareness-based theory of the firm using strategic network formations games under incomplete information and unawareness.}
+	%It might be helpful to illustrate type mappings with an example. FigureXX depicts the same lattice of spaces as in FiguresXX andXX. In addition, we depict the type mappings for three different groups. At any state in the upmost space $S_{pq}$, the blue agent is aware of $p$ but unaware of $q$. Moreover, she is certain whether or not $p$ depending on whether or not $p$ obtains. This is modeled by her type mapping that assigns probability 1 to state $p$ in every state where $p$ obtains and probability 1 to state $\neg p$ in every state where $\neg p$ obtains. (The blue circles represent the support of her probability distribution that must assign probability 1 to the unique state in the support.) An analogous interpretation applies to the red agent except that she is an expert in $q$. In contrast, the green agent is aware of both $p$ and $q$ but knows nothing with certainty, modeled by her probabilistic beliefs in the upmost space that assigns equal probability to each state in it.\footnote{The example is taken from \citet{Schipper2016} who shows how a generalist (i.e., the green agent) emerges as an entrepreneur and forms a firm made of specialists (i.e., the blue or red agents) in a knowledge-belief and awareness-based theory of the firm using strategic network formations games under incomplete information and unawareness.}
 	%
-	%Unawareness structures allow us to model an agent's awareness and beliefs about another agent's awareness and beliefs, beliefs about that, and so on. This is because, as in the incomplete information case,  beliefs are over states and states also describe the awareness and beliefs of groups.  Return to Figure~\ref{lattice3}. At state $pq$ the green agent assigns probability $1$ that the blue group is aware of $p$ but unaware of $q$. Moreover, he assigns probability $1$ to the blue agent believing with probability 1 that the red group is unaware of $p$.\footnote{We  note, it has been shown that under appropriate assumptions on spaces $S \in \mathcal{S}$ and the type mapping, unawareness structures are rich enough to model any higher order beliefs of agents (see the working paper version of \citet{Heifetz2013}).}
+	%Unawareness structures allow us to model an agent's awareness and beliefs about another agent's awareness and beliefs, beliefs about that, and so on. This is because, as in the incomplete information case,  beliefs are over states and states also describe the awareness and beliefs of groups.  Return to FigureXX. At state $pq$ the green agent assigns probability $1$ that the blue group is aware of $p$ but unaware of $q$. Moreover, he assigns probability $1$ to the blue agent believing with probability 1 that the red group is unaware of $p$.\footnote{We  note, it has been shown that under appropriate assumptions on spaces $S \in \mathcal{S}$ and the type mapping, unawareness structures are rich enough to model any higher order beliefs of agents (see the working paper version of \citet{Heifetz2013}).}
 	
 	\bibliographystyle{chicago}
-	\bibliography{MDRJabLib}
+	\bibliography{library}
 \end{document}
 
 pdflatex: --aux--directory=build
