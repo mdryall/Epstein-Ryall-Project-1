@@ -118,9 +118,10 @@ reqno,
 	
 	\section{Notational conventions}
 	Capital letters ($G$, $N$, etc.) refer to sets.  
-	Small Arabic and Greek letters refer variously to elements of sets (e.g., $i\in N$), functions (e.g., $\sigma:N\rightarrow \mathcal{N}$), and indexed lists (e.g., $x\equiv(x_1,\ldots,x_n)$). 
+	Small Arabic and Greek letters refer variously to elements of sets (e.g., $i\in N$) and functions (e.g., $\sigma:N\rightarrow \mathcal{N}$). 
 	Terms  are \textit{italicized} at the point of definition.  
-	A \textit{profile} is a placeholder for a list of elements; e.g., $x$ where $x\equiv(x_1,\ldots,x_n)$. 
+	A \textit{profile} is a placeholder for a list of elements.
+	We denote these in boldface: e.g., $\mathbf{x}$ where $\mathbf{x}\equiv(x_1,\ldots,x_n)$. 
 	The ``$\equiv$'' symbol indicates the definition of a mathematical object. 
 	If $X$ is a set, then $2^X$ is the notation denoting the set of all subsets of $X$. Calligraphic letters refer to sets of sets (e.g. $\mathcal{X}\equiv 2^X$). 
 	Curly parentheses indicate sets, typically in defining them (e.g. $X\equiv\{x|x\text{ is an even integer}\}$). 
@@ -131,21 +132,25 @@ reqno,
 	
 	\section{Individual Agency}\label{sec: Individuals}
 
-	Begin with a \textit{population of individuals}, indexed by $N\equiv \{0,\ldots,n\}$ with typical element $i\in N$ and $\mathcal{N}\equiv 2^N$. For now, we focus on an individual actor. Later, we consider groups. The evolution of the world through time is driven by the actions of individuals as well as of the onset of natural phenomena. We account for natural phenomena as the ``actions'' of a ``Nature'' which we assign to population index 0.b 
+	Begin with a \textit{population of individuals}, indexed by the set $N\equiv \{0,\ldots,n\}$ with typical element $i\in N$ and $\mathcal{N}\equiv 2^N$. For now, we focus on an individual actor. 
+	Later, we consider groups. The evolution of the world through time is driven by the actions of individuals as well as of the onset of natural phenomena. 
+	We account for natural phenomena as the ``actions'' of a ``Nature'' which we assign to population index 0.
 	
 	
 	\subsection{States\label{sec:states}}
 
-	A \textit{state}, denoted $s$, is a snapshot of the world at a moment in time. 
+	A \textit{state}, denoted $s$, is a snapshot of the world at a moment in time.
 	States summarize the status \textit{of all features of the world that are relevant to all individuals} in that moment. 
 	This includes the relevant ``mind-independent'' features of a particular world as well as the ``mind-dependent'' features of the individuals acting in that world. 
-	The finite \textit{state space at time} $t$, denoted $S_t$, with typical element $s_t\in S_t$, contains all the possible states that could occur at $t$.\footnote
+	Let $S$ denote the set of all possible states of the world.
+	For our analysis, we assume time is discreet and limit attention to some finite number of periods $T$. 
+	The finite \textit{state space at time} $t$, denoted $S_t\subset S$, with typical element $s_t\in S_t$, contains all the states that could possibly be actualized at $t$.\footnote
 	{
 		This setup can be generalized to include countably or uncountably infinite state spaces. Limiting attention to finite sets allows us to sidestep some mathematical complexities which are not necessary for the purposes of this analysis.
 	} 
 	
 	A note on terminology: the term `event', which we define in the next paragraph, is used differently by philosophers than it is by game theorists. 
-	We will use the game-theorist's use of the term, but since we are writing to both audiences, it is important to clarify this difference. 
+	We will use the game-theorist's meaning of the term, but since we are writing to both audiences, it is important to clarify this difference. 
 	In game theory, `event' is used similarly to the term `property' in philosophy, where properties are understood intensionally. 
 	Philosophers typically use `event' to mean a spatiotemporal particular extended over time. 
 	In game theory (and in our usage), an event is a set of states. 
@@ -153,56 +158,60 @@ reqno,
 	For example, in our context, the event ``Mike intends to get a cup of coffee''  includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
 	In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property.
 
-	An \textit{event}, then, is a subset of $S$.  
-	Let $\mathcal{S}\equiv 2^S$ be the set of \textit{events}, with typical element $E\in \mathcal{S}$.
+	We will distinguish between events associated with states at a moment in time, which we refer to as \textit{synchronic}, and those associated with states unfolding through time. 
+	A \textit{synchronic event} is a subset of $S$.  
+	Let $\mathcal{S}\equiv 2^S$ be the set of all possible \textit{events}, with typical element $E\in \mathcal{S}$.
+	We will define diachronic events momentarily.
 	
 	To see how we use states and understand how these objects work, consider the canonical example of rolling a six-sided die. 
 	We use functions on $S$ to ``extract'' information from the states. 
-	Here, for example, we can let $d(s)$ indicate the die roll outcome in state $s$.
-	Thus, given $s\in S$, $d(s)\in\{1,2,3,4,5,6\}$, assuming the die never lands on an edge. 
-	To clarify the domain and the range to which the function maps, we write $d:S\rightarrow \{1,2,3,4,5,6\}$.
+	Here, for example, we can let $d(s)$ indicate the outcome of a die roll in state $s$.
+	Given $s\in S$, $d(s)\in\{1,2,3,4,5,6\}$, assuming the die never lands on an edge. 
+	To clarify the domain and the range to which the function maps, we write $d:S\rightarrow \{1,2,3,4,5,6\}$; i.e., $d$ maps from a state in $S$ to a number between 1 and 6, inclusive.
 	Now, the event ``the die roll is even'' is described by $E\in\mathcal{S}$ such that $E\equiv\{s\in S|d(s)=2,4\text{ or }6\}$. 
 	
 	\subsection{Acts and actions\label{sec:dynamics}}
-	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the changes that, in addition to the acts of the individuals, determine actualization of a particular state from an immediately preceding, previously actualized state).
-	We assume the world begins in a null state, denoted $s_0$. 
-	For all individuals $i\in N$,  $A_i(s)$ indicates the set of \textit{feasible acts available to $i$ in state $s$} with typical element $a_i\in A_i(s)$.\footnote
+	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the causes that, in conjunction with the acts of the individuals, determine the actualization of a particular state from an immediately preceding, previously actualized state).
+	Let $A$ be the set of all possible acts that can be chosen by some individual in some state
+	For all individuals $i\in N$,  $A^i(s_t)$ indicates the set of \textit{feasible acts available to individual $i$ in state $s_t$} with typical element $a^i_t\in A^i(s_t)$.\footnote
 	{
-		Notice that we use a capital letter to indicate that $A_i(s)$ is a set-valued function. 
-		Also, because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
+		Notice that we use a capital letter to indicate that $A^i(s_t)$ is a set-valued function: $A^i\rightarrow 2^A$.
+		Also note that we use superscripts for individual's indices and subscripts to index time.
+		Because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
 		We think of ``action'' as describing the narrower category of act associated with physical movement.
 	} 
 	
-	We adopt the convention that $A_i(s)=\emptyset$ indicates that individual $i$ has no available acts in state $s$.
-	An \textit{act profile} is a list of acts, one for each individual, denoted  $a\equiv(a_0,a_1,\ldots,a_k)$. 
-	Recall, Nature is ``Individual 0'' so that $a_0$ summarizes all the relevant natural developments that, in conjunction with the individuals' acts, determine which state is actualized following $s$. 
-	The set of \textit{all act profiles at state $s$} is $A(s)\equiv \times_{i=0}^n A_i(s)$. 
-	The set of \textit{all possible act profiles} is $A\equiv \cup_{s\in S} A(s)$. 
+	We adopt the convention that $A^i(s_t)=\emptyset$ indicates that individual $i$ has no available acts in state $s_t$.
+	An \textit{act profile} is a list of acts, one for each individual, denoted  $\mathbf{a}_t\equiv(a^0_t,a^1_t,\ldots,a^n_t)$. 
+	Recall, Nature is ``Individual 0'' so that $a^0_t$ summarizes all the developments that, in conjunction with the individuals' acts, determine which state is actualized following $s_t$. 
+	The set of \textit{all act profiles at state $s_t$} is $\mathbf{A}(s_t)\equiv \times_{i=0}^n A^i(s_t)$. 
+	The set of \textit{all possible act profiles} is $\mathbf{A}\equiv \cup_{s\in S} \mathbf{A}(s)$. 
 	
 	\subsection{Dynamics  } 
 	  
 	As indicated above, the act profiles summarize all the contingencies required to actualize one state from the next. 
-	To formalize this, let $\omega:S\times A\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega(a_t|s_t)=s_{t+1}$ indicates that if the act profile at state $s_t\in S_{t}$ is $a_t\in A(s_t)$, then the next state actualized is $s_{t+1}$.
-	Assume that, for all $s_t$, $\omega:\{s_t\}\times A_t(s_t)\rightarrow \cup_{a_t\in A_t(s_t)} \omega(a_t|s_t)$ is a bijection.
+	To formalize this, let $\omega:S\times \mathbf{A}\rightarrow S$ be the \textit{state-contingent actualization function}, where $\omega(\mathbf{a}_t|s_t)=s_{t+1}$ indicates that if the act profile at state $s_t\in S_{t}$ is $\mathbf{a}_t\in \mathbf{A}(s_t)$, then the next state actualized is $s_{t+1}$.
+	Assume that, for all $s_t$, $\omega:\{s_t\}\times \mathbf{A}_t(s_t)\rightarrow \cup_{\mathbf{a}_t\in \mathbf{A}_t(s_t)} \omega(\mathbf{a}_t|s_t)$ is a bijection.
 	In other words, each feasible  act profile in a given state leads to a unique state and each state can be traced back to its immediate predecessor by the unique act profile that would lead to its actualization.
 	Suppose, for example, that two distinct sequences of acts could lead to an identical footprint in the snow.
 	In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it. 
 
 	The world begins at state $s_0$.
 	To allow for uncertainty or partial knowledge with respect to various aspects of the world at the beginning of time, we assume Nature's acts entirely determine $s_{1}$. 
-	That is, $a_{0}=(a_0,\emptyset,\ldots,\emptyset)$, where $a_0$ represents all the factors that lead individuals to their  first decision state, $s_1=\omega(a_0|s_0)$.
-	Uncertainty with respect to the state of the world in $t=1$ (e.g., about the intentions or other individuals) is, thus, formalized as uncertainty about ``Nature's act'' prior to the start of the focal time period.
+	That is, $\mathbf{a}_{0}=(a^0_0,\emptyset,\ldots,\emptyset)$, where $a^0_0$ represents all the actualize historic factors that lead individuals to their  first decision state, $s_1=\omega(\mathbf{a}_0|s_0)$.
+	Uncertainty with respect to the state of the world in $t=1$ (e.g., about the intentions or other individuals) is, thus, formalized as uncertainty about ``Nature's act'' $a^0_0\in A^0(s_0)$ prior to the first decision period.
 	
-	We define the \textit{history at state $s_t$} as a profile that starts at $s_0$ and ends at $s_t$ along with the  acts that determine the sequence of states according to $\omega$, denoted $h(s_t)=(s_0,a_0,\ldots,a_{t-1},s_t)$, where $s_1=\omega(a_0|s_0)$, etc.
-	The set of all histories at time $t$ is $H_t$.
-	Let $T$ be the number of time periods under consideration for the analysis.
-	Then,  the set of all possible histories is $H_T$ and the set of all subsets of histories is $\mathcal{H}_T$.
-	An arbitrary \textit{history at time $t$} is denoted $h_t\in H_t$, where we start with the \textit{null history} $h_0=(s_0)$ at the beginning of time (so, $H_0=\{h_0\}$ and  $S_0=\{s_0\}$).   
-	Because there is a single root node and $\omega$ is a bijection, the set of paths in $H_T$ form a tree.
+	We define the \textit{history at state $s_t$} as a profile that starts at $s_0$ and ends at $s_t$ along with the  acts that determine the sequence of states according to $\omega$, denoted $\mathbf{h}(s_t)=(s_0,a_0,\ldots,a_{t-1},s_t)$, where $s_1=\omega(a_0|s_0)$, etc.
+	The set of all histories at time $t$ is $\mathbf{H}_t$.
+	The set of all possible histories is $\mathbf{H}_T$ and the set of all subsets of histories is $\mathcal{H}_T$.
+	An arbitrary \textit{history at time $t$} is denoted $\mathbf{h}_t\in \mathbf{H}_t$, where we start with the \textit{null history} $\mathbf{h}_0=(s_0)$ at the beginning of time (so, $\mathbf{H}_0=\{\mathbf{h}_0\}$ and  $S_0=\{s_0\}$).   
+	Because there is a single root node and $\omega$ is a bijection, the set of paths in $\mathbf{H}_T$ form a tree.
 	Thus, $S$ can be partitioned according to  subsets of states corresponding to time periods: $S=S_0\cup S_1\cup \cdots\cap S_T$ and $S=S_0\cap S_1\cap \cdots\cap S_T = \emptyset$.
-	Note also that each $S_t$ implies a partition of $H_T$ according to the sets of paths intersecting the states in $S_t$.
-	Similarly, an event $E\in\mathcal{S}_t$ is associated with a unique subset of $H_T$ defined by all the paths that intersect the states in $E$. 
-	Therefore, we can speak of events in a state space $S_t$  or the history space $H_T$ interchangeably.
+	Note also that each $S_t$ implies a partition of $\mathbf{H}_T$ according to the sets of paths intersecting the states in $S_t$.
+	
+	A \textit{diachronic event} is a subset $E\in 2^{\mathbf{H}_T}$; i.e., a subset of paths in the tree associated with $\mathbf{H}_T$.
+	Let $\mathcal{H}\equiv 2^{\mathbf{H}_T}$ be the set of all diachronic events.
+	Given the preceding discussion, every event $E\in\mathcal{S}$ is associated with a unique event $E^\prime\in \mathcal{H}$. 
 	 
 	
 	\subsection{Mental attitudes\label{sec:attitudes}}
@@ -216,7 +225,7 @@ reqno,
 	To the extent some share of the mind's resources are occupied in solving a problem (e.g., deciding what kind of car to buy), those resources are not available for other conscious operations, such as solving other problems, constructing a feasible plan by which to acquire a car, or actualizing that plan by driving to the car dealer and making the transaction.
 	We conjecture that an individual's finite stock of cognitive resources almost always acts as a hard constraint on his or her decision- and act-making capability.
 	In our model, intentions serve as the pivot from goal assessment to goal acquisition.
-	The formation of an intention moves an individual from a state in which an individual is reckoning what to do to a new state in which the individual is decided what to do and in which he or she has at least some sense of how to proceed -- i.e., a \textit{plan}.\footnote
+	The formation of an intention moves an individual from a state in which an individual is reckoning what to do to a new state in which the individual has decided what to do and in which he or she has at least some sense of how to proceed -- i.e., a \textit{plan}.\footnote
 	{
 		A more elaborate treatment might well separate each step by an act of intention: first, the move from goal assessment to plan selection; then, from plan selection to plan implementation. For now, we bundle these steps into one.
 	}
@@ -245,7 +254,7 @@ reqno,
 	 \subsubsection{Awareness}
 
 There are two conditions that must be met for an individual to be aware of some information. 
-First, the information must be accessible to the consciousness for active consideration. 
+First, the information must be accessible to oneself for active consideration. 
 The sources of accessible information are contemporaneous sense data, active imagination, and knowledge -- essentially, anything an individual can call to mind. 
 Second, the information must be actively brought to mind. 
 For example, an airline pilot may be able to call to mind how to navigate a jetliner but not a container ship. 
@@ -254,49 +263,53 @@ We cannot bring to mind things we do not know or cannot imagine.
 Of the things we know or can imagine, we are constrained in the number to which we can actively attend. 
 
 Unawareness has long been a tricky problem for decision theorists. 
-A decision maker can only choose between acts of which he or she is aware. 
+A decision maker can only choose between acts of which he or she is aware which, typically, does not include all the truly feasible acts at that moment. 
 Moreover, the decision problem is further compounded by unawareness of future possibilities associated with one's acts. 
-It is simple enough to represent a static decision problem which is constrained by the decision maker's perceptions of feasible acts and their expected consequences.
+It is easy enough to represent a static decision problem which is constrained by the decision maker's awareness of possible acts by simply  defining the ``feasible'' acts as those corresponding to his or her awareness.
 The problem is how to model what happens in a dynamic setting in which the decision maker suddenly faces an unexpected consequence. 
 For example, in a standard Bayesian decision problem, unawareness of certain consequences can be modeled as zero-probability states according to the decision maker's subjective beliefs. 
-However, Bayesian decision makers will be immediately confounded should such a state occur.  
+However, such decision makers will be confounded should a subjectively impossible state occur. 
+Added to this is the problem of representing decision makers of differing awareness when decision problems are interactive. 
 
-\citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. \citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. We adopt a version of the framework used in   \cite{bryan2020value} which itself builds on previous work developed by \citet{Heifetz2006}, \citet{Heifetz2008}, and \citet{Heifetz2013}. This approach solves the problems mentioned above by creating multiple state spaces, each one associated with the awareness of a particular individual. This allows different agents to have different perceptions of the the true state of the world as well as the future states that might obtain in the future. 
+\citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. \citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. We adopt a version of the framework used in   \cite{bryan2020value} which itself builds on previous work developed in \citet{Heifetz2006}, \citet{Heifetz2008}, and \citet{Heifetz2013}. This approach solves the problems mentioned above by creating multiple state spaces, each one associated with the awareness of a particular individual. This allows different agents to have different perceptions of the the true state of the world as well as the future states that might obtain in the future. 
 
-In each period $t$, we assume that every individual is associated with a state space of his or her own. 
+In each period $t$, we assume that every individual is associated with a state space representing the states of which that individual is aware. 
 Let $\mathcal{S}_t =\{S^0_t, S^1_t,\ldots,S^n_t\}$ be an \textit{awareness structure} in period $t$, where $S^i_t$ is the \textit{individual awarenes space for individual} $i$.
-$S^i_t$ is a state space that represents the aspects of $S^0_t$ of which individual $i$ is aware. 
-Note that $t$ may be a future state -- an individual can bring to mind future possibilities and, for example, relate them to a decision at hand.
-Individuals may also be aware of what they know, what they believe, what they intend, and so on. 
-Importantly, awareness may extend to the mental states of others, for example, whether the leather-clad man in the biker bar intends to hit you.
-Remember, awareness is an awareness of aspects of the world that could be contemporaeneously true or true in the future.
-Beliefs are an individual's subjective assessment of the relative likelihood of which state is presently actualized or of which future state will  occur.  
-Nature's state space, $S^0_t$ always corresponds to the world as it is, in its  finest degree of detail. 
-If Nature were an individual, that person would have God-like awareness of every detail in the universe. 
-At the beginning of time, all individual state spaces are set to $S_0=\{s_0\}$ (recall, the action starts in period $t=1$ following an act of Nature).
-The state spaces within and across the $\mathcal{S}_t$'s are disjoint. 
- 
-All individual awareness spaces are strict refinements of Nature's actual state space: in every period $t$, there are always aspects of the world described by the states in $S^0_t$ of which no individual is aware.
-We also extend the set of awareness spaces $\mathcal{S}_t$ to include a ``null space,'' denoted $S_\emptyset=\{s_\emptyset\}\in\mathcal{S}_t$, where $s_\emptyset$ represents a state of complete unawareness. 
-Then, for any $t$, the collection of awareness spaces in $\mathcal{S}_t$ can be partially ordered according to the level of detail of the world to which they correspond.
-Specifically, if individual $i$ is aware of at least everything of which individual $k$ is aware in period $t$, then we write $S^i_t\succeq S^k_t$ and refer to $i$ as having a \textit{weakly richer} awareness than $k$.
-If $i$ is aware of everything of which $k$ is aware and then some, then the richness-of-awareness relation is \textit{strict} and we write $S^i_t\succ S^k_t$.
-We assume, for all $t$ and all individuals $i$, $S^0_t\succ S^i_t\succ S_\emptyset$.
-To emphasize, beyond the preceding relation, there is no requirement that individual awareness spaces be relatable -- individuals may simply be aware of different things.
-Mathematically, each $\mathcal{S}_t$ is a bounded lattice with maximum element $S^0_t$ and minimum element $S_\emptyset$.
-Finally, it is also useful to have notation for all states in a period, no matter in which space: let $\Omega_t\equiv S_\emptyset\cup S^0_t \cdots S^n_t$ denote the \textit{union of spaces} in $\mathcal{S}_t$. 
+As we will elaborate below, $S_t$ is the richest space -- it is a God's-eye perception of all relevant aspects of reality at time $t$.
+Then, $S^i_t$ is a state space that represents the aspects of $S_t$ of which individual $i$ is aware. 
+Note that $t$ may be a future state -- the future possibilities that an individual can bring to mind and relate to a decision at hand.
+Given the information encoded in a state, individuals may also be aware of what they know, what they believe, what they intend, and so on. 
+Importantly, awareness may extend to the mental states of others, for example, whether the leather-clad man in the biker bar intends to strike. 
+ We adopt the intuitive convention that $S^0_t=S_t$.
+We also extend the set of awareness spaces $\mathcal{S}_t$ to include a ``null space,'' denoted $S_\emptyset=\{s_\emptyset\}\in\mathcal{S}_t$, where $s_\emptyset$ represents a state of complete unawareness of anything. 
+
+We assume that the state spaces in $\mathcal{S}_t$ are partially ordered according to their richness relative to $S_t$. 
+Mathematically, let $\langle \mathcal{S}_t, \succeq\rangle$ be a bounded lattice of spaces ($\succeq$ is a partial order on the spaces in  $\mathcal{S}_t$), such that $S^k_t\succeq S^i_t$ means ``$S^k_t$ is a (weakly) richer description of the world than $S^i_t$.''
+The richest state space is $S^0_t$ (a maximum of the lattice), and the poorest is $S_\emptyset$ (a minimum of the lattice).
+To keep track of the interrelationships between states, we introduce projections to map states in richer spaces to their counterparts in poorer spaces.
+If $S^k_t\succeq S^i_t$, then $r^{k\to i}_t : S^k_t \longrightarrow S^i_t$ maps states in richer spaces $S^k_t$ to those in $S^i_t$.  
+Projections are assumed to be onto functions: if $S^k_t\succeq S^i_t$, every state in $S^i_t$ has a state in $S^k_t$ that is related to it.
+\textit{We can think of $r^i_t$ as dropping various details from a state in the richer space to yield a more impoverished level of awareness  in the coarser space.} 
+By this setup,
+\begin{enumerate} 
+	\item Every state in $S^i_t$ is related to some state in its richer counterpart  $S^k_t$,
+	\item A state in $S^i_t$ may be related to multiple states  (i.e., an event) in a richer $S^k_t$,
+	\item Some states in a richer $S^k_t$ may have no counterpart in $S^i_t$.
+\end{enumerate}
+In general, $r^{k\to i}$ is not defined unless $S^k_t\succeq S^i_t$.
+
+For example, suppose the only information of interest in the first period is the outcome of a single die roll. Then, $S^0_1=\{1,2,3,4,5,6\}$. Further, suppose that individual $i$ is told ``red'' if 1 or 2, ``blue'' if 3 or 4, and ``green'' if 5 or 6. 
+Assume individual $i$ is only aware that he may be told ``blue'' or ``green''. 
+Then, $S^i_1=\{blue, green\}$ and $r^{0\to i}_1(3)=r^i_1(4)=blue$ and $r^{0\to i}_1(5)=r^i_1(6)=green$.
+Notice that: i) $r^{0\to i}$ is not defined on 1 or 2; and ii) the states in $S^i_1$ correspond to events in $S^0_1$.
 
 
-As just described, the awareness spaces may be related according to their relative richness. To be able to speak more precisely about these relations, we define projections from richer to coarser awarness spaces of the world:  let $r_t: \Omega_t\times\mathcal{S}_t\longrightarrow\Omega_t$,  where $r_t(s^\prime,S)=s$ means that if $s^\prime\in S^\prime\in\mathcal{S}_t$ and $S^\prime\succeq S$, then $s\in S$ is the coarser state to which $s^\prime$ maps. 
-If $S$ and $S^\prime$ are unordered with respect to their relative richness or if $S\succeq S^\prime$, then $r_t$ is undefined.
-\textit{We can think of $r_t$ as dropping various details from a state in the richer space to yield a more impoverished level of awareness  in the coarser space.}
-Projections are assumed to be onto: every state in the coarser space has a state in the richer space that is related to it. 
-There may be several levels of relations within any set of awareness spaces; e.g., $S'' \succeq S' \succeq S$. 
-Therefore, we require consistency across projectsion: if $S^{\prime\prime} \succeq S^{\prime} \succeq S$, $s^{\prime\prime}\in S^{\prime\prime}$, and $r_t(s^{\prime\prime},S) = s$, then $r_t(r_t(s^{\prime\prime},S^{\prime}),S) = s$.
-
-Since $r_t$ maps states in richer awareness spaces to those in coarser spaces, it is also possible to identify the events in  richer spaces that are related to a state in a coarser space. Given $S, S^\prime \in \mathcal{S}_t$ such that $S^\prime \succeq S$ and state $s\in S$,  let $r^{-1}_t(s,S^\prime)\subseteq S^\prime$  denote the subset of states in $S'$ that project to $s$.
-That is, $r^{-1}_t$ is the inverse image of $s$ under $r_t$. 
-We refer to $r^{-1}_t(s,S^\prime)$  as the \emph{ramifications of $s$ in $S^\prime$}.
+Because the lattice is only a partial order, it may be that the awareness spaces of two individual cannot be compared. 
+There is no requirement that individual awareness spaces be relatable -- individuals may simply be aware of different things.
+Moreover, suppose $S^k_t\succeq S^j_t\succeq S^i_t$. 
+This implies $S^k_t\succeq S^i_t$.
+Therefore, for consistency, we require that the projection from $S^k_t$ to $S^i_t$ yield the same as the projection from $S^k_t$ to $S^j_t$ followed by the projection from $S^j_t$ to $S^i_t$: $r^{k\to i}_t = r^{j\to i}_t \circ r^{k\to j}_t$.
+It is also useful to have notation for all states in an awareness structure, no matter in which space: let $\Omega = S^0_t \cup S' \ldots \cup S^n_t$ denote the \textit{union of spaces} in $\mathcal{S}_t$.
 
 \begin{figure}[h!]	
 	\begin{center}
@@ -324,10 +337,10 @@ Note that, while $S^0_t\succeq S^i_t\succeq S_\emptyset$ and $S^0_t\succeq S^k_t
 
 As was explained earlier, in a standard state space, events are subsets of states that, typically, correspond to some true aspect of the world -- e.g., ``the price of gold hit a new high'' is the event containing all states of the world in which that description is true. 
 Events can also be described in terms of our awareness structures.
-Given the conditions on $r_t$, every even in Natures state space maps to events in all awareness spaces. 
-The awareness structure event ``Irene intends to take a walk with Ken'' is illustrated by the shaded area in Figure ref{lattice-event}.
+Given the conditions on the $r^i_t$s, every event in Nature's state space maps to events in all awareness spaces. 
+The $S^0_t$ event ``Irene intends to take a walk with Ken'' extended to the awareness structure is illustrated by the shaded area in Figure \ref{lattice-event}.
 Irene knows whether she intends to walk with Ken, but Ken is unaware of that intention.
-If $E_t\subseteq S^0_t$ is an actual event in period $t$, then we denote by $[E]_t\subseteq \Omega_t$ the states that correspond to $E_t$ in the awareness structure $\mathcal{S}_t$.
+If $E_t\subseteq S^0_t$, then we denote by $[E]_t\subseteq \Omega_t$ the states that correspond to $E_t$ in the awareness structure $\mathcal{S}_t$.
 Then, for example, the event within Irene's awareness structure that corresponds to Nature's event $E_t$ is $[E]_t\cup S^i_t$.
 
 \clearpage
