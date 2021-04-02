@@ -1,5 +1,13 @@
-% Encoding: UTF-8
+%% This BibTeX bibliography file was created using BibDesk.
+%% https://bibdesk.sourceforge.io/
 
+%% Created for Michael Ryall at 2021-03-03 10:48:35 -0500 
+
+
+%% Saved with string encoding Unicode (UTF-8) 
+
+
+@comment{jabref-meta: databaseType:bibtex;}
 
 
 
@@ -3765,24 +3773,22 @@
 	year = {1985},
 	Bdsk-Url-1 = {http://econpapers.repec.org/RePEc:eee:pubeco:v:28:y:1985:i:1:p:1-23}}
 
-@Article{Heifetz2006,
-  author     = {Heifetz, Aviad and Meier, Martin and Schipper, Burkhard C.},
-  journal    = {Journal of Economic Theory},
-  title      = {{Interactive unawareness}},
-  year       = {2006},
-  issn       = {00220531},
-  month      = {sep},
-  number     = {1},
-  pages      = {78--94},
-  volume     = {130},
-  bdsk-url-1 = {http://linkinghub.elsevier.com/retrieve/pii/S0022053105000578},
-  bdsk-url-2 = {https://doi.org/10.1016/j.jet.2005.02.007},
-  doi        = {10.1016/j.jet.2005.02.007},
-  file       = {:Users/mikeryall/Library/Application Support/Mendeley Desktop/Downloaded/Heifetz, Meier, Schipper - 2006 - Interactive unawareness.pdf:pdf},
-  keywords   = {awareness,bounded,interactive epistemology,knowledge,speculative trade,unawareness},
-  publisher  = {Elsevier {BV}},
-  url        = {http://linkinghub.elsevier.com/retrieve/pii/S0022053105000578},
-}
+@article{Heifetz2006,
+	author = {Heifetz, Aviad and Meier, Martin and Schipper, Burkhard C.},
+	doi = {10.1016/j.jet.2005.02.007},
+	file = {:Users/mikeryall/Library/Application Support/Mendeley Desktop/Downloaded/Heifetz, Meier, Schipper - 2006 - Interactive unawareness.pdf:pdf},
+	issn = {00220531},
+	journal = {Journal of Economic Theory},
+	keywords = {awareness,bounded,interactive epistemology,knowledge,speculative trade,unawareness},
+	month = {sep},
+	number = {1},
+	pages = {78--94},
+	title = {{Interactive unawareness}},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0022053105000578},
+	volume = {130},
+	year = {2006},
+	Bdsk-Url-1 = {http://linkinghub.elsevier.com/retrieve/pii/S0022053105000578},
+	Bdsk-Url-2 = {https://doi.org/10.1016/j.jet.2005.02.007}}
 
 @article{Roberts2002,
 	author = {Roberts, PW and Dowling, GR},
@@ -13419,10 +13425,6 @@ From Duplicate 2 ( FIRM INTERDEPENDENCE Frank M. GOLLOP - Gollop, Frank M; Rober
 	timestamp = {2021-03-03},
 	title = {{Capital One Financial Corporation}},
 	year = {2000}}
-
-@Comment{jabref-meta: databaseType:bibtex;}
-
-@Comment{jabref-meta: fileDirectory:/home/mdryall/Dropbox/My_BibTeX_Files;}
 
 @comment{BibDesk Static Groups{
 <?xml version="1.0" encoding="UTF-8"?>
