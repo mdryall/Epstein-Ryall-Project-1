@@ -185,6 +185,8 @@ reqno,
 	With this in mind, let $S^0$ denote the (finite) set of all possible states of the world.
 	The  ``0'' superscript indicates that this corresponds to Nature's ``perception'' of reality; i.e., $s\in S^0$ is a description of the real world as it could actually exist. 
 
+	We use functions to identify some particular feature of interest in a given state. For example, $f:S^0\rightarrow \{wet,dry\}$, where $f(s)=wet$ would indicate that the ground is wet in state of the world $s\in S^0$. Essentially, the function ``pulls out'' the information from the state. We will use this technique to identify both mind-dependent and mind-independent features of reality.
+
 	\subsubsection{Individual awareness}
 
 
@@ -228,6 +230,16 @@ Added to this is the problem of representing decision makers of differing awaren
 	Then, $s^j=r^{i\rightarrow j}(s^i)$ is the impoverished version of reality $j$ perceives relative to the awareness of $i$. 
 	By assumption, for all $i\ne 0$, $S^0\succeq S^i$.
 	Assume the projections are transitive: if $S^i\succeq S^j\succeq S^k$, then $r^{i\rightarrow k}=r^{j\rightarrow k}\circ r^{i\rightarrow j}$.
+
+	Here, the projections are functions that are pulling the awareness levels of all the individuals out from Nature's states.
+	Thus, $s^j=r^{0\rightarrow j}(s^0)$ identifies the features of reality $s^0$ of which individual $j$ is aware when state $s^0$ is actualized.
+	The transitivity rule ensures that Nature's states do not contain internal inconsistencies across awareness levels.
+	By assuming the projections are onto functions, we impose an overarching consistency on the individual awareness structures across the states of Nature:
+	$S^j$ contains all possible awareness states of $j$ -- everything $j$ would find herself aware of in every state of Nature that could arise.
+	Note that, in this paper, we assume that individuals have limited-but-true awareness of reality.
+	That is, Bob may be aware that it is raining outside the window while being unaware of the weather conditions in other geographic locations.
+	The point is that Bob's awareness is correct -- he is not hallucinating rain when it is really sunny outside.
+
 
 
 
@@ -312,7 +324,7 @@ Added to this is the problem of representing decision makers of differing awaren
 \subsection{Diachronic Awareness}\label{sec:diachronic_setup}
 
 	Assume time is discreet and limit attention to some finite number of periods, $T$. 
-	\textit{Nature's state space at time} $t$, denoted $S^0_t\subset S^0$, with typical element $s^0_t\in S^0_t$, contains all the states that could possibly be actualized at $t$.
+	We now use  subscripts to indicate the period. For example, \textit{Nature's state space at time} $t$, is denoted $S^0_t\subset S^0$, where with typical element $s^0_t\in S^0_t$, contains all the states that could possibly be actualized at $t$.
 
 \subsubsection{Acts and actions\label{sec:dynamics}}
 	The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the causes that, in conjunction with the acts of the individuals, determine the actualization of a particular state from an immediately preceding, previously actualized state).
