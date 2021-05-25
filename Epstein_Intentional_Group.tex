@@ -187,7 +187,7 @@ $\mathbf{H}_T$                                     & The set of all histories th
 $\mathcal{H}_t$                                    & Set of all subsets of histories at $t$                & \\
 \bottomrule
 \end{tabular}
-\caption{Notation Reference}\label{Tab: Notation}
+\caption{Notation Reference (WILL NEED TO BE UPDATED)}\label{Tab: Notation}
 \end{table*}
 \pagebreak
 
@@ -231,27 +231,26 @@ We break this section into two subsections. The first develops the mathematical 
 
 \subsubsection{Nature's reality\label{sec:states}}
 A \textit{state}, denoted $s$, is a snapshot of the world at a moment in time.
-States elaborate the potential status \textit{of all features of the world} in that moment. 
+States elaborate the possible status \textit{of all features of the world} in that moment. 
 This includes the relevant ``mind-independent'' features of a particular world as well as the ``mind-dependent'' features of the individuals acting in that world. 
-Clearly, it would require an uncountably infinite number of states to elaborate everything about the actual world in a given moment (much less all the potential features that \textit{could have} been actualized).
-However, our discussion will always focus upon a finite set of actors who are typically concerned with a particular set of issues.
-Therefore, we sidestep some mathematical complexities by limiting our attention to the relevant features by assuming that the potential number of states required to describe the features of interest at any particular moment are finite.
+Clearly, it would require an uncountably infinite number of states to elaborate everything about the actual world in a given moment (much less all the potential features that \textit{could} be actualized).
+However, our discussion will always focus upon a finite set of individuals who are interacting within some specific domain of interest.
 	
-With this in mind, let $S^0$ denote the (finite) set of all possible states of the world.
-The  ``0'' superscript indicates that this corresponds to Nature's ``perception'' of reality; i.e., $s\in S^0$ is a description of the real world as it could actually exist. 
+With this in mind, let $S^0$ denote the set of all possible states of the world.
+The  ``0'' superscript indicates that this corresponds to Nature's  reality; i.e., $s\in S^0$ is a complete description of the real world as it could actually exist. 
 
-We use functions to identify some particular feature of interest in a given state. For example, $f:S^0\rightarrow \{wet,dry\}$, where $f(s)=wet$ would indicate that the ground is wet in state of the world $s\in S^0$. Essentially, the function ``pulls out'' the information from the state. We will use this technique to identify both mind-dependent and mind-independent features of reality.
+% We use functions to identify some particular feature of interest in a given state. For example, $f:S^0\rightarrow \{wet,dry\}$, where $f(s)=wet$ would indicate that the ground is wet in state of the world $s\in S^0$. Essentially, the function ``pulls out'' the information from the state. We will use this technique to identify both mind-dependent and mind-independent features of reality.
 
 
 \subsubsection{Individual awareness}
-There are two conditions that must be met for an individual to be aware of some information. 
-First, the information must be accessible to oneself for active consideration. 
-The sources of accessible information are contemporaneous sense data, active imagination, and knowledge -- essentially, anything an individual can call to mind. 
-Second, the information must be actively brought to mind. 
+There are two conditions that must be met for an individual to be aware of some feature of the world. 
+First, the feature must be accessible to the individual for active consideration. 
+The sources of accessible features include contemporaneous sense data, active imagination, and knowledge -- essentially, anything an individual can call to mind. 
+Second, the feature must be actively brought to mind. 
 For example, an airline pilot may be able to call to mind how to navigate a jetliner but not a container ship. 
-That same pilot may not be aware of how to navigate a jetliner while driving his or her car down the freeway. 
+That same pilot may not be actively considering how to navigate a jetliner while driving his car down the freeway. 
 We cannot bring to mind things we do not know or cannot imagine.
-Of the things we know or can imagine, we are constrained in the number to which we can actively attend. 
+Of the things we know or can imagine, we are constrained in the collection to which we can actively attend. 
 
 Unawareness has long been a tricky problem for decision theorists. 
 A decision maker can only choose between acts of which he or she is aware which, typically, does not include all the truly feasible acts at that moment. 
@@ -261,23 +260,22 @@ The problem is how to model what happens in a dynamic setting in which the decis
 For example, in a standard Bayesian decision problem, unawareness of certain consequences can be modeled as zero-probability states according to the decision maker's subjective beliefs. 
 However, such decision makers will be confounded should a subjectively impossible state occur. 
 Added to this is the problem of representing decision makers of differing awareness when decision problems are interactive. 
+ 
+\citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. 
+\citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. 
+We adopt a version of the framework used in   \cite{bryan2020value} which itself builds on previous work developed in \citet{Heifetz2006} \citep[also see][for related extensions]{Heifetz2008,Heifetz2013}. 
+This approach solves the problems mentioned above by creating multiple state spaces, each one associated with the awareness of a particular individual. 
+This allows different agents to have different perceptions of the the true state of the world as well as the future states that might obtain in the future. 
 
-% SUBLIME IS HAVING TROUBLE FINDING THE CITATIONS - FIX AND RESTORE THIS TEXT LATER 
-%\citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. 
-% \citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. We adopt a version of the framework used in   \cite{bryan2020value} which itself builds on previous work developed in \citet{Heifetz2006} (also see \citet{Heifetz2008} and \citet{Heifetz2013} for related extensions). 
-% This approach solves the problems mentioned above by creating multiple state spaces, each one associated with the awareness of a particular individual. 
-% This allows different agents to have different perceptions of the the true state of the world as well as the future states that might obtain in the future. 
-
-Individual superscripts, e.g., $S^i$, $i\ne 0$,  indicate individual $i$'s (typically, limited) awareness of reality.
-Specifically, we assume $\mathcal{S}\equiv \{S^\emptyset,S^0,S^1,\ldots,S^n\}$ along with $\succeq$, a partial order on $\mathcal{S}$, is a complete lattice in which $S^0$ is a maximum (the richest expression of reality) and $S^\emptyset$ is a minimum (the poorest expression), where $S^\emptyset\equiv\{\emptyset\}$ is defined as the state space consisting of a single element (i.e., in which nothing about the world is distinguished).
-Let $\Sigma\equiv\bigcup_{i\in N}S^i$ denote the union of the individual spaces.
-	
-Conceptually, for an actual individual $i$, $s^i\in S^i$ includes all the features of reality that individual $i$ can bring to mind and relate to in the moment at hand.
-Thus, $S^i\succeq S^j$ means that individual $i$ is able to distinguish at least as much about the world as individual $j$ in that moment.
-Because $\succeq$ is a partial order, not all state spaces are comparable; i.e., individuals $i$ and $j$ may be aware of different things in a given moment.
+The set of states that are discernable to individual $i$ given her awareness of reality is denoted $S^i$.
+Conceptually, $s^i\in S^i$ includes all the features of reality that individual $i$ can bring to mind and discuss should it be actualized.
 Given the information encoded in a state, individuals may also be aware of what they know, what they believe, what they intend, and so on. 
 Importantly, awareness may extend to the mental states of others. 
-
+Assume $\mathcal{S}\equiv \{S^\emptyset,S^0,S^1,\ldots,S^n\}$ along with $\succeq$, a partial order on $\mathcal{S}$, is a complete lattice in which $S^0$ is the maximum (a complete expression of reality) and $S^\emptyset$ is the minimum. 
+$S^\emptyset\equiv\{s^\emptyset\}$ is the space consisting of a single, ``null'' element in which nothing about the world is distinguished.
+Then, $S^i\succeq S^j$ means that individual $i$ is able to distinguish at least as much about the world as individual $j$ in that moment.
+Because $\succeq$ is a partial order, not all state spaces are comparable; i.e., individuals $i$ and $j$ may be aware of different things in a given moment.
+Let $\Sigma\equiv\bigcup_{i\in N}S^i$ denote the union of the states of all the individual spaces.
 
 We wish to keep track of how the different state spaces relate to reality ($S^0$) and, when possible, to each other. 
 Therefore, define the surjective \textit{projection} $r^{i\rightarrow j}:S^i\rightarrow S^j$, which is only defined if  $S^i\succeq S^j$.
@@ -789,7 +787,68 @@ Unawareness structures allow us to model an agent's awareness and beliefs about 
 	
 	
 	
-	\subsubsection{Unawareness Structures}
+	\subsection{Group Awareness}
+
+\paragraph{Example: awareness of corporate culture''}
+
+Let us illustrate the difference between zero-probability events and unawareness in a group context.
+Suppose we pick up the action at $t=1$. 
+Amee is the customer service manager who reports directly to Bob, who is the owner of Intentional Products, Inc. a business-to-consumer firm. 
+Amee conceives of a state of world in $t=2$ in which her group develops a ``culture of customer-service excellence.'' 
+Label this state $s^\ast_1$.  
+The other possibility is a state in which IPI delivers a level of customer service consistent with industry standard practices, state $s_1$. 
+Assume $S^0_2=\{s^\ast_2,s_2\}$.
+
+If Amee is successful, the firm is more profitable: $\pi(s^\ast_2)=80$, whereas $\pi(s_2)=60$.
+Suppose Amee incurs a personal cost of effort if she attempts to establish the culture of excellence of $c=15$. 
+Furthermore, if she does attempt it, state $s^\ast_2$ actualizes with certainty.
+If Amee does not attempt it, then she incurs no personal cost and $s_1$ (the status quo) actualizes with certainty.
+Clearly, Amee will not attempt it unless she receives some bonus payment $B\ge c$ in the event of success.
+	
+Suppose that Bob, being a member of IPI, is awaren of the possibility of a ``culture of customer-service excellence.'' 
+Thus, both Amee and Bob are aware of reality fully elaborated: $S^A_2=S^B_2=S^0_2$. 
+Although Bob is aware of $s^\ast_2$, he believes the actualization of this state is impossible (zero probability). 
+Amee believes the two states happen with equal probability.
+
+Suppose Amee proposes a bonus of $B=35$ if successful and nothing otherwise. Under this deal, Amee's expected payoff is 
+\begin{align*}
+	Pr_A(s=s^\ast_2)\times(B-c)+Pr_A(s=s_2)\times(0) 
+	&=
+	0.5\times(35-15)+0.5\times(0)\\
+	&=
+	10
+\end{align*}
+since she gets nothing under the status quo state $s_2$.
+Bob's expected payoff is 
+\begin{align*}
+	Pr_B(s=s^\ast_2)\times\big(\pi(s^\ast_2)-B\big)+Pr_A(s=s_2)\times \pi(s_2)
+	&=
+	0\times(80-35)+1\times 60\\
+	&=
+	60.
+\end{align*}
+It is worth pointing out that there is no feasible deal (i.e., one constrained by the funds available under each state) that makes either individual strictly better off.
+Bob is happy to agree to give Amee all the surplus in $s^\ast_2$ because he believes it is impossible. 
+
+Now, switch things up and assume that Bob is outside the organization -- say, Bob is a venture capitalist dealing with Amee the entrepreneur. 
+Furthermore, assume that, exactly because Bob is outside the organization, Bob is unable to conceive of what a ``culture of customer-service excellence'' might look like in IPI. 
+Alternatively, Bob may be able to conceive of it, but realize that there is no way he could verify it as an outsider -- either way, a problem arises.
+
+Then, from Bob's perspective, $s_2$ is the \textit{only} possibility. 
+Thus, Bob expects to earn $\pi(s_2)=60$ with certainty.
+He will not agree to a deal in which Amee is paid a bonus. 
+First, he cannot conceive of (or, alternatively, verify) what Amee is talking about -- which precludes any contractual agreement around this idea since, presumably, he will not agree to put clauses in a contract the meaning of which he does not understand. 
+Second, even if one could get past the first problem, from his perspective, any payment to Amee (should conditions arise that he would have to make one, even though he does not grasp Amee's idea) would come out of his $60$ which, sans any deal with Amee, he is fully guaranteed.
+
+The point of the example, then, is that awareness within an organization permits a wide range of state-contingent arrangements -- even when individuals disagree on the probabilities.
+Indeed, divergent beliefs may be the \textit{source} of internal organizational opportunities such as exemplified here. 
+Moreover, awareness may span a wide range of state-cintingent organizational phenomena, such as organizational intentions, plans, conditions, etc.
+Those outside the organization do not share in this awareness. 
+This limits the sorts of state-contingent arrangements outsiders can make with an organization.  
+It also limits the extent to which the inner workings can be understood by outsiders (e.g., competitors).
+In this example, a ``culture of customer-service excellence'' may be viewed by outsiders as the ``secret sauce'' that allows IPI to outperform the industry
+
+
 	
 	%In  general, the modeling of  unknown unknowns has proven to be a challenge. Importantly, \citet{Dekel1998} demonstrate that any decision theory featuring a standard state space (e.g., subjective expected utility theory and non-expected utility theory, like maximin expected utility or Choquet expected utility used for ambiguity analyses) is inadequate to the task.\footnote{To understand this impossibility result at an intuitive level, lets consider what states really mean. We use states to let `something' depend on them (e.g., like the value created by firms). So whatever effects this `something' is implicitly described by states even though states are often just taken as some abstract set of indices or points in some space. Taking this thought more seriously, we can think of a state as a comprehensive description of all relevant events like ``drug A cures X, X is caused by Y, ...''. Now given that a decision maker can reason like in this \emph{one} state, she could also use her language to reason about alternative states like the state ``drug A cures X, X is \emph{not} caused by Y, ...''. More generally, the language to express the events that occur in one state, can be used to reason about occurrence and non-occurrence of any events in the language, and thus describe any state referring to those events. Consequently, a decision maker whose reasoning is modeled implicitly with a state space can not be unaware of any event expressible in this state space because implicitly she has the language to reason about all events modeled in this state space.} To model unawareness one must go beyond a state space. There are several approaches to doing so, developed in artificial intelligence, logic, and game theory (see \citet{Schipper2015} for a survey). Some of these approaches require the user to know epistemic logic, which, unfortunately, is not in the repertoire of most social scientists.
 	%
