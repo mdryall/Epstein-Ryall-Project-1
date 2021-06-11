@@ -1,0 +1,142 @@
+\documentclass[
+%draft,
+11pt,
+titlepage,
+reqno,
+%	oneside,
+%	twocolumn
+]{article}%Draft option puts "slugs" in the margin for overfull lines
+
+%\usepackage{newlattice}%custom package by Gratzer. Use with amsart See book for details.
+%Packages loaded by amsart:
+%\usepackage{amsmath}%This loads amsbsy, amsopn, amstext
+%\usepackage{amsfonts}
+\usepackage{amsthm}%This loads amsgen
+\usepackage{amsxtra}
+\usepackage{geometry}
+
+%\usepackage{pdfsync}
+%\usepackage{upref}
+%\usepackage{amsidx}
+%\usepackage{stmaryrd} %This adds small left arrows for accents that more closely mirror the \vec command
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{latexsym}
+\usepackage{amsmath}
+
+\usepackage{exscale}
+\usepackage{amscd} %commutative diagrams
+\usepackage{dcolumn} %to get decimal places aligned in tables
+\usepackage{array}
+\usepackage{tabularx}
+%\usepackage{MnSymbol} %dashed arrows and more - see documentation
+\usepackage[mathscr]{eucal}
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage{booktabs}%for nice tables (see discuss at https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf). For details see https://ctan.org/pkg/booktabs.
+% A FANCY TABLE
+% \begin{table*}\centering
+% \ra{1.3}
+% \begin{tabular}{@{}rrrrcrrrcrrr@{}}\toprule
+% & \multicolumn{3}{c}{$w = 8$} & \phantom{abc}& \multicolumn{3}{c}{$w = 16$} &
+% \phantom{abc} & \multicolumn{3}{c}{$w = 32$}\\
+% \cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+%     & $t=0$    & $t=1$    & $t=2$  & & $t=0$    & $t=1$    & $t=2$   & & $t=0$    & $t=1$   & $t=2$\\ \midrule
+% $dir=1$\\
+% $c$ & 0.0790   & 0.1692   & 0.2945 & & 0.3670   & 0.7187   & 3.1815  & & -1.0032  & -1.7104 & -21.7969\\
+% $c$ & -0.8651  & 50.0476  & 5.9384 & & -9.0714  & 297.0923 & 46.2143 & & 4.3590   & 34.5809 & 76.9167\\
+% $dir=0$\\
+% $c$ & 0.0357   & 1.2473   & 0.2119 & & 0.3593   & -0.2755  & 2.1764  & & -1.2998  & -3.8202 & -1.2784\\
+% $c$ & -17.9048 & -37.1111 & 8.8591 & & -30.7381 & -9.5952  & -3.0000 & & -11.1631 & -5.7108 & -15.6728\\
+% \bottomrule
+% \end{tabular}
+% \caption{Caption}
+% \end{table*}
+\usepackage{subcaption}%for tables and such
+\usepackage{lipsum} %for preventing breaks and such
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfshade}
+\usepackage{setspace} %Turn ON for editing
+%\usepackage{verbatim}
+%\usepackage{enumerate}
+%\usepackage{xspace}`
+%\usepackage{longtable}
+%\usepackage{epstopdf}
+%\usepackage[authoryear]{natbib}
+%\usepackage{lscape}
+\usepackage{natbib}
+\bibliographystyle{chicago}
+
+%\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{econjecture}{Empirical Conjecture}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+%\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{main}{Main Theorem}
+\newtheorem{solution}{Solution}
+\newtheorem{summary}{Summary}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\BigFig}[1]{\parbox{12pt}{\Huge #1}}%See Gratzer l. 2442 (for matrix)
+\newcommand{\BigZero}{\BigFig{0}}
+
+\doublespacing %This is a command from the SetSpace package
+
+\geometry{letterpaper}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\topskip}{0in}
+\setlength{\headsep}{0in}
+\setlength{\headheight}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.75in}
+
+%junk comment for Git
+
+\begin{document}
+	
+	\title{Examples of Awareness of Intentions\thanks{}
+	}
+	\author
+	{
+		Brian Epstein \\Tufts University, Medford
+		\and 
+		Michael D.\ Ryall \\University of Toronto 
+	}
+	\date{\today}
+	\maketitle
+	
+	%\begin{abstract}
+	
+	%\end{abstract}
+	
+	%\doublespacing
+	\def\baselinestretch{1.5}\small\normalsize
+	\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}%for tables
+	\newpage
+	\section{Overview}
+
+	
+
+\bibliography{library}
+
+\end{document}
+
+pdflatex: --aux--directory=build
+bibtex: build/% -include-directory=build
