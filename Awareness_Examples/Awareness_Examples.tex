@@ -14,7 +14,6 @@ reqno,
 \usepackage{amsthm}%This loads amsgen
 \usepackage{amsxtra}
 \usepackage{geometry}
-
 %\usepackage{pdfsync}
 %\usepackage{upref}
 %\usepackage{amsidx}
@@ -23,7 +22,7 @@ reqno,
 \usepackage{mathtools}
 \usepackage{latexsym}
 \usepackage{amsmath}
-
+\usepackage{hyperref}
 \usepackage{exscale}
 \usepackage{amscd} %commutative diagrams
 \usepackage{dcolumn} %to get decimal places aligned in tables
@@ -33,6 +32,8 @@ reqno,
 \usepackage[mathscr]{eucal}
 \usepackage[english]{babel}
 \usepackage[pdftex]{graphicx}
+\usepackage[export]{adjustbox}%The adjustbox package scales, resizes, trims, rotates, and also frames LaTeX content. Conveniently, these functions can be exported to the \includegraphics command. \frame is an adjustbox command.
+
 \usepackage{booktabs}%for nice tables (see discuss at https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf). For details see https://ctan.org/pkg/booktabs.
 % A FANCY TABLE
 % \begin{table*}\centering
@@ -111,28 +112,122 @@ reqno,
 
 \begin{document}
 	
-	\title{Examples of Awareness of Intentions\thanks{}
-	}
-	\author
-	{
-		Brian Epstein \\Tufts University, Medford
-		\and 
-		Michael D.\ Ryall \\University of Toronto 
-	}
-	\date{\today}
-	\maketitle
+\title
+{
+	Examples of Awareness of Intentions\thanks{Rough examples for the paper}
+}
+\author
+{
+	Brian Epstein \\Tufts University, Medford
+	\and 
+	Michael D.\ Ryall \\University of Toronto 
+}
+\date{\today}
+\maketitle
 	
-	%\begin{abstract}
+%\begin{abstract}
 	
-	%\end{abstract}
+%\end{abstract}
 	
-	%\doublespacing
-	\def\baselinestretch{1.5}\small\normalsize
-	\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}%for tables
-	\newpage
-	\section{Overview}
+%\doublespacing
+\def\baselinestretch{1.5}\small\normalsize
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}%for tables
+\newpage
 
-	
+We consider the problem of Brian's Toddler. The toddler, Individual 1, is faced with a decision as to which of two toys, labeled A and B, to obtain. The issue is whether A or B is best. 
+
+\section*{Parsimonious game theoretic treatment}
+The parsimonious game theoretic treatment is shown in Fig. \ref{Diag: p-01}. The uncertainty of indiviudal 1 with respect to which toy is actually best is represented by including an initial move by Nature at time $t=1$ -- i.e., the two possible states are A-Best and B-Best, one of which is true and the other of which is counterfactual. The bold lines indicate the choices of the players. Individual 1 is then faced with a choice as to whether to get A or get B. As illustrated by the dashed line connecting 1's decision nodes, 1 does not know with certainty which is the true state but, as indicated, believes it is most likely that A is best. Therefore, 1 chooses to get A in $t=2$. As a result, 1 obtains A in $t=3$.
+
+The features to note are: 1) the world simply presents 1 with a decision; 2) although 1 is uncertain about which toy is best, he is aware of the counterfactual possibilities -- indeed, 1 knows everything about the game, including what will happen as a consequence of his actions; 3) all of 1's cognitive processes associated with the decision are compressed into the act of making a decision. The decision could be elaborated as one involving probabilistic beliefs on the part of 1, but this is not necessary. For whatever reason, at the time of his decision, 1 believes (with some measure of uncertainty) that A is best. Given these beliefs, and a desire for possessing the best toy, 1 chooses to get A.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=1,trim = 0 0in 6in 4in,scale = .8]{Awareness_Diagrams_All}
+	\caption{Brian's Toddler, parsimonious game-theoretic treatment\textbf{Phase 3} \label{Diag: p-01}}%trim: L B R T
+\end{figure}
+
+\section*{A four-phase decision process}
+Our goal is to expand the parsimonious treatment of individual 1's cognitive process to include some of the features debated in the philosophy literature. With an eye toward adopting the unawareness formalism of game theory, we begin by elaborating what 1 is aware of about the world, how he thinks about his decision at a given moment in time, and how this evolves dynamically. 
+
+First, what is the decision process? One useful disaggregation of the decision process for our context is: \textbf{Phase 1} Individual finds himself in a state of the world in which a decision is called for (here, we count deciding not to pursue the decision further as, itself, a decision); \textbf{Phase 2} Individual selects focal elements for the decision analysis, analyses them, and forms an intention; \textbf{Phase 3} Individual forms a plan to effectuate the intention;  \textbf{Phase 4} Individual acts in accordance with the plan.
+
+In our example: \textbf{Phase 1} Individual 1 is presented with a choice of A or B; \textbf{Phase 2} Individual 1 consults beliefs and forms an intention to obtain A; \textbf{Phase 3} Individual 1 plans to effectuate the intention by crawling to the location of Toy A and picking it up; \textbf{Phase 4} Individual 1 crawls to Toy A and picks it up. 
+
+Note that Phase 2 may involve limiting attention to a subset of what we might call Individual 1's ``field-of-awareness'' (FOA for short, which could also abbreviate field-of-attention if we wish). That is, given all the elements of the world of which 1 is passively aware at the start of the decision process, he may decide to limit his attention to a strict subset of elements thought to be  decision-relevant. Similarly, the individual may call to mind (make himself aware) elements that expand his FOA. The plan formed in Phase 3 may be simple, but it may also be state-contingent (and, typically, will be for the satisfaction of complex real-world intentions). A key assumption is that the plan, once formulated, will be enacted as long as the world unfolds in a way that is ``sufficiently consistent'' with it (the precise meaning of this will need to be worked out). 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=2,trim = 0in 4.5in 8in .5in,scale=1]{Awareness_Diagrams_All}
+	\caption{Toddler's Field-of-Awareness (blue)\label{Diag: p-02}}%trim: L B R TxPer
+\end{figure}
+
+Therefore, we begin by defining the states of the world at $t=1$ as $S^0_1\equiv \{(A,n),(B,n),(A,y),(B,y)\}$. This follows our earlier notation where $S$ indicates a state space, $0$ indicates Nature, and $1$ indicates the time period. The states are $(x_1,x_2)$ where $x_1$ is which toy is truly best and $x_2$ is whether a toy is obtained or not (note: for completeness, the state should elaborate \textit{which} toy is obtained, but the example will work without the extra clutter). 
+
+Begin with the case of a fully aware decision maker. Assume the state is $(A,n)$. In this state, Individual 1's FOA is $S_1^1=S^0_1$ as illustrated in Fig. \ref{Diag: p-02} by the blue part of the diagram. The red dashed line indicates which states 1 believes \textit{could be} true. Beyond being aware of the states about which 1 is unsure is the case, 1 also knows the counterfactual states $(A,y)$ and $(B,y)$ (where the dashed circles around them indicate that 1 is also aware that were, e.g., $(A,y)$ to be true he would know it). We also indicate that, in this state, 1's beliefs have note yet been formed (in a Bayesian setting, are uninformative).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=7,trim = 0 0in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{At $t=1$, Toddler thinks about the future (green)\label{Diag: p-04}}%trim: L B R T
+\end{figure}
+
+In addition to what the individual is aware of with respect to the present situation, he also has thoughts about the future. Tracking all four phases, our individual considers the future unfolding as shown in Fig. \ref{Diag: p-04}. Moving to Phase 2, which is an analysis and commitment step, 1 may discover that either A or B is preferred. Here, analysis takes one time period. Once the analysis is complete, and the intention is formed to obtain the preferred toy, 1 formulates a plan. The planning takes one time period.
+
+Here, we make an important assumption: while the individual is thinking, analyzing, planning, and acting, the world evolves. Now, from $t=1$ to $t=2$, this evolution is implicit as occurring and possibly affecting the analysis. The individual considers things from the perspective of his FOA, which may evolve during the interval between periods. Still, the outcome of that process is that 1 comes to believe either that A or B is best. What happens from $t=2$ to $t=3$ is distinct from the analysis phase. During this interval, a plan to get A or to get B is being shaped. However, real-world events may intrude upon the process in ways that disrupt the plan. This is illustrated in the figure. For example, 1 may be planning to get A yet experience something that happens to indicate that B is really best (e.g., Toy B starts making a ringing sound). When the plan is disrupted, we assume that the decision maker must backtrack to an earlier stage -- either a new analysis or a new planning cycle. In the figure, we show that the process reverts to a new analysis stage.
+
+Then, if the state of the world in $t=3$ is consistent with the plan plan, individual 1 proceeds to act. So, in the top row of individual $1$'s projected future, following the plan to Get A, a state of the world occurs in which 1 continues to believe that A is best and, hence, 1 acts to obtain A. In $t=4$, therefore, the final state is $(A,y)$ (and 1 knows that this is the state).
+
+\section*{A two-phase reduction}
+Before continuing with the example let us compress Phases 1-3  into one -- i.e., there is a thinking, deciding, and planning phase followed by an acting phase. This seems to give us a sufficient level of elaboration to investigate the kinds of issues in which we are interested. Refer to the compressed phase as ``planning.'' The revised version of Fig. \ref{Diag: p-04} is shown in Fig. \ref{Diag: p-03}.
+ 
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=3,trim = 0 2in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{The two-phase version\label{Diag: p-03}}%trim: L B R T
+\end{figure}
+
+All of this is by way of setting up the dynamic analysis. Based upon the, now, compressed analysis, decision, and planning phase, 1 develops a plan to get A. Fig \ref{Diag: p-05} shows the situation at the start of $t=2$. The world has evolved to $S^0_2$ in which state $(A,n)$ continues to hold. Reality is illustrated on the top row. Individual 1's act ``Plan Get A'' happens and leads to $S^0_1$. 
+
+Keep in mind that the state labelled $(A,n)$ in $S^0_2$ is not identical to the one so labelled in $S^0_1$, even though the state spaces appear to be the same. First, the states in $S^0_2$ includes the information about the sequence of preceding states (i.e., $s^0_1=(A,n))$ as well as about the acts that caused them (i.e., $a^1_1 = \text{plan get A}$). Second,  individual 1's state of mind has changed (and, remember, this is also summarized by the state). He recalls what he knew before, $S^1_1$ as well as what action he took. This  is indicated by the blue dashed line. Another difference is that he projects the decision process from the present into the future. This is indicated by the green objects. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=5,trim = 0 3in 3in 0in,scale=.85]{Awareness_Diagrams_All}
+	\caption{The plan proceeds without disruption\label{Diag: p-05}}%trim: L B R T
+\end{figure}
+
+Having formed a plan to get A, nothing has happened to disrupt 1's decision to get A. His belief remains that A is best. As we saw above, an alternative possibility was that an act of Nature, e.g., Toy B begins ringing, might have disrupted the plan. This emphasizes that what we are illustrating is one path of actual events analogous to the bold lines through the tree in Fig. \ref{Diag: p-01}. A diagram of all possible paths and FOAs would be quite complex to illustrate in a single diagram. 
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=6,trim = 0 2in 3in 0in,scale=.85]{Awareness_Diagrams_All}
+	\caption{Decision and action resolve\label{Diag: p-06}}%trim: L B R T
+\end{figure}
+
+Evolution to the final period, $t=3$ is shown in Fig. \ref{Diag: p-06}. At the conclusion, individual 1 obtains A and is certain that he obtained A. 
+
+\section*{Can this be represented as an extensive-form game}
+
+So far, we have not written anything down that can't be shown as an extensive form game. This is not surprising given that, thus far in our example, individual 1 continues to have full awareness and, as well, his projection into the future is consistent with reality. One would need to be careful to ensure that feasible actions available to 1 would correspond to the logic of our assumptions. In particular, acts must follow plans and, presumably, some states could disrupt the plan which would leave 1 with one feasible act (restarting the planning process) or, if we include quitting the decision, two feasible acts. That game would be the one shown in Fig. \ref{Diag: p-01} extended to give nature intervening moves (i.e., with the power to switch 1's assessment of which is the better toy) and adjusting the feasible acts as described.
+
+Our diagrams give a more elaborate description of what is going on in 1's mind (recalled history, FOA, and projected futures). However, this comes at the expense of providing a simultaneous illustration of the entire set of possible paths as we have in extensive form game trees. Later, if we introduce unawareness, our FOAs will provide an expressive capacity not available to standard extensive form games. 
+
+The next step is to illustrate what can go wrong -- how an even fully aware individual (or, perhaps, a fully aware individual in particular) can get stuck in a ``paralysis by analysis'' situation. Then, we can show why intentional unawareness can help (or hurt) the situation.
+
+
+\section*{An interesting connection}
+While thinking about this example, I came across the idea of OODA Loops (Observe, Orient, Decide, Act), which gained popular use in the military. The wiki discussion is \href{https://en.wikipedia.org/wiki/OODA_loop}{here}. I also downloaded a couple of short articles about this into the repo lit file. The diagram of the OODA Loop  is shown in Fig. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=11,trim = 0in 2in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{John Boyd's OODA Loop\label{Diag: p-11}}%trim: L B R T
+\end{figure}
+
+
+
 
 \bibliography{library}
 
