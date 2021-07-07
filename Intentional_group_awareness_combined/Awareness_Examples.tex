@@ -1,0 +1,412 @@
+\documentclass[
+%draft,
+11pt,
+titlepage,
+reqno,
+%	oneside,
+%	twocolumn
+]{article}%Draft option puts "slugs" in the margin for overfull lines
+
+%\usepackage{newlattice}%custom package by Gratzer. Use with amsart See book for details.
+%Packages loaded by amsart:
+%\usepackage{amsmath}%This loads amsbsy, amsopn, amstext
+%\usepackage{amsfonts}
+\usepackage{amsthm}%This loads amsgen
+\usepackage{amsxtra}
+\usepackage{geometry}
+%\usepackage{pdfsync}
+%\usepackage{upref}
+%\usepackage{amsidx}
+%\usepackage{stmaryrd} %This adds small left arrows for accents that more closely mirror the \vec command
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{exscale}
+\usepackage{amscd} %commutative diagrams
+\usepackage{dcolumn} %to get decimal places aligned in tables
+\usepackage{array}
+\usepackage{tabularx}
+%\usepackage{MnSymbol} %dashed arrows and more - see documentation
+\usepackage[mathscr]{eucal}
+\usepackage[english]{babel}
+\usepackage[pdftex]{graphicx}
+\usepackage[export]{adjustbox}%The adjustbox package scales, resizes, trims, rotates, and also frames LaTeX content. Conveniently, these functions can be exported to the \includegraphics command. \frame is an adjustbox command.
+
+\usepackage{booktabs}%for nice tables (see discuss at https://people.inf.ethz.ch/markusp/teaching/guides/guide-tables.pdf). For details see https://ctan.org/pkg/booktabs.
+% A FANCY TABLE
+% \begin{table*}\centering
+% \ra{1.3}
+% \begin{tabular}{@{}rrrrcrrrcrrr@{}}\toprule
+% & \multicolumn{3}{c}{$w = 8$} & \phantom{abc}& \multicolumn{3}{c}{$w = 16$} &
+% \phantom{abc} & \multicolumn{3}{c}{$w = 32$}\\
+% \cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+%     & $t=0$    & $t=1$    & $t=2$  & & $t=0$    & $t=1$    & $t=2$   & & $t=0$    & $t=1$   & $t=2$\\ \midrule
+% $dir=1$\\
+% $c$ & 0.0790   & 0.1692   & 0.2945 & & 0.3670   & 0.7187   & 3.1815  & & -1.0032  & -1.7104 & -21.7969\\
+% $c$ & -0.8651  & 50.0476  & 5.9384 & & -9.0714  & 297.0923 & 46.2143 & & 4.3590   & 34.5809 & 76.9167\\
+% $dir=0$\\
+% $c$ & 0.0357   & 1.2473   & 0.2119 & & 0.3593   & -0.2755  & 2.1764  & & -1.2998  & -3.8202 & -1.2784\\
+% $c$ & -17.9048 & -37.1111 & 8.8591 & & -30.7381 & -9.5952  & -3.0000 & & -11.1631 & -5.7108 & -15.6728\\
+% \bottomrule
+% \end{tabular}
+% \caption{Caption}
+% \end{table*}
+\usepackage{subcaption}%for tables and such
+\usepackage{lipsum} %for preventing breaks and such
+%\usepackage{pgf,pgfarrows,pgfnodes,pgfshade}
+\usepackage{setspace} %Turn ON for editing
+%\usepackage{verbatim}
+%\usepackage{enumerate}
+%\usepackage{xspace}`
+%\usepackage{longtable}
+%\usepackage{epstopdf}
+%\usepackage[authoryear]{natbib}
+%\usepackage{lscape}
+\usepackage{natbib}
+\bibliographystyle{chicago}
+
+%\theoremstyle{plain}
+\newtheorem{acknowledgement}{Acknowledgement}
+\newtheorem{assumption}{Assumption}
+\newtheorem{axiom}{Axiom}
+\newtheorem{case}{Case}
+\newtheorem{claim}{Claim}
+\newtheorem{conclusion}{Conclusion}
+\newtheorem{condition}{Condition}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{corollary}{Corollary}
+\newtheorem{criterion}{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{econjecture}{Empirical Conjecture}
+\newtheorem{example}{Example}
+\newtheorem{exercise}{Exercise}
+\newtheorem{lemma}{Lemma}
+%\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem*{notation}{Notation}
+\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}
+\newtheorem*{main}{Main Theorem}
+\newtheorem{solution}{Solution}
+\newtheorem{summary}{Summary}
+%\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.} }{\ \rule{0.5em}{0.5em}}
+
+\newcommand{\BigFig}[1]{\parbox{12pt}{\Huge #1}}%See Gratzer l. 2442 (for matrix)
+\newcommand{\BigZero}{\BigFig{0}}
+
+\doublespacing %This is a command from the SetSpace package
+
+\geometry{letterpaper}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+\setlength{\topskip}{0in}
+\setlength{\headsep}{0in}
+\setlength{\headheight}{0in}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.75in}
+
+%junk comment for Git
+
+\begin{document}
+	
+\title
+{
+	Examples of Awareness of Intentions\thanks{Rough examples for the paper}
+}
+\author
+{
+	Brian Epstein \\Tufts University, Medford
+	\and 
+	Michael D.\ Ryall \\University of Toronto 
+}
+\date{\today}
+\maketitle
+	
+%\begin{abstract}
+	
+%\end{abstract}
+	
+%\doublespacing
+\def\baselinestretch{1.5}\small\normalsize
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}%for tables
+\newpage
+
+We consider the problem of Brian's Infant, whom we refer to as individual $i$. At time $t=0$, the $i$ finds herself in a room with two toys, $A$ and $B$, situated in front of her. At this point, $i$ needs to figure out what to do. Her goal is to obtain the best toy.
+
+
+
+\section*{Parsimonious game theoretic treatment}
+The parsimonious game theoretic treatment is shown in Fig. \ref{Diag: p-01}. The uncertainty of individual 1 with respect to which toy is actually best is represented by including an initial move by Nature at time $t=1$ -- i.e., the two possible states are A-Best and B-Best, one of which is true and the other of which is counterfactual. The bold lines indicate the choices of the players. Individual 1 is then faced with a choice as to whether to get A or get B. As illustrated by the dashed line connecting 1's decision nodes, 1 does not know with certainty which is the true state but, as indicated, believes it is most likely that A is best. Therefore, 1 chooses to get A in $t=2$. As a result, 1 obtains A in $t=3$.
+
+The features to note are: 1) the world simply presents 1 with a decision; 2) although 1 is uncertain about which toy is best, he is aware of the counterfactual possibilities -- indeed, 1 knows everything about the game, including what will happen as a consequence of his actions; 3) all of 1's cognitive processes associated with the decision are compressed into the act of making a decision. The decision could be elaborated as one involving probabilistic beliefs on the part of 1, but this is not necessary. For whatever reason, at the time of his decision, 1 believes (with some measure of uncertainty) that A is best. Given these beliefs, and a desire for possessing the best toy, 1 chooses to get A.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=1,trim = 0 3.5in 5in 0in,scale = .8]{Awareness_Diagrams_All}
+	\caption{Brian's Toddler, parsimonious game-theoretic treatment\label{Diag: p-01}}%trim: L B R T
+\end{figure}
+
+\section*{State spaces, fields of awareness, and awareness structures}
+A \textit{state} captures the world at a moment of time. The state space in a past or present period contains the state that actualized at that time and all the counterfactuals (states that could have occurred instead at that time). The state space for a future period contains all the states that could occur at that time. 
+
+In this example, the simplest state space is $S^n_0=\{A^\ast,B^\ast\}$. The $n$ superscript indicates that the state space is associated with ``Nature'' (i.e., these states are the ones associated with the world as it really is). Here, either Toy $A$ or Toy $B$ is the best toy for $i$. Which is truly the best is determined by Nature at the beginning of time. 
+
+The toddler lands in the situation at $t=0$ in one state or the other. States elaborate everything about the world at a given time, including the cognitive status of everyone involved. Here, we wish to expand the parsimonious representation in Fig. \ref{Diag: p-01} to dive more deeply into $i$'s cognitive status as it evolves through the decision process. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=3,trim = 0in 4.5in 0in .5in,scale=.7]{Awareness_Diagrams_All}
+	\caption{Toddler's FOA in (a) state $A^\ast$, (b) state $A^\ast$, and (c) shorthand, combined diagram\label{Diag: p-03}}%trim: L B R TxPer
+\end{figure}
+
+We are interested in describing what $i$ knows (or would have known) about the actualized (or counterfactual) states of the world contained in $S^n_0$. We do this by equipping $i$ with a description of the world as he is aware of it. We refer to this description as $i$'s \textit{field of awareness} (FOA). Because $i$'s cognitive status is determined by the actualized state, we write, e.g.,  $S^i_0(A^\ast)$ to indicate the state space describing $i$ awareness in state $A^\ast$. If $i$ is fully aware, then $S^i_0(A^\ast)=S^n_0$. Specifically, the FOA includes everything about the actualized state about which $i$ can reason, including counterfactual states. 
+
+In addition, the state elaborates $i$'s beliefs about which state is true. For example, it may be true that $A$ is the best toy (state $A^\ast$) and that $i$ knows it. Alternatively, it may be true that $A$ is best, but $i$ is uncertain about it. Fig. \ref{Diag: p-03} panel (a), illustrates the case in which $A$ is the best toy (shown by brackets around $A^\ast$ in space $S^n_0$). Below $S^n_0$ we depict $S^i_0(A^\ast)$. The grey line shows that, when $A^\ast$ is true, the FOA for $i$ is $S^i_0(A^\ast)$. The toddler is aware of both states. The dashed lines around the states indicate what he knows. Here, he knows that the true state is $A^\ast$. Moreover, he can reason about counterfactual state $B^\ast$. The blue dashed line around $B^\ast$ means that $i$ believes that, had $B^\ast$ been the case, he would know it. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=21,trim = 0in 4.5in 0in .5in,scale=.7]{Awareness_Diagrams_All}
+	\caption{Toddler's FOA in (a) state $A^\ast$ with uncertainty about which state is true\label{Diag: p-21}}%trim: L B R TxPer
+\end{figure}
+
+Panel (b) illustrates the FOA that arises when $B^\ast$ is the true state of the world. When awareness and beliefs are consistent across states, diagrams can be combined without danger of ambiguity, as shown in Panel (c): when $A^\ast$ is true, $i$ knows it and, moreover believes that, had $B^\ast$ been the case, he would have known that \ldots and the converse when $B^\ast$ is true. Illustrated this way, the implication is that beliefs about which toy is best are the same in both state. In other words, Nature determines which toy is best, $i$ sees the two toys and forms beliefs about which is best. These are \textit{the} beliefs regardless of which toy is truly best. Note that this diagram corresponds to the information set (the nodes connected by the dashed line) illustrated in the parsimonious game shown in Fig. \ref{Diag: p-01}. 
+
+Fig. \ref{Diag: p-21} Panel (b), illustrates a situation in which $i$ is unaware that Toy B could be the best. In this case, $i$'s FOA includes a single state: $A^\ast$. The diagram shows both states projecting into it. That is, whichever state is true, $i$ is only thinking about Toy A. Perhaps Toy B is under the couch or, even if it is in $i$'s field of vision, he simply isn't thinking about it. Not that, in the situation depicted in Fig. \ref{Diag: p-21} Panel (a), $i$ could believe that $B^\ast$ is impossible -- i.e., a probability-zero occurrence. In Fig. \ref{Diag: p-21} Panel (b), the possibility of $B^\ast$ is not even in his mind -- he is completely unaware of it. As we show elsewhere, these two cases (zero-probability and unawareness) are \textit{not} equivalent. 
+
+Finally, Fig. \ref{Diag: p-21} Panel (c) illustrates the flexibility of the setup. Here, in state $A^\ast$ the toddler is uncertain whether $A^\ast$ or $B^\ast$. However, in state $B^\ast$, he is certain that $B^\ast$ is true and reasons (incorrectly) that he would similarly be certain that $A^\ast$ had that state occurred. Given the simplicity of the story, it is hard to provide an explanation of why this sort of inconsistency would arise. Nevertheless, the framework is sufficiently general to accommodate it.
+
+
+
+\section*{A four-phase decision process}
+Our goal is to expand the parsimonious treatment of individual $i$'s cognitive process to include some of the elements discussed in the philosophy literature. We begin by elaborating what $i$ is aware of about the state of the world, how he thinks about his decision at a given moment in time, how the thinks about his decision in light of possible future states and how this evolves dynamically over time. 
+
+First, what is the decision process? One useful disaggregation for our context is one that involves four-phases. At $t=0$, individual $i$ finds himself in a state of the world in which Nature presents him with the potential to make a decision about something. For example, our toddler finds himself faced with a potential welter of information along with an opportunity to begin the process of achieving some goal. For example, he is set down on the with the two toys in front of him. Toy $A$ is making a ringing sound. There are other people in the room doing interesting things, the TV is on, and the pet dog is barking in the next room. The thought occurs to him that one end he might consider is  obtaining one of the toys. The toddler chooses to think about obtaining the best toy. In this setting, he naturally organizes the available information for the next phase -- he considers the condition of the toys, realizing that what the other people are doing, what is happening on the TV, and what the dog is doing are all irrelevant to an analysis of which toy is best.  
+
+Importantly, \textit{states} indicate what is, could have been, or could be true about the world at a moment in time. Alternatively, \textit{phases} represent the flow of the world between states. In this framework, phases are the periods within which acts occur. Acts include the acts of Nature, physical actions by individuals, and non-physical acts by individuals (e.g., pondering a choice). Acts are the events that cause the world to evolve from one state to the next over time (where ``Nature's acts'' are all the things that co-determine the next state in conjunction with the acts of individuals). It is also important to note that the acts associated with higher phases require the completion of the lower phases. For example, one cannot begin analysis until one chooses to do so and organizes the information required for it. In game-theoretic language, the acts associated with Phase $k$ are not \textit{feasible} until Phases $1$ through $k-1$ are completed. 
+
+At the conclusion of Phase 1, the decision maker arrives in $t=1$. The actualized state in which he finds himself is determined by the state actualized in $t=0$, the acts of Nature, of $i$, and of others during Phase 1. At this point, $i$ has either settled upon opting to continue observing the situation further (which begins another iteration of Phase 1) or to move forward and analyze whether to form the intention of interest based upon the information organized in Phase 1 (which begins Phase 2). 
+
+In \textbf{Phase 2}, $i$ analyzes the information organized in Phase 1 and determines whether forming an intention is, indeed, warranted and, if so, which one specifically. Intentions are commitments to achieve some future state of the world (i.e., in which the desired end is obtained). For example, in Phase 1, the toddler chose to think further about forming an intention to obtain the best toy. As part of that choice, he also organized the available information so as to support that analysis (the condition of the toys versus other features of his environment). Suppose that, at the beginning of Phase 2 ($t=1$) Toy $A$ is still making the ringing sound and that this leads the toddler to conclude that $A$ is best. As Phase 2 ends (at $t=2)$, the analysis is concluded and an intention is either formed (move to on Phase 3), the analysis is chosen to be extended (reiterate Phase 2), or the movement toward the focal end is abandoned (return to Phase 1). 
+
+\textbf{Phase 3} begins at $t=2$. During this phase, $i$ formulates a plan to complete the intention. A plan provides a decision maker with  a menu of state-contingent acts over time designed to achieve the intention. In a given state, the decision maker is presented with information about the present state, beliefs about both the present and the future (and, thus, beliefs about what the acts of Nature and others will be), and a set of feasible acts to do in during the next phase. A rational decision maker chooses a plan that selects the best among the feasible acts at each future state (with respect to achieving the intended end).
+
+Here, it may be helpful to make some comparisons with game theory. In game theory, what we are calling a \textit{plan} is referred to as the decision maker's \textit{strategy}. Typically, game theory presents an interactive decision situation (i.e., in which players' decisions interact to affect the outcome of the game) as an extensive for game. Fig. \ref{Diag: p-22} expands Fig. \ref{Diag: p-01} to depict a situation in which the toys ring and the toddler is unsure of which toy is best. Here, the information sets (nodes connected by dashed lines) indicate that, at the time of his decision, $i$ knows which toy is ringing but not which is best. However, $i$'s beliefs are that the ringing toy is best. Then, in this game, Nature determines the state, $i$ forms beliefs based upon what is happening, and chooses rationally. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=22,trim = 0 0in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{The complete but imperfect information game in which Brian's Toddler must act\label{Diag: p-22}}%trim: L B R T
+\end{figure}
+
+Here, $i$'s  rational strategy is: If $A$ is ringing, get A, otherwise get $B$. Note well that ``rationality'' does not imply perfect foresight. Rather, it means that $i$ chooses the subjectively optimal action given his beliefs. Beliefs may or may not be consistent with objective reality, depending upon the primitives of the game. In our example, a well-calibrated Bayesian player would believe that Nature selects among the four possible states according to some probability distribution. His beliefs about which node is really best would equal the true conditional probability of which is best given which toy is ringing. In most games, a players' desires are represented by a dollar-denominated utility number associated with each path through the game (the terminal nodes indicate the outcome of play). Then, the rational Bayesian player selects the action that maximizes his expected utility. More generally, players' subjective beliefs need not be consistent with objective reality, in which case the ``rational'' player selects according to his subjective expected utility.
+
+This brings us to the notions of \textit{complete} versus \textit{perfect} information games. A game of complete information is one in which the players know everything about the structure of the game, including everyone's payoffs: that is, the players know what game they are really playing. Games of perfect information are those in which, at every decision node, the associated player knows everything that happened in the past (i.e., there is no uncertainty regarding which node each player is on at any point). In Fig.  \ref{Diag: p-22}, the assumption is that Brian's Toddler knows everything about the game, but at the time of his choice of action, is uncertain about which toy is best. Games of incomplete information are typically analyzed by transforming them into games of imperfect information: players know the set of possible games, Nature chooses the true game at the beginning of time and, faced with a decision,  the player's form beliefs about both which game they are playing and where in that game they find themselves. The game in Fig.  \ref{Diag: p-22} is a game of complete but imperfect information. 
+
+The parsimonious game theoretic treatment focuses upon the actions of the decision makers. In Fig. \ref{Diag: p-22}, Nature acts by choosing the true state, $i$ arrives at a decision about which toy to choose given  uncertainty about which is  best. His choices are $A$ or $B$. Following his choice, the game resolves with an outcome. The question being asked in Fig. \ref{Diag: p-22} is: \textit{suppressing the details} of how he comes to formulate  his strategy in the depicted situation (but making some assumptions about rationality), what strategy would that be? The treatment is ``parsimonious'' because the Phases 1-3 in our framework are left implicit.
+
+
+In \textbf{Phase 4}, $i$ arrives at $t=3$ and -- if the state at that point is consistent with the plan developed in Phase 3 -- acts in accordance with it. One way a state would be inconsistent with the plan is if it was not contemplated as a possibility in the plan's ``menu'' of possible states. (Such inconsistencies are not possible in a complete information game.) We will have more to say about what constitutes an inconsistency later but, for now, \textit{we claim that running into an inconsistency causes the decision maker to revert to Phase 1}.  
+
+\section*{Detailed illustration}
+We  begin by illustrating the case in which everything goes smoothly. \textbf{Phase 1:} $i$ hears $A$ ringing and decides to move forward to Phase 2. \textbf{Phase 2:} Toy $A$ continues to ring and, influenced by this information, $i$  believes that $A$ is best, thereby forming an intention to get $A$. \textbf{Phase 3} $A$ continues ringing and  $i$  plans to effectuate his intention by crawling to the location of Toy A and picking it up. \textbf{Phase 4} $A$ continues ringing and $i$ crawls to Toy A and picks it up, thereby concluding the decision-action process. Notice that $i$'s intention to obtain the best toy may or may not have been satisfied at $t=4$. If so, the process concludes. If not, $i$ may choose to think about obtaining $B$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=4,trim = 0 0in 0in 0in,scale=.60]{Awareness_Diagrams_All}
+	\caption{The four-phase process as considered by $i$ at $t=0$\label{Diag: p-04}}%trim: L B R T
+\end{figure}
+
+The situation in $t=0$ is illustrated in Fig. \ref{Diag: p-04}. Phase 1 generally involves limiting the Phase 2 FOA to a subset of focal states. Thus, given all the elements of the world of which $i$ is passively aware at $t=0$ (other people, the TV, and the barking dog), he will limit his attention to a strict subset of states thought to be  decision-relevant. In our depiction, the decision-irrelevant features of reality mentioned above are not present at $t=0$ (we erase them from $S^n_0$ to simplify the diagram -- but the reader is welcome to imagine a much larger state space at $t=0$ that includes all these elements).
+
+Specifically, we define the states of the world at $t=0$ as $S^n_0\equiv \{(\acute{A},A^\ast),(\acute{A},B^\ast),(\acute{B},A^\ast),(\acute{B},B^\ast)\}$ where the accent indicates that the toy is ringing a bell: e.g., $(\acute{A},A^\ast)$ is the state in which A is ringing and A is best. Assume this is the true state. Further, assume $i$ is fully aware but uncertain which toy is best. This is indicated by the blue box, and labelled $S^i_0$. As shown, $i$ is aware of all the states and knows $A$ is ringing. However, as shown by the dashed lines (\textit{information sets}), he is uncertain whether $A^\ast$ or $B^\ast$. The solid grey line shows that the FOA depicted is the one that arises in state $(\acute{A},A^\ast)$. At $t=0$, $i$'s has some belief endowment. 
+
+
+In addition to what the individual is aware of with respect to the present situation, he also has thoughts about the future. Tracking all four phases, our individual considers the future unfolding as shown by the green objects. Moving to Phase 2, the FOA may be reduced or expanded, as discussed, and Nature may act in a way that changes beliefs. Once the analysis is complete, and the intention is formed to obtain the preferred toy, at which point $i$ formulates a plan. 
+
+To emphasize, while the individual is thinking, analyzing, planning, and acting, the world evolves. Our individual $i$ considers how things might unfold. For example, during the analysis, which ends at $t=2$, new information may come in to change $i$'s assessment of which toy is best. During this interval, a plan to get A or to get B is being shaped. The planning phase follows the intention. In this example, $i$ is rational -- he plans to get whichever toy he believes best. In this case, real-world events may once again intrude upon the process, this time in ways that disrupt the plan. This is illustrated in the figure. For example, $i$ may plan to get A yet experience something that happens to indicate that B is really best (e.g., Toy B starts  ringing). When the plan is disrupted, we assume that the decision maker must backtrack to the analysis phase.
+
+Then, if the state of the world in $t=3$ is consistent with the plan, $i$ proceeds to act. So, in the top row of individual $1$'s projected future, following the plan to Get A, a state of the world occurs in which 1 continues to believe that A is best and, hence, 1 acts to obtain A. However, $i$ considers the possibility that he will land in an inconsistent state in $t=3$. 
+
+If the FOA evolves in a fashion consistent with the plan, then $i$ moves to the final phase in which he acts to obtain $A$. When a toy is obtained, the state is indicated so with an exclamation mark (e.g., $A!$). Here, $i$ allows for the possibility that he fails to obtain his planned objective, indicated by $X$ instead of $A!$ or $B!$. Note also, that $i$ believes that, upon successful completion of the action to get a toy, he will know whether it is the best one or not (indicated by the green dashed lines) and will be able to reason about the counterfactual (obtaining the planned toy but realizing it is not the best). If something happens to disrupt the plan, $i$ will be uncertain about which is best.
+
+\textit{Suppose everything goes according to expectations}.  Fig \ref{Diag: p-07} shows the situation at  $t=1$. The world has evolved to $S^n_1$ in which state $(\acute{A},A^\ast)$ continues to hold. Reality is illustrated on the top row. Individual $i$ begins the analysis phase based upon the information organized in Phase 1. 
+
+Keep in mind that the state labelled $(\acute{A},A^\ast)$ in $S^n_1$ is not identical to the one so labelled in $S^n_0$, even though the state spaces appear to be the same. First, the states in $S^n_1$ include the information about the sequence of preceding states (i.e., $s^n_1=(\acute{A},A^\ast))$ as well as about the acts that caused them (i.e., $A$ \textit{continues} ringing and $i$ chooses to consider forming an intention in Phase 1). Second,  individual 1's state of mind has changed (and, remember, this is also summarized by the state). He recalls what he knew before, $S^i_0$ as well as what actions were taken by himself and Nature. This  is indicated by the blue dashed line. Another difference is that he projects the decision process from the present into the future. This is indicated by the green objects -- although they are consistent with his state of mind in $t=0$, they are what is in his mind in $t=1$. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=7,trim = 0in 0in 0in 0in,scale=.60]{Awareness_Diagrams_All}
+	\caption{Environment stable, Brian's Toddler begins analysis,\label{Diag: p-07}}%trim: L B R T
+\end{figure}
+
+In Fig. \ref{Diag: p-08}, Phase 2 concludes in $t=2$ with $i$ forming an intention to get $A$. Toy $A$ continues to ring. This is relevant because we have assumed that $i$ believes whichever toy is ringing is best. Since $A$ rings throughout, there is nothing happening on the part of Nature to disrupt the process. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=8,trim = 0 3.5in 0in 0in,scale=.6]{Awareness_Diagrams_All}
+	\caption{Environment stable, intention formed, planning begun\label{Diag: p-08}}%trim: L B R T
+\end{figure}
+
+In Fig. \ref{Diag: p-09}, Phase 3 concludes in $t=3$ with a plan formulated to act towards the attainment of the intention. The sound of $A$ ringing continues. This is consistent with the plan to get $A$. Therefore, $i$ proceeds to act according to plan -- that is, to actually get $A$. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=9,trim = 0in 5in 0in 0in,scale=.6]{Awareness_Diagrams_All}
+	\caption{Environment stable, plan complete, action begun\label{Diag: p-09}}%trim: L B R T
+\end{figure}
+
+Finally, as shown in Fig. \ref{Diag: p-21}, the process draws to a conclusion: toy $A$ is obtained and, as it turns out, this is indeed the best. Notice that all uncertainty has been resolved -- by obtaining $A$, it is discovered to be the best.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=21,trim = 0in 5in 0in 0in,scale=.6]{Awareness_Diagrams_All}
+	\caption{Process complete, intention satisfied!\label{Diag: p-21}}%trim: L B R T
+\end{figure}
+
+
+\section*{Can this be represented as an extensive-form game}
+
+So far, we have not written anything down that can't be shown as an extensive form game. This is not surprising given that, thus far in our example, individual $i$ continues to have full awareness of the situation and, as such, has expectations about the future that are consistent with reality. To represent what we are doing as an extensive form game, Fig. \ref{Diag: p-22} would need to be expanded to include all the acts of $i$ (organize information, form intention, set up plan,  act to get a toy, etc.) as individual decisions. As, well, it would need to account for the acts of Nature in each intervening period (choosing a ringing toy). 
+
+Unlike an extensive form game, our diagrams provide an elaboration of what is going on in $i$'s mind (explicitly: recalled history, FOA, and projected futures). However, this level of detail comes at the expense of illustrating everything happening over time in one diagram (.e.g,  Fig. \ref{Diag: p-22}). Game theorists would surely point out that, while these diagrams are not incorrect, they are also not necessary. Elaborating all these details in our example is superfluous since they are all implied by the joint stipulation that the setting is one of complete information and perfect recall (i.e., $i$'s assessments about present and future possibilities is correct and he remembers everything he knew at in an earlier period). Nevertheless, since this paper is attempting to bridge idea between two disciplines, we judge the additional elaboration to be worthwhile. 
+
+The next step is to illustrate what can go wrong -- how an even in a complete information setting, a decision maker can get stuck in a ``paralysis by analysis'' situation. This, then will bring us to introduce our idea of intentional unawareness and its  effects on the decision process.
+
+\section*{Paralysis by analysis}
+The previous discussion suggested that things can go wrong when nature evolves state spaces more quickly than the decision maker's response process. This situation is illustrated in Fig. \ref{Diag: p-09}: the interpretation now is that the state actualized in period $t=2$ reflects an act by Nature (not illustrated but, e.g., Toy B sounding a bell) that interrupts the intended plan by causing the toddler to switch beliefs from $A>B$ to $B>A$. Given this new state of mind, a new plan is formulated -- to get $B$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=10,trim = 0 3.5in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Nature disrupts the plan\label{Diag: p-10}}%trim: L B R T
+\end{figure}
+
+This alternating flow of information can go on indefinitely, as illustrated in Fig. \ref{Diag: p-10}. Under the standard, Bayesian belief-desire model, a rational agent is one who immediately updates beliefs based upon new information. This is true in the sense that, provided the information is indeed informative (and not just noise), more information will lead to better decisions. The problem highlighted here is that taking new information into consideration requires an allocation of time and cognitive resources, both of which are in finite supply. 
+
+By explicitly accounting for this fact, we see that a truly rational decision maker must weigh the benefits of recalibrating while postponing acting versus ignoring new information and moving forward. The purpose of making a decision is to act and of acting is to achieve an end. If one never decides, then one attains the desired end -- the means to which is the deciding. (Note that``never'' is too high a bar -- if one discounts future utility streams, then there is always a tension between taking time to analyze in lieu of acting.)
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=10,trim = 0 3.5in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Nature disrupts the plan again\label{Diag: p-10}}%trim: L B R T
+\end{figure}
+
+\section{Intentional unawareness}
+We can now see how unawareness solves the problem. Here, there are three interrelated aspects: intention, planning, and awareness. How these are distinguished from one another in  a fashion amenable to philosophers is a question that requires further discussion. Speaking roughly, at some point, an individual ``commits'' to making an act.
+
+It seems that an intention (a commitment to attain some end) always implies a corresponding commitment to a plan (a program of action designed to achieve the intended end).  Even in the case of split-second decision making, e.g., a policeman's intention to stay alive during a drug raid upon observing an unidentified person moving in the room behind the door, a ``plan'' is required -- e.g., aiming the rifle and pulling the trigger. Thus, a random twitch in one's leg does not count as an intentional act. The converse is not true: one can make many plans without intending to put them into action.
+
+The new idea that we are proposing is that along with the plan comes another piece of the puzzle -- intentional unawareness. In the most disaggregated elaboration, there are at least two places where unawareness arises. The first is at the observation/analysis stage. Here, the individual decides what aspects of the present state of the world to pay attention to (we will call this \textit{weak} unawareness). Having focused upon a particular set of aspects about the world, the individual proceeds to conduct an analysis. The conclusion of the analysis is a decision either to continue thinking about and analyzing the situation or to commit to the attainment of some end. 
+
+In the preceding paragraph, I mention weak unawareness because it seems there is an important distinction worth making. One can be unaware of some things which one could call to mind (weak) as well as of some things about which one cannot call to mind (strong). As I was writing a moment ago, I had music playing in the background. I was unaware of the name of the band playing the music. It was not in my mind at all. I was not thinking about it. Then, as I started thinking about examples to write down, this one occurred to me. When it did, I naturally recalled the name of the band. A moment ago I was also unaware of what engineering details are required for a working teleportation system (which could be the null set if such systems are impossible). Now, I am aware of the question, but not of the answer -- nor will I ever be. 
+
+Here, there is another distinction. A moment ago, I was not thinking about what the temperature is in Hong Kong. It was not in my mind at all. Now, the question is in my mind -- I am aware of it.  In this case, I have introduced a new information set into my FOA. It includes a \textit{range} of temperatures within which I think the true temperature lies. Presumably, I also form beliefs over that range and can report an expected temperature. I can also take an action (look on the internet) to discover the actual state of the world. 
+
+All of these awareness distinctions seem important to intending and planning.  
+
+With this commitment in place, the individual then develops a committed plan of action. The program may be simple, i.e., just selecting among one's presently available acts. Or, it may be complex, requiring much analysis -- including deciding the best among several plans required to attain the end. In any event, the conclusion of this process is the committed plan. Unawareness arises here because a plan can be enacted without further analysis. An important caveat is that there must be some specification of what states the plan are included in the plan's FOA with the proviso that should a state arise that is not part of the plan's FOA -- that is, should the individual become aware of something that falls outside the plan FOA, then the plan is disrupted. In other words, the plan allows the individual to put activity on ``auto-pilot'' for some FOA. Awareness of new states or events outside the scope of the plan have the potential to disrupt it -- at a minimum, a reevaluation is required. [This bit needs further thought and refinement.]
+
+With all of this in mind, return to the problematic case discussed above. Fig. \ref{Diag: p-11} illustrates the situation in $t=1$ in which the intention, plan, and planned unawareness all occur in the period. Notice the change from Fig.XXX: now, instead of a more refined set of future FOAs, the  $(B,n)$ state has been eliminated from the future plan. The shift is intentional (or, at least, is implied by the plan). The potential for state $(B,n)$ to disrupt the plan is eliminated. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=11,trim = 0in 4in 3in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Individual 1's intended unawareness\label{Diag: p-11}}%trim: L B R T
+\end{figure}
+
+The implementation of the plan is shown in Fig. \ref{Diag: p-12}. The world evolves and, once again, Nature does her best to disrupt the plan. Now, however, the toddler is resolutely focused upon getting Toy A -- he is unaware of the signals being sent by Nature to reevaluate the situation. The process is happily concluded as illustrated in Fig. \ref{Diag: p-13}.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=12,trim = 0in 5in 3in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Actualized state $(B,n)$ does not disrupt the plan\label{Diag: p-12}}%trim: L B R T
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=13,trim = 0in 5in 3in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Mission accomplished\label{Diag: p-13}}%trim: L B R T
+\end{figure}
+
+
+\section*{An interesting connection}
+While thinking about this example, I came across the idea of OODA Loops (Observe, Orient, Decide, Act), which gained popular use in the military. The wiki discussion is \href{https://en.wikipedia.org/wiki/OODA_loop}{here}. I also downloaded a couple of short articles about this into the repo lit file. The diagram of the OODA Loop  is shown in Fig. 
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=14,trim = 0in 2in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{John Boyd's OODA Loop\label{Diag: p-14}}%trim: L B R T
+\end{figure}
+
+The articles are interesting for at least two reasons. First, they are dealing with split-second decision situations, for example a soldier entering a building in hostile territory and having to decide whether to shoot at someone moving past an open doorway in the room ahead. The fact that this model is used for training people to make split-second decisions in life-or-death situations suggests there is something to it. Most importantly, it suggests that some process like this is going on at the basic cognitive level and not only, e.g., at the level of higher-level, complex decisions that may involve explicit, more extended data gathering and analysis phases. 
+
+The other interesting angle is that this model assumes that interrupting the OODA loop resets the competitor's loop all the way back to the first stage. Hence, the explicit reason soldiers want to get inside the enemy's OODA loop is precisely that disrupting the process disrupts the enemy's ability to act. One way of thinking about our previous example is that Nature is ``getting inside'' the decision maker's ``OODA loop''.e
+
+\section{A deeper dive into the state spaces and FOAs in this example}
+The preceding discussion was intended as a first, rough cut exposition designed to outline and illustrate some key ideas. Having done that, there are some aspects worth refining.  
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=15,trim = 0in 7in 6in 0in,scale=1]{Awareness_Diagrams_All}
+	\caption{A more accurate set of Nature's states in $t=1$\label{Diag: p-15}}%trim: L B R T
+\end{figure}
+
+The previous elaboration of nature's state spaces was compressed in order to get at the overall framework without too much clutter. A more accurate represetnation is shown in Fig. \ref{Diag: p-15}. In $t=1$, Toddler hears one of the Toys ringing a bell and believes one of the toys is best. The states are $(x,y)$ where $x$ is the toy that is ringing and $y$ is the toy that is best. The toddler always believes that the ringing toy is going to be the best toy. Since acting is not allowed without a plan, there are not states in the first period in which a toy is obtained. Presumably, the truly best toy is determined by Nature at the start, in period $t=1$.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=16,trim = 0in 5in 1in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Possible state spaces in $t=2$ depend upon toddler's act\label{Diag: p-16}}%trim: L B R T
+\end{figure}
+
+In this example, the transition from $S^0_1$ to $S^0_2$ depends upon the act of the toddler in period 1. There are three possibilities: i) continue to gather information; ii) commit to a plan to get $A$; or iii) commit to a plan to get $B$. Each act leads to a corresponding Nature's state space ($S^0_{2,i}$ through $S^0_{2,iii}$ as illustrated in Fig. \ref{Diag: p-16}). In the second period, the actualized state $(x,y,z) $depends upon which toy is ringing in $t=2$ $(x)$,  which toy is actually best $(y)$ and, if operating under a committed plan, whether the state is consistent with the plan (e.g., $z=A!$ if the plan is to get $A$) or the toddler becomes aware of something that disrupts the plan ($z=D$).
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=17,trim = 0in 0in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Possible state spaces in $t=2$ depend upon toddler's act\label{Diag: p-17}}%trim: L B R T
+\end{figure}
+
+The tree expands substantially in period $t=3$. The possibilities are illustrated in Fig. \ref{Diag: p-17}. What happens in $t=3$ depends upon the state space actualized in $t=2$ in conjunction with the act of the toddler in $t=2$. If the toddler continued analysis, then the possibilities are $S^0_{2,i}$ through $S^0_{2,iii}$, mirroring the possibilities in period $t=2$. If the committed plan was to get $A$, then three possibilities are illustrated: Space $S^0_{3,iv}$, corresponding to the plan being disrupted in $t=2$ and the toddler choosing to reanalyze the situation; Space $S^0_{3,v}$, corresponding to the plan being disrupted in $t=2$ and the toddler committing to a plan to get $B$; and Space $S^0_{3,vi}$, corresponding to an actualized state consistent with the plan and the toddler acting to get $A$. The possibilities following $S^0_{2,iii}$ mirror these (shown as $S^0_{3,vii}$ through $S^0_{3,ix}$).
+
+It is important to note that, although $S^0_{3,i}$, $S^0_{3,iv}$, and $S^0_{3,vii}$ appear to be identical (the analysis state space), in fact they are not. The reason for this is that each state also contains its own history. Since the histories leading to each of these state spaces is different, technically, the states they contain are not identical.
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=18,trim = 0in 5in 1.5in 0in,scale=.7]{Awareness_Diagrams_All}
+	\caption{Toddler believes the ringing toy is best\label{Diag: p-18}}%trim: L B R T
+\end{figure}
+
+Finally, what do the toddler's FOAs look like in this example? Let us consider the sequence described in the previous, problematic case: Nature switches between ringing toys, starting with $A$ , the toddler commits to the plan to get $A$, following which there is no disruption. As shown in Fig. \ref{Diag: p-18}, there are a couple of possibilities for the toddler's FOA that come immediately to mind. On the left-hand side, the toddler is aware of all the states but uncertain about which toy is best. Her beliefs are such that he believes the ringing toy is best. On the right-hand side, the toddler is unaware of all the possibilities. Rather, she is certain that whichever toy is ringing is best. The latter is probably a good model of a toddler, the former would be better for a sophisticated decision maker.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=19,trim = 0in 4in 1in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Plan coupled with intentional unawareness\label{Diag: p-19}}%trim: L B R T
+\end{figure}
+
+In $t=2$, illustrated in Fig. \ref{Diag: p-19}, the plan and its associated unawareness kick in. Even though toy $B$ is ringing, the toddler's FOA projects all the plan-consistent states into a single, plan-to-get-$A$-consistent state, $(A!)$. Here, the toddler is shown as being aware of the possibility that something could happen to disrupt the state. 
+
+I am not sure this depiction is accurate. Since everything is going according to plan, including $(D)$ may be incorrect. Rather, if something actually happened to disrupt the plan (Mom enters the room and says, ``It is time for bed!''), then that would count as an act of Nature, resulting in the FOA shown (with the $(D)$ state included in the FOA). 
+
+
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=20,trim = 0in 0in 2in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Final outcome possibilities: only aware of getting $A$ or all relevant state details\label{Diag: p-20}}%trim: L B R T
+\end{figure}
+
+Finally, we come to the last stage, in which the toddler obtains $A$. This is shown in Fig. \ref{Diag: p-20}. This is fairly straightforward, though there are a couple of options here as well. In the top version, toddler gets $A$ and is only aware of that -- having achieved her intended end, she simply moves on to other things. Alternatively, the toddler may be aware of the true state (it really is the best toy!) and, as well, may be able to reason about the other possibilities. Note that all states in the toddler's FOAs have the $A!$ (get $A$) indicator, since this is accomplished by his act in $t=2$. Therefore, it is redundant (and could be removed). But, keeping the indicator there is fine since it is consistent with what happens in all states. 
+
+\bibliography{library}
+
+\end{document}
+
+pdflatex: --aux--directory=build
+bibtex: build/% -include-directory=build
