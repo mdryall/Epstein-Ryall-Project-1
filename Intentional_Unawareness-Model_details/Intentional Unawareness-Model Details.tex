@@ -246,95 +246,224 @@ All sets are assumed to be finite unless otherwise indicated.\footnote
 \pagebreak
 \subsection{Notation Reference}
 Table \ref{Tab: Notation} elaborates all the mathematical objects used in the paper.
-\begin{table*}\centering
-\ra{1.3}
-\begin{tabular}{@{}rll@{}}\toprule
-Object                                             & \multicolumn{1}{c}{Description}                       & \multicolumn{1}{c}{Comments}\\ \midrule
-$N\equiv \{1,\dots,n\}$                            & The set of $n$ individuals                            & \\
-$i\in N$                                           & An arbitrary individual                               & $i=0$ is Nature\\
-$S^i$                                              & States of the world of which $i\in N$ is aware        & $S^n$ contains all possible states\\
-$s^i\in S^i$                                       & An arbitrary state in $S^i$                           & $s_t$ the state in period $t$,\\
-$S^\emptyset\equiv\{\emptyset\}$                   & Space representing complete unawareness               & \\
-$\mathcal{S}\equiv \{S^\emptyset,S^n,\ldots,S^n\}$ & Lattice of awareness spaces                           & Maximum is $S^n$ and minimum is $S^\emptyset$\\
-												   &													   & $\mathcal{S}_t,S^i_t$ lattice \& state spaces in $t$\\
-$S^i\succeq S^j$                                   & Individual $i$ is at least as aware as $j$            & \\
-$\Sigma\equiv\bigcup_{i\in N}S^i$                  & Union of the individual spaces                        & \\
-$r^{i\rightarrow j}(s^i)$                          & Impoverished version of $s^i$ perceived by $j$        & Only defined if  $S^i\succeq S^j$\\
-$B^{\downarrow}$                                   & A synchronic event $B^{\downarrow}\subseteq \Sigma$   & $B^{\downarrow}=\bigcup_{S^j\in \mathcal{S}}\left(r^{0\rightarrow j}\right)^{-1}(B)$, $B\subseteq S^n$\\
-$A^i(s)$                                           & $i$'s feasible acts in state $s\in S^n$               & \\
-$a^i\in A^i(s)$                                    & An arbitrary feasible act of $i$                      & \\
-$\mathbf{a}$                                       & A profile of acts, $\mathbf{a}\equiv(a^n,\ldots,a^n)$ & \\
-$\mathbf{A}(s)$                                    & All act profiles in $s$                               & $\mathbf{A}(s)\equiv \times_{i=0}^n A^i(s)$\\
-$\mathbf{A}_t$                                     & All act profiles at time $t$                          & $\mathbf{A}_t\equiv \cup_{s\in S^n_t} \mathbf{A}(s)$\\
-$\mathbf{A}$                                       & All possible act profiles                             & $\mathbf{A}\equiv \cup_{s\in S^n} \mathbf{A}(s)$\\
-$\omega(\mathbf{a}_t,s^n_t)$                       & State actualized in $t+1$ from $s^n_t$ given $\mathbf{a}_t$    & e.g., $s^n_{t+1}=\omega(\mathbf{a}_t,s^n_t)$\\
-$\mathbf{h}(s^n_t)$                                & History at $s^n_t$                                    & a profile, $\mathbf{h}(s^n_t)=(s^n_0\ldots,s^n_t)$\\
-$\mathbf{H}_t$                                     & Set of all feasible histories at $t$                  & \\
-$\mathbf{h}_t\in \mathbf{H}_t$                     & An arbitrary feasible history at $t$                  & \\
-$\mathbf{H}_T$                                     & The set of all histories to end of time ($t=T$)       & \\
-$\mathcal{H}_t$                                    & Set of all subsets of histories at $t$                & \\
-\bottomrule
-\end{tabular}
-\caption{Notation Reference (WILL NEED TO BE UPDATED)}\label{Tab: Notation}
-\end{table*}
+%\begin{table*}\centering
+%\ra{1.3}
+%\begin{tabular}{@{}rll@{}}\toprule
+%Object                                             & \multicolumn{1}{c}{Description}                       & \multicolumn{1}{c}{Comments}\\ \midrule
+%$N\equiv \{1,\dots,n\}$                            & The set of $n$ individuals                            & \\
+%$i\in N$                                           & An arbitrary individual                               & $i=0$ is Nature\\
+%$S^i$                                              & States of the world of which $i\in N$ is aware        & $S^n$ contains all possible states\\
+%$s^i\in S^i$                                       & An arbitrary state in $S^i$                           & $s_t$ the state in period $t$,\\
+%$S^\emptyset\equiv\{\emptyset\}$                   & Space representing complete unawareness               & \\
+%$\mathcal{S}\equiv \{S^\emptyset,S^n,\ldots,S^n\}$ & Lattice of awareness spaces                           & Maximum is $S^n$ and minimum is $S^\emptyset$\\
+%												   &													   & $\mathcal{S}_t,S^i_t$ lattice \& state spaces in $t$\\
+%$S^i\succeq S^j$                                   & Individual $i$ is at least as aware as $j$            & \\
+%$S\equiv\bigcup_{i\in N}S^i$                  & Union of the individual spaces                        & \\
+%$r^{i\rightarrow j}(s^i)$                          & Impoverished version of $s^i$ perceived by $j$        & Only defined if  $S^i\succeq S^j$\\
+%$B^{\downarrow}$                                   & A synchronic event $B^{\downarrow}\subseteq S$   & $B^{\downarrow}=\bigcup_{S^j\in \mathcal{S}}\left(r^{0\rightarrow j}\right)^{-1}(B)$, $B\subseteq S^n$\\
+%$A^i(s)$                                           & $i$'s feasible acts in state $s\in S^n$               & \\
+%$a^i\in A^i(s)$                                    & An arbitrary feasible act of $i$                      & \\
+%$\mathbf{a}$                                       & A profile of acts, $\mathbf{a}\equiv(a^n,\ldots,a^n)$ & \\
+%$\mathbf{A}(s)$                                    & All act profiles in $s$                               & $\mathbf{A}(s)\equiv \times_{i=0}^n A^i(s)$\\
+%$\mathbf{A}_t$                                     & All act profiles at time $t$                          & $\mathbf{A}_t\equiv \cup_{s\in S^n_t} \mathbf{A}(s)$\\
+%$\mathbf{A}$                                       & All possible act profiles                             & $\mathbf{A}\equiv \cup_{s\in S^n} \mathbf{A}(s)$\\
+%$\omega(\mathbf{a}_t,s^n_t)$                       & State actualized in $t+1$ from $s^n_t$ given $\mathbf{a}_t$    & e.g., $s^n_{t+1}=\omega(\mathbf{a}_t,s^n_t)$\\
+%$\mathbf{h}(s^n_t)$                                & History at $s^n_t$                                    & a profile, $\mathbf{h}(s^n_t)=(s^n_0\ldots,s^n_t)$\\
+%$\mathbf{H}_t$                                     & Set of all feasible histories at $t$                  & \\
+%$\mathbf{h}_t\in \mathbf{H}_t$                     & An arbitrary feasible history at $t$                  & \\
+%$\mathbf{H}_T$                                     & The set of all histories to end of time ($t=T$)       & \\
+%$\mathcal{H}_t$                                    & Set of all subsets of histories at $t$                & \\
+%\bottomrule
+%\end{tabular}
+%\caption{Notation Reference (WILL NEED TO BE UPDATED)}\label{Tab: Notation}
+%\end{table*}
 \pagebreak
 
 
 
-\section{Theoretical setup}\label{sec:world}
+\section{Objective Reality}\label{sec:world}
 
-We begin with a single decision maker, labeled $i$. 
-The evolution of the world through time is driven by the acts of $i$, the acts of others, and the occurrence of natural phenomena. 
-In future work, we will investigate interactions between agents and group decisions.
-This model lays the foundation for those extensions.
+In this section, we describe the status and dynamics of ``brute'' reality; that is, the world as it actually is, could have been, or might yet be along with the causes that drive it to unfold in a particular way. 
+Once we describe the way the world works here, we move on to the next section to describe the way a single decision maker understands and thinks about it.
+In this setup, there are two \textit{agents}, an individual decision maker and Nature, labeled $i$ and $n$, respectively.\footnote
+{
+	In future work, we will investigate interactions between agents and group decisions.
+	This model lays the foundation for those extensions.
+} 
+Nature is included to account for  a God's-eye view of the status of the world in all its richness as well as for the phenomena that occur outside the decision maker's acts that, jointly with them, determine the evolution of the world through time. 
+We focus on the action over a fixed period of time, from $t=0$ to $t=T$.
+ 
+
 
 \subsection{States of the world\label{sec:states}}
-As outlined in the Introduction, at time $t$, individual $i$ finds himself in a particular state of the world.
-Specifically, the \textit{Nature's state at time} $t$ is denoted $s^n_t$.
-The superscript refers to Nature and the subscript to the time period in which $s^n_t$ is a snapshot of the world.
-Nature's state corresponds to objective reality, including the status \textit{of all features of the world} in that moment. 
-These include the  mind-independent features of the world as well as the mental attitudes of the individuals acting in that world. 
+
+As outlined in the Introduction, at time $t$, individual $i$ finds himself in a particular situation.
+Specifically, at time $t$ he exists in a \textit{state of Nature}, denoted $s^n_t$, where we use superscripts  to indicate agents (Nature or the individual) and subscripts to indicate time.
+Think of $s^n_t$ as a snapshot describing the world in all its detail.
+This state corresponds to objective reality, including the status \textit{of all features of the world} in that moment. 
+Importantly, these include the  mind-independent features of the world as well as the \textit{mental attitudes} of the individuals acting in that world. 
 
 In addition to elaborating what the world actually looks like at $t$, we want to equip our individual with the ability to consider counterfactuals and future possibilities---that is, to be able to think about the way the world is, the way it might have been and the way it could be.
-With this in mind, let $S^n_t$ denote \textit{Nature's state space at time $t$}. 
-The idea is that, at time $t$ some element of $S^n_t$ will be actualized. 
+With this in mind, let $S^n_t$ denote the collection of states that constitute \textit{Nature's state space at time $t$}. 
 If $t$ is the present or some historic time, then one state in  $S^n_t$ is factual and the others are counterfactual. 
-If $t$ is some future time, then $S^n_t$ elaborates all the possibilities the could occur at that time.
-Thus, depending upon the time, an arbitrary element $s_t^n\in S^n_t$ is a snapshot of the world either as it might have, does, or could actually exist.
+If $t$ is some future time, then $S^n_t$ elaborates all the possibilities that could occur at $t$.
+Let $S^n\equiv\cup_{t=0}^T S^n_t$ be the set of all Nature's states.
 
 
 In terms of interpretation, it does no harm to imagine that $s^n_t$ elaborates an uncountably infinite number of features of the world.
-However,  we assume the set cardinality of $S^n_t$ is finite .
+However,  we assume the cardinality of $S^n_t$ is finite.
 The rationale for this is two-fold.
 First, the number of decision-relevant features and their variants can often be elaborated by a sufficiently large yet finite number of states.
-Second, even  though we lose a measure of generality by making this assumption, doing so eliminates a substantial amount of mathematical complexity and that, were it included, would add little in the way of analytical insight.
+Second, even  though we lose a measure of generality by making this assumption, doing so eliminates a substantial amount of mathematical complexity and that, were it included to account for an uncountably infinite number of states, would add little in the way of analytical insight.
+
+\subsection{Acts}\label{sec:acts}
+
+In our approach the acts of Nature and the decision maker jointly cause the system to evolve from a state $s^n_t\in S^n_t$ to a new state $s^n_{t+1}\in S^n_{t+1}$.
+Acts of Nature represent all the causes that, in conjunction with the act of the individual, co-determine the actualization of a particular state from an immediately preceding, previously actualized state.
+
+For each  $s^n_t\in S^n$, let $A^j(s^n_t)$ indicate the set of \textit{feasible acts available to actor $j$ in state $s^n_t$} with arbitrary element $a^j_t\in A^j(s^n_t)$, where $j\in\{i,n\}$.\footnote
+{
+	Because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
+	We think of ``action'' as describing the narrower category of act associated with physical movement.
+} 
+We adopt the convention that $A^j(s^n_t)=\emptyset$ indicates that actor $j$ has no feasible acts in state $s^n_t$.
+An \textit{act profile} is a pair of acts, $\mathbf{a}_t\equiv(a^n_t,a^i_t)$, one by Nature and one by $i$. 
+The set of \textit{all act profiles at state $s^n_t$} is $\mathbf{A}(s^n_t)\equiv A^n(s^n_t)\times A^i(s^n_t)$.
+Note the implication that the acts of $i$ and $n$ at $s^n_t$ are simultaneous---that is, while $i$ is in the process of acting, there are other things going on in the world that may have an impact on the features of the world of interest to $i$.
+The set of \textit{all possible act profiles at time $t$} is  $\mathbf{A}_t\equiv \cup_{s^n_t\in S^n_t} \mathbf{A}(s^n_t)$; and the set of \textit{all possible act profiles} is $\mathbf{A}\equiv \cup_{t=0}^{T} \mathbf{A}_t$. 
+
+\subsection{Dynamics} 
+
+As indicated above, the act profiles summarize all the conditions required to actualize one state from the previously actualized state. 
+It may be helpful to think of act profiles as the ``flow'' variables between states---the activities that occur over a unit of time that cause the world to move from one state to the next.
+
+To formalize this, assume that Nature kicks things off at the beginning of time.
+Specifically, $S^n_0=\{s^n_0\}$.
+That is, the world begins in state $s^n_0$, in which $i$ is presented with a number of mutually exclusive action problems from which to choose.
+From this state, $i$ begins the process of choosing which problem to solve (orientation) followed by the stages of deliberation, planning and then acting.
+At stage, Nature may act along with $i$, which will influence how the world evolves.
+
+Let $\Gamma\equiv\langle S^n,E\rangle$ be a graph in which the nodes $S^n$ are the set of all the states of Nature and $E\subset S^n\times S^n$ is a set of edges.
+Assume: (i) $\Gamma$ is a tree with root node $s^n_0$; and (ii) if $(s^n_t,s^n_k)\in E$, then $k=t+1$.
+Then, we wish to associate each edge $(s^n_t,s^n_{t+1})$ a single action profile  $\mathbf{a}_t$ that identifies the causes that move the world from state $s^n_t$ to $s^n_{t+1}$.
+To this end, let $\omega :E\rightarrow\mathbf{A}$ be the \textit{state-contingent actualization function}, where $\omega (s^n_t,s^n_{t+1})=\mathbf{a}_t$ indicates that the the act profile that causes the world to evolve from $s^n_t$ to $s^n_{t+1}$ is $\mathbf{a}_t$.
+Let $C(s^n_t)\subset E$ be the set of edges of the form $(s^n_t,\cdot)$.
+We assume that: (i) $\omega$ is surjective (no superfluous act profiles---every act profile in $\mathbf{A}$ is associated with at least one edge in $E$); and (ii)  for all $s^n_t$, $\omega$ is bijective from $C(s^n_t)$ to $\mathbf{A}(s^n_t)$ (if $\omega (s^n_t,s^n_{t+1})=\mathbf{a}_t$, then $\mathbf{a}_t\in\mathbf{A}(s^n_t)$ and if $\mathbf{a}_t\in\mathbf{A}(s^n_t)$ then $\omega (s^n_t,s^n_{t+1})=\mathbf{a}_t$ for some $(s^n_t,s^n_{t+1})$).\footnote
+{
+	Suppose, for example, that two distinct sequences of acts could lead to an identical footprint in the snow.
+	In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it.
+}
+
+We define the \textit{history at state $s^n_t$} as a profile of states that starts at $s^n_0$ and ends at $s^n_t$, denoted $\mathbf{h}(s^n_t)=(s^n_0\ldots,s^n_t)$.
+A history $\mathbf{h}(s^n_t)$ is \textit{feasible} if there exists a sequence of edges $(s^n_0,s^n_1),\ldots,(s^n_{t-1},s^n_t)$, a path, in $\Gamma$.
+Notice that a feasible history $\mathbf{h}(s^n_t)$ is actualized by the sequence of act profiles $\omega(s^n_0,s^n_1),\ldots,\omega(s^n_{t-1},s^n_t)$.
+The set of all \textit{feasible histories at time $t$} is $\mathbf{H}_t$, with an arbitrary element  denoted $\mathbf{h}_t$
+The world begins  with the \textit{null history} $\mathbf{h}^n_0=(s^n_0)$ at the beginning of time (so, $\mathbf{H}^n_0=\{\mathbf{h}^n_0\}$ and  $S^n_0=\{s^n_0\}$).   
+The set of all complete histories is $\mathbf{H}_T$.
+
+\subsection{Example: Brian's Child, Part 1}	
+We consider the problem of Brian's Infant, an extended example that we will use  to illustrate the formalism as we develop it.
+The situation is as follows.
+Brian's child, $i$, finds herself in $t=0$ with two action options: to play indoors or, alternatively, to go outside. 
+If $i$ decides to play indoors, then she must pick between one of two new toys with which to play.
+Alternatively, $i$ can choose to play outdoors, in which case she must decide whether to put on flip-flops or boots.
+%These two possibilities will each require further deliberation and planning prior to acting.
+Let the toys be labeled $A$ and $B$. 
+One of these toys is better than the other. 
+Let $A^\ast$ indicate that $A$ is best and $B^\ast$ indicate that $B$ is best. 
+%If the child decides to play indoors, then her ultimate action is to choose one with which to pick up and play. 
+%Let $\hat{A}$ denote the action of picking up $A$ and $\hat{B}$ the action of picking up $B$.
+%These actions are mutually exclusive.
+Alternatively, the child can choose to play outdoors.
+If so,  the weather outside can be warm, $W$ or cold, $C$.
+%If the weather is warm, the optimal action is to put on flip-flops, denoted $\hat{W}$ (i.e., the optimal action given $W$).
+%Otherwise, it is best to put on boots, denoted $\hat{C}$.
+%Since all features of the world are binary in this example, let ``$\neg$'' indicate the opposite instance of a feature: i.e., $\neg\hat{W}=\hat{C}$.
+ 
+%Assume the child's desires are fixed at the beginning of time. 
+%Specifically, 
+%\[
+%	(X,\hat{X})>(Y^\ast,\hat{Y})>(Y,\neg\hat{Y})>(X^\ast,\neg\hat{X})>(\cdot,\emptyset),
+%\]
+%where $X$ indicates the weather, $Y$ indicates the best toy and, as described above, $\emptyset$ indicates doing nothing.
+%This says that playing outside with shoes that match the weather is first-best.
+%However, playing inside with either the best or the inferior toy is more desirable than going outside with the wrong shoes.
+%Finally, any action is better than doing nothing.
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=1,trim = 0in 4in 0in 0in,scale=.6]{Awareness_Diagrams_All}
+	\caption{Evolution of Nature's state spaces from $t=0$ to $t=1$\label{Diag: p-01}}%trim: L B R TxPer
+\end{figure}
+
+At the start of time, the world presents the decision maker with a list of mutually exclusive action problems from which to choose. 
+Here, $s^n_0=\{P_1,P_2\}$ where $P_1$ is to play outside and $P_2$ is to play indoors.
+Nature selects one of among of four possible acts: $A^n(s^n_0)=\{(A^\ast,W),(A^\ast,C),(B^\ast,W)$ and $(B^\ast,C)\}$.
+That is, Nature determines which toy is best and what the weather will be at time $t=1$.
+Infant $i$ must choose which action problem to solve (the ``Orientation'' step).
+Therefore, $A^i(s^n_0)=\{P_1,P_2\}$
+%Assume that the best toy is fixed at $s^n_1$ but that Nature can vary the weather across time: so, $A^n(s^n_t)=\{W,C\}$ for $t>0$.
+
+Figure \ref{Diag: p-01} illustrates the evolution of the system from $t=0$ to $t=1$. 
+From $s^n_0$, the action profiles are of the form $\mathbf{a}_0=((Y,X),(Z))$ where $a^n_0=(Y,X)$ is Nature's choice of  $Y$, the best toy, and, $X$ the weather and $Z$ is $i$'s choice of which problem to solve.
+Thus, $S^n_1$ contains eight possible states (one for each combination of these variables).
+Note that some states describe the same features of the world; e.g., $(A^\ast,W)_{1.1}$ and $(A^\ast,W)_{1.2}$. 
+The differences between these is the history by which they come to be actualized: the ``$t.v$'' footnotes indicate the state's time and version number.
+Setting up $\Gamma$ as a tree implies that each state of the world encodes the unique sequence of action profiles that cause it to actualize. 	
+
+
+
+%Then, from each state in $S^n_1$, Nature chooses the weather from $A^n_1(s^n_1)=\{W,C\}$ and the child chooses an action problem from $A^i_1(s^n_1)=\{P_1,P_2\}$ (the choices are the same for both $n$ and $i$ at all states in $S^n_1$).
+%Keep in mind that Nature does not change the best toy.
+%Therefore, there are four edges from each state in $S^n_1$ corresponding to the four possible action profiles $(W,P_1), (C,P_1),(W,P_2)$ and $(C,P_2)$.
+%There are sixteen resulting states in $S^n_2$, eight of which are shown in Figure \ref{Diag: p-01} (those reachable from $s^n_1=(A^\ast,W)$ and $s^n_1=(A^\ast,C)$).
+
+
+%\subsubsection{Diachronic events}
+%	
+%	A \textit{diachronic event} is a subset $D\in 2^{\mathbf{H}_T}$; i.e., a subset of paths in the tree associated with $\mathbf{H}_T$.\
+%	Note that diachronic events are subsets of whole paths from $s^n_0$ to subsets of states in $S^n_T$. 
+%	Therefore, they do not have time subscripts.
+%	Let $\mathcal{D}\equiv 2^{\mathbf{H}_T}$ be the set of all diachronic events.
+%	%Given the preceding discussion, every synchronic event $\sigma_t\in S_t$ is associated with a unique event $E\in \mathcal{E}$. 
+%
+%	
+%	To see how we use states and understand how these objects work, consider the canonical example of rolling a six-sided die. 
+%	We use functions on $S^n$ to ``extract'' information from the states. 
+%	Here, for example, we can let $d(s^n_t)$ indicate the outcome of a die roll in state $s^n_t$: for all $s^n_t\in S^n_t$, $d(s^n_t)\in\{1,2,3,4,5,6\}$; i.e., $d$ maps from each state in $S^n_t$ to a number between 1 and 6, indicating the side of the die that landed up in that state (where $s^n_t$ includes \textit{all} features of the world besides how the die landed).
+%	%Now, the synchronic event ``the die roll is even'' is described by $\sigma_t\in S_t$ such that $S_t\equiv\{s^n_t\in S^n_t|d(s^n_t)=2,4\text{ or }6\}$. 
+%	Alternatively, suppose $T=2$.
+%	Then, the diachronic event, ``snake-eyes were rolled'' is described by $E\in\mathcal{E}$ such that $E\equiv\{(s^n_0,s^n_1,s^n_2)\in \mathbf{H}_T|d(s^n_1)=d(s^n_2)=1\}$.
+	
+
+\section{Subjective Reality}
 
 \subsection{Awareness}
-\subsubsection{Discussion}
-At any given moment, an individual is aware of a small subset of all the features constituting the state of the world.
+
 There are two conditions that must be met for an individual to be aware of some feature of the world. 
 \begin{enumerate}
-	\item The feature must be accessible to the individual for active consideration. The sources of accessible features include contemporaneous sense data, imagination, and knowledge---essentially, anything toward which an individual could mindfully attend.
+	\item The feature must be accessible to the individual for active consideration. The sources of accessible features include contemporaneous sense data, imagination, and knowledge---essentially, anything toward which an individual can mindfully attend.
 	\item An individual must choose to incorporate that feature into a conscious thought process.
 \end{enumerate}
-These conditions reflect our focus on decision making, as opposed to what mental phenomena might be going on when an agent sits idly thinking with no purpose in mind.
- 
+These conditions reflect our focus on decision making, as opposed to what mental phenomena might be going on when an agent sits idly thinking with no purpose in mind. 
+Because conscious capacity is finite, at any given moment an individual will be aware of a small subset of all the features constituting the state of the world.
+
 In some cases, a feature of the world may force itself into an individual's awareness through sense data, such as the pilot becoming aware of an alarm screeching in the cockpit.
 Even though the pilot does not control the breaking-through of the noise into his consciousness when the alarm goes off, at the point it does he then has a choice as to whether to incorporate the fact of the alarm sounding into his decision process or not.
 If for some reason the pilot should decide that the alarm is not relevant to any of his active decision deliberations, we count him as being unaware of it---even though it remains audible (and even irritating to listen to), it is not a factor in any activity he is presently thinking about.
-In other cases, a feature of the world may be intentionally called to mind, such as when a pilot in mid-flight calls upon his knowledge of how to navigate the jetliner. 
-We cannot bring to mind aspects of the world that we do not know or cannot imagine, such as an airline pilot who has never been to medical school pondering the technical pros and cons of alternative heart transplant procedures. 
+Alternatively, a feature of the world may be intentionally called to mind, such as when a pilot in mid-flight calls upon his knowledge of how to navigate the jetliner. 
+We cannot bring to mind aspects of the world that we do not know or cannot imagine, such as an airline pilot who has never been to medical school pondering the technical pros and cons of cutting-edge heart transplant procedures. 
 
 Central to our approach is the assumption that humans face extreme constraints in the number of features of the world to which they can mindfully attend in any given moment.
-Given these constraints and the fact that humans are constantly bombarded with more information than they can effectively incorporate into a decision process, we see that mental effort is required to keep relevant information in mind, as opposed to requiring it to banish unnecessary information from our consciousness.
-For example, unless the pilot chooses to maintain awareness of the cockpit alarm (presumably, because it is relevant to something he is trying to do), the fact of the alarm automatically fades to unawareness as part of a natural process of constrained human cognition. 
+Given these constraints and the fact that humans are constantly flooded with more information than they can effectively incorporate into a decision process, we see that mental effort is required to keep relevant information in mind, as opposed to being required to banish unnecessary information from it.
+For example, unless the pilot chooses to maintain awareness of the cockpit alarm (presumably, because it is relevant to something he is trying to do), we are claiming that the fact of the alarm will automatically fade to unawareness as part of a natural process of the pilot's  cognitive architecture. 
 
-Although this strikes us as an entirely uncontroversial assumption, it has non-trivial implications that should be taken seriously.
+Although this strikes us as an uncontroversial position, it has non-trivial implications.
 In particular, an open issue in the philosophy of action is whether it is rational for individuals to make commitments to ignore new information which, properly considered, might cause them to change their future plans.
-From our perspective, ``ignoring'' information---in the sense of being unaware of it---is the natural state of human cognition.
+From our perspective, ``ignoring'' information---in the sense of being unaware of it---is the baseline state of most information accessible for human cognition.
 Given that an individual has the mental capacity to focus upon only a tiny fraction of the world's features at any one time, the question for rationality is not whether one should reflect upon the set of all relevant information and then decide whether to brush some of it aside.
 Rather, it is to determine which one of the multitude of issues that are rendered mutually exclusive for the purpose of reflection (due to cognitional constraints) should be brought to into active consideration (at the expense of the benefits available from reflecting upon some other things instead).
- 
+
 Awareness and unawareness have long been a tricky problem for decision theorists. 
 %A decision maker can only choose among the potential acts about which she is aware. 
 %Moreover, in addition to uncertainty about the future consequences of an act, the decision problem may be confounded by unawareness of information relevant to the situation at hand. 
@@ -343,206 +472,168 @@ For example, in a standard Bayesian decision problem, unawareness of certain con
 However, Bayesian decision makers will be confounded should a subjectively impossible state occur. 
 What then?
 Added to this is the problem of representing interactive decision makers with different states of awareness (i.e., when the acts of one affects the consequences of the acts of the others). 
- 
- 
-\subsubsection{Technical details}
+
 \citet{Dekel1998} demonstrate that standard state-space approaches cannot model unawareness. 
 \citet{Schipper2015} surveys various alternatives to modeling unawareness, including approaches from  AI, logic, and game theory. 
 We adopt a version of the framework developed in \citet{Heifetz2006} \citep[also see][for related extensions]{Heifetz2008,Heifetz2013} that is both simpler, in the sense that we focus upon a single-agent decision problem, and extended, in the sense that an agent's space of awareness may vary.
 The basic technical approach is to map Nature's full-featured state space to an impoverished version that represents the features of the world of which individual $i$ is aware.
 
-As discussed above, Nature's states are snapshots of all the features of the world in a moment of time.
+As discussed above, states of Nature are snapshots of all the features of the world at a moment in time.
 This includes the mental attitudes of $i$, one of which is $i$'s awareness.
-We adopt the convention of using functions on Nature's states to ``pull'' features of interest out from them. 
-Let $\Sigma^n\equiv \cup_{t=0}^T S^n_t$ be the set of all Nature's states over the time period of interest (i.e., from $t=0,\ldots,T$).
-Similarly, let $\Sigma^i$ be the set of all awareness states of $i$ over the same period, with typical element denoted $s^i_t$.
-Then, define $i$'s the \textit{awareness space correspondence (ASC)} as a (set-valued) correspondence $S^i:\Sigma^n\rightrightarrows \Sigma^i$, where $S^i(s^n_t)$ is the awareness space of $i$ when Nature's state is $s^n_t$. 
-The idea is that  $S^i(s^n_t)$ contains all the features of reality about which $i$ is aware upon arriving in the actualized state $s^n_t$. 
-Notice that the set identified by $S^i(s^n_t)$ includes all the historical and future states $i$ is contemplating from $s^n_t$.
+Similar to $S^n$, let $S^i$ be the set of all \textit{$i$'s states of awareness}, with typical element denoted $s^i_t$.
+The interpretation is that $s^i_t$ is a snapshot of all the features of the world at time $t$ to which $i$ is mindfully attending.
 
+We must now say something about how states of Nature correspond to states of awareness.
+With a slight abuse of notation, define $i$'s the \textit{awareness correspondence} as a (set-valued) correspondence $S^i:S^n\rightrightarrows S^i$, where $S^i(s^n_t)\subseteq S^i$ is the \textit{awareness space of $i$ at $s^n_t$}.\footnote
+{
+	In other words, $S^i$ written with an argument $(s^n_t)$ indicates its use as a correspondence rather than as the set of all awareness states. $S^i(s^n_t)$ is a subset of $S^i$. 
+} 
+The idea is that  $S^i(s^n_t)$ contains all the features of reality about which $i$ is aware if $s^n_t$ is actualized. 
+Notice that the set identified by $S^i(s^n_t)$ includes all the historical and future states $i$ is contemplating in state $s^n_t$.
 
-Thus, define \textit{$i$'s period $k$ awareness space at $s^n_t$} as  $S^i_k(s^n_t)\equiv\{s^i_j\in S^i(s^n_t)|j=k\}$.
-Thus, from $s^n_t$, individual $i$ can reflect on actualized states and counterfactuals of which he is aware, contained in awareness spaces from $S^i_0(s^n_t)$ to $S^i_t(s^n_t)$, as well as future possibilities, contained in awareness spaces from $S^i_{t+1}(s^n_t)$ to $S^i_T(s^n_t)$.
-When it is clear from the context, we reduce notational clutter by eliminating the Nature's-states arguments (e.g., and simply write $S^i_t$).
+Again mirroring Nature, define \textit{$i$'s time $k$ awareness space at $s^n_t$} as  $S^i_k(s^n_t)\equiv\{s^i_j\in S^i(s^n_t)|j=k\}$.
+Assume that $i$ is always aware of something about each time in the period of analysis: for all $s^n_t\in S^n$ and $k=0\ldots,T$, $S^i_k(s^n_t)\ne\emptyset$.
+Thus, from $s^n_t$, individual $i$ can reflect on actualized states and counterfactuals of which he is aware,  from $S^i_0(s^n_t)$ to $S^i_t(s^n_t)$, as well as future possibilities, from $S^i_{t+1}(s^n_t)$ to $S^i_T(s^n_t)$.
+%When it is clear from the context, we reduce notational clutter by eliminating the Nature's-states arguments (e.g., $S^i_t$).
 
 In addition to identifying the overarching awareness of $i$ as determined by each state of Nature, it is important to relate $i$'s awareness to Nature's reality. 
 We assume that $i$'s awareness is a limited but accurate version of reality on a state-by-state basis.
-In particular, we will operate from the assumption that, although $i$ is not aware of all the features of reality,  those of which he \textit{is} aware are correct.  
-Therefore, for each $s^n_t\in \Sigma^n$, define the surjective \textit{projection} $r(\cdot|s^n_t):\Sigma^n\rightarrow S^i(s^n_t)$, where $s^i_k=r_t(s^n_k|s^n_t)$ is the impoverished version of Nature's period $k$ state $s^n_k$ about which $i$ is aware upon landing in state $s^n_t$.
-%It is important to keep in mind that $i$ is aware of all the elements in $S^i_t$, including the counterfactuals.  
-%Thus, the ASC includes everything about which $i$ is aware and, therefore, can reason---both the factual and the counterfactual.
+In particular, we  operate from the assumption that, although $i$ is not aware of all the features of reality,  those of which he \textit{is} aware are correct.  
+To this end, for each $s^n_t\in S^n$, define the surjective \textit{projection} $r(\cdot|s^n_t):S^n\rightarrow S^i(s^n_t)$ and assume that if $s^i_j=r(s^n_k|s^n_t)$ then $j=k$.
+Thus,  $s^i_k$ is the impoverished version of $s^n_k$ about which $i$ is aware upon landing in state $s^n_t$.
+Making $r(\cdot|s^n_t)$ surjective means that every one of Nature's states always maps to some state in $i$'s awareness space and, possibly, many to one (reality is typically more refined than $i$'s awareness of reality).
+The  $j=k$ requirement ensures that $i$'s awareness is not time-inconsistent; e.g., $i$ does not mistake something that happened yesterday with something happening today.
 
+\subsection{Example: Brian's Infant, Part 2}	
+We consider the problem of Brian's Infant, $i$. 
+For now, assume there is only one period, so $t=T=0$.  
+Suppose the child $i$ finds herself in a room with two toys, $A$ and $B$, situated in front of her.  
+One of the toys is strictly better than the other. At the same time, the weather outside is either rainy $R$ or cloudy $C$. 
+The simplest state space for Nature in this example is $S^n_0=\{(R,A^\ast),(C,A^\ast),(R,B^\ast),(C,B^\ast)\}$ where, e.g., $s^n_t=(R,A^\ast)$ means that it is raining and $A$ is best. 
+Since there is only one period, $S^n=S^n_0$ The true condition of the weather and which toy is the best is determined at the beginning of $t=0$ when Nature actualizes one of these states. 
 
-\subsection{Example: Brian's Infant, Part 1}	
-	We consider the problem of Brian's Infant, $i$. For now, assume there is only one period, so $t=0=T$.  Suppose the infant $i$ finds herself in a room with two toys, $A$ and $B$, situated in front of her.  One of the toys is strictly better than the other. At the same time, the weather condition is either rainy $R$ or cloudy $C$. The simplest state space for Nature in this example is $S^n_0=\{(R,A^\ast),(C,A^\ast),(R,B^\ast),(C,B^\ast)\}$ where, e.g., $s^n_t=(R,A^\ast)$ means that it is raining and $A$ is best. Since there is only one period, $\Sigma^n=S^n_0$ The true condition of the weather and which toy is the best is determined by Nature at the beginning of $t=0$. 
-	
-	Assume that if the weather is raining, $i$ is aware only of the weather and, alternatively, if the weather is cloudy, $i$ is aware only of the best toy. Then,  $\Sigma^i=\{(R),(C),(A^\ast),(B^\ast)\}$. Furthermore,  $S^i(R,\cdot)=\{(R),(C)\}$ and $S^i(C,\cdot)=\{(A^\ast),(B^\ast)\}$. The accuracy assumption means, e.g., that $r((C,B^\ast)|(R,A^\ast))=(C)$: being in a rainy state $(R,A^\ast)$ means that $i$ is aware of weather conditions---in this case, the counterfactual state of Nature $(C,B^\ast)$ maps to $i$'s awareness state $(C)$.
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics*[page=1,trim = 0in 3in 1.5in 0in,scale=.7]{Awareness_Diagrams_All}
-		\caption{Detailed awareness space for Brian's Infant when $s^n_0=(C,A^\ast)$ with state projections\label{Diag: p-01}}%trim: L B R TxPer
-	\end{figure}
-	
-	Figure \ref{Diag: p-01} illustrates these ideas in their full detail when Nature's state is $s^n_t=(C,A^\ast)$. The awareness space of $i$ in this state, $S^i_0(C,A^\ast)$, includes all the features of the world---actual, counterfactual, or anticipated---of which $i$ is aware in state $(C,A^\ast)$. Here, we see that $i$ is aware of the fact that $A$ is the best toy. Moreover, $i$ can reason about the counterfactual that $B$ might have been the best toy. The awareness states that comprise $i$'s awareness space correspond to Nature's fully elaborated states of the world in an accurate fashion. For example, when $i$ reasons about the counterfactual in which $B$ is the best toy, his musings correspond to real states of the world. He does not imagine that $B$ might have been the best state when when that possibility does not correspond to any reality. Importantly, $i$ is unaware of the weather. As such, from this space of awareness, she cannot factor the present state of the weather or its counterfactual into any decision analysis. She is simply not thinking about it. Figure \ref{Diag: p-02} illustrates the awareness spaces and projection mappings for all four states of Nature. We will illustrate multi-period cases shortly.
-	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics*[page=2,trim = 0in 0in 0in 0in,scale=.6]{Awareness_Diagrams_All}
-		\caption{Simplified awareness space diagrams for each of Nature's four states\label{Diag: p-02}}%trim: L B R TxPer
-	\end{figure}
+Assume that if the weather is raining, $i$ is aware only of the weather and, alternatively, if the weather is cloudy, $i$ is aware only of the best toy. 
+Then,  $S^i_0=\{(R),(C),(A^\ast),(B^\ast)\}$. 
+Furthermore,  $S^i_0(R,\cdot)=\{(R),(C)\}$ and $S^i_0(C,\cdot)=\{(A^\ast),(B^\ast)\}$. 
+The accuracy assumption means, e.g., that $r((C,B^\ast)|(R,A^\ast))=(C)$: being in a rainy state $(R,A^\ast)$ means that $i$ is aware of weather conditions---in this case, the counterfactual state of Nature $(C,B^\ast)$ maps to $i$'s awareness state $(C)$.
 
-	
-\subsection{Synchronic events}
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=2,trim = 0in 3in 1.5in 0in,scale=.7]{Awareness_Diagrams_All}
+	\caption{Detailed awareness space for Brian's Infant when $s^n_0=(C,A^\ast)$ with state projections\label{Diag: p-02}}%trim: L B R TxPer
+\end{figure}
 
-The term `event' is used differently in philosophy than it is in probability theory. 
-Since we are writing to audiences familiar with one or the other, it is important to clarify this difference. 
-In probability theory, `event' is used similarly to the term `property' in philosophy, where properties are understood intensionally. 
-Philosophers typically use `event' to mean a spatiotemporal particular extended over time. 
-We refer to events associated with states at a moment in time (the game theory usage) as \textit{synchronic events}, and those associated with properties unfolding through time (the philosophy usage) as \textit{diachronic events}.
-We begin with synchronic events.
-	
-In probability theory, events are subsets of state spaces. 
-For example, the event ``Mike intends to get a cup of coffee includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
-In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property.
-Because individual $i$ is associated with a ASC that elaborates states according to the features of the world of which that individual is aware, the events of which he or she could be aware are subsets of that space. 
+Figure \ref{Diag: p-01} illustrates these ideas in their full detail when Nature's state is $s^n_t=(C,A^\ast)$. 
+The awareness space of $i$ in this state, $S^i_0(C,A^\ast)$, includes all the features of the world---actual, counterfactual, or anticipated---of which $i$ is aware in state $(C,A^\ast)$. 
+Here, we see that $i$ is aware of the fact that $A$ is the best toy. 
+Moreover, $i$ can reason about the counterfactual that $B$ might have been the best toy. 
+The awareness states that comprise $i$'s awareness space correspond to Nature's fully elaborated states of the world in an accurate fashion. 
+For example, when $i$ reasons about the counterfactual in which $B$ is the best toy, his musings correspond to real states of the world. 
+He does not imagine that $B$ might have been the best state when when that possibility does not correspond to any reality. 
+Importantly, $i$ is unaware of the weather. 
+As such, from this awareness, she cannot factor the present state of the weather or its counterfactual into any decision analysis. 
+She is simply not thinking about it. 
+Figure \ref{Diag: p-03} illustrates the awareness spaces and projection mappings for all four states of Nature. 
+We will illustrate multi-period cases shortly.
 
-For example, referring back to the example of Brian's infant, $B=\{s\in S^n|s\Rightarrow \text{Bob has a cup of coffee}\}$ is the event that collects all the states in Nature's space in which Bob has a cup of coffee.
-
-Because individual state spaces may be related to one another and, in any case, are all related to reality fully elaborated ($S^n$), it will be helpful to associate events in $S^n$ with the awareness of the individuals of them.
-For an event $B\subseteq S^n$, let $B^{\downarrow}=\bigcup_{S^j\in \mathcal{S}}\left(r^{0\rightarrow j}\right)^{-1}(B)$ be the extension of $B$ to include all states in the  individuals' state spaces consistent with the projection of $B$ into them.
-Then, $E\subseteq \Sigma$ is a \textit{synchronic event} if it is of the form $B^{\downarrow}$ for some $B\subseteq S^n$.
-We refer to the state space event, $B$, as the \textit{basis} of the sychronic event $E=B^{\downarrow}$.
-	
-By this definition, not every subset of $\Sigma$ is a synchronic event.
-If $B\subseteq S^n$, define the negation of the synchronic event $B^{\downarrow}$, denoted $\lnot B^{\downarrow}$, as $(S^n\setminus B)^{\downarrow}$,  a  subset of $\Sigma\setminus B^{\downarrow}$.
-Typically, $B\cap \lnot B$ is a strict subset of $\Sigma$; unlike the standard probability space setup, $2^\Sigma$ is not the event space.
-Nevertheless, by our definition, $\lnot\lnot B^\downarrow = B^\downarrow$.\footnote
-{
-	This is not true in \citet{Heifetz2006}.
-		The difference is our extended events are generated by events in a specific space (in their terminology, Nature's space is always the ``base space''), which is an added restriction that assures this nice technical feature.
-}
-
-\begin{figure}[h!]	
-	\begin{center}
-		\includegraphics[scale=.4]{lattice-event.png}
-	\end{center}
-	\caption{The sycnronic event ``Kate's grass is wet'' with corresponding projections shown.\label{lattice-event}}
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=3,trim = 0in 0in 0in 0in,scale=.6]{Awareness_Diagrams_All}
+	\caption{Simplified awareness space diagrams for each of Nature's four states\label{Diag: p-03}}%trim: L B R TxPer
 \end{figure}
 	
-Returning to our example with Bob and Kate, consider the event ``Kate's grass is wet' in $S^n$: $B=\{s^n_3,s^n_4\}$.
-$B$ is the basis of $B^{\downarrow}=\{s^n_3,s^n_4,s^b_1,s^b_2,s^k_2,s^\emptyset\}$.
-Notice that $\lnot B^{\downarrow}=\{s^n_1,s^n_2,s^b_1,s^b_2,s^k_1,s^\emptyset\}$.
-Thus, $B^{\downarrow}\cup \lnot B^{\downarrow}=\Sigma$.
-Here, the impossible event ``Kate's grass is both wet and dry'' corresponds to $\emptyset^{S^k}$.
-
-\subsection{Beliefs and uncertainty}
-
-While we assume that $i$ may be uncertain about the true state of the world,  limited-but-true awareness of reality.
-Bob may be aware that it is raining outside the window while being unaware of the weather conditions in other geographic locations (in the sense that those other conditions are simply not objects of active reflection).
-However, in this version of the model, Bob is not hallucinating rain outside when it is sunny.	 
-
-\subsection{Diachronic Awareness}\label{sec:diachronic_setup}
-
-We now extend this framework to the dynamic setting.
-Assume time is discreet and limit attention to some finite number of periods, $T$. 
-Time subscripts are added to indicate the period. For example, \textit{Nature's state space at time} $t$, is denoted $S^n_t\subset S^n$, where with an arbitrary element denoted $s^n_t\in S^n_t$
-Then, $S^n$ contains all the states that could possibly be actualized at $t$ expressed in their richest level of detail.
-We continue to use index subscripts to identify specific states when necessary; e.g., $s^n_{3,t}$ is the state indexed as number 3 in Nature's state space in priod $t.$
-
-
-\subsubsection{Acts and actions\label{sec:dynamics}}
-The sequence of states actualized over the period of analysis is effected by the acts of the individuals in the population in conjunction with acts of Nature (i.e., all the causes that, in conjunction with the acts of the individuals, determine the actualization of a particular state from an immediately preceding, previously actualized state).
-For each individual $i\in N$ and each state $s\in S^n$,  $A^i(s)$ indicates the set of \textit{feasible acts available to individual $i$ in state $s$} with arbitrary element $a^i\in A^i(s)$.\footnote
-{
-	Notice that we use a capital letter to indicate that $A^i$ is a set-valued function: $A^i:S^n\rightarrow 2^A$.
-	Also note that feasible acts for individual $i\ne 0$ are determined by reality (states in $S^n$), not by $i$'s awareness of reality (states in $S^i$).
-	Because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
-	We think of ``action'' as describing the narrower category of act associated with physical movement.
-} 
 	
-We adopt the convention that $A^i(s)=\emptyset$ indicates that individual $i$ has no available acts in state $s$.
-An \textit{act profile} is a list of acts, one for each individual, denoted  $\mathbf{a}\equiv(a^n,\ldots,a^n)$. 
-Recall, Nature is ``Individual 0'' so that $a^n$ summarizes all the developments that, in conjunction with the individuals' acts, determine which state is actualized following $s$. 
-The set of \textit{all act profiles at state $s$} is $\mathbf{A}(s)\equiv \times_{i=0}^n A^i(s)$; the set of \textit{all possible act profiles at time $t$} is  $\mathbf{A}_t\equiv \cup_{s\in S^n_t} \mathbf{A}(s)$; and the set of \textit{all possible act profiles} is $\mathbf{A}\equiv \cup_{s\in S^n} \mathbf{A}(s)$. 
-
-
-\subsubsection{Dynamics  } 
-  
-As indicated above, the act profiles summarize all the conditions required to actualize one state from the previously actualized state. 
-To formalize this, let $\omega:\mathbf{A}\times S^n\rightarrow S^n$ be the \textit{state-contingent actualization function}, where $\omega(\mathbf{a}_t,s^n_t)=s^n_{t+1}$indicates that if the act profile at state $s^n_t\in S^n_t$ is $\mathbf{a}_t\in \mathbf{A}(s^n_t)$, then the next state actualized is $s^n_{t+1}$.
-Notice that the engine of change operates at the level of Nature's reality: individuals find themselves in some true state $s^n_t$; 
-they implement their human acts alongside Nature's act (this act elaborates the things that occur beyond the acts of the individuals represented in the analysis), as summarized by $\mathbf{a}_t$;
-after which, the next state $s^n_{t+1}=\omega(\mathbf{a}_t,s^n_t)$ is actualized. 
-Assume that, for all $t$, $\omega$ is bijective from $\mathbf{A}_t\times S_t$ to $S^n_t$.
-In other words, each feasible  act profile in a given state at time $t$ leads to a unique state in period $t+1$ and each state in period $t+1$ can be traced back to a single predecessor state in period $t$ by a unique act profile that links the two.
-Thus, the inverse $\omega^{-1}$ exists, where $\omega^{-1}(s^n_{t+1})=(\mathbf{a}_t,s^n_t)$ indicates if $s^n_{t+1}$ is actualized, then the immediately preceding state was $s^nt$ and $\mathbf{a}_t$ was the enacted act profile.
-Suppose, for example, that two distinct sequences of acts could lead to an identical footprint in the snow.
-In that case, we consider there to be two states in which that identical footprint exists, each associated with one of the sequences of acts that lead to it. 
-The world begins at state $s_0^n$.
-To allow for uncertainty or partial knowledge with respect to various aspects of the world at the beginning of time, we assume Nature's acts entirely determine $s^n_{1}$. 
-That is, $\mathbf{a}_0=(a^n_0,\emptyset,\ldots,\emptyset)$, where $a^n_0$ represents all the actualized historic factors that lead individuals to their  first decision state, $s0_1=\omega(\mathbf{a}_0,s^n_0)$.
-Uncertainty with respect to the state of the world in $t=1$ (e.g., about the intentions or other individuals) is, thus, formalized as uncertainty about ``Nature's act'' $a^n_0\in A^n(s_0)$ prior to the first decision period.
-
-We define the \textit{history at state $s^n_t$} as a profile of states that starts at $s^n_0$ and ends at $s^n_t$, denoted $\mathbf{h}(s^n_t)=(s^n_0\ldots,s^n_t)$.
-A history $\mathbf{h}(s^n_t)$ is \textit{feasible} if there exists a sequence of action profiles $\mathbf{a}_0,\ldots,\mathbf{a}_{t-1}$ such that $s^n_1=\omega(\mathbf{a}_0,s^n_),\ldots, s^n_t=\omega(\mathbf{a}_{t-1},s^n_{t-1})$.
-Feasible histories are the only ones that can be actualized according to objective reality.\footnote
-{
-	This distinction allows for situations in which individuals subjectively consider infeasible histories to be possible. 
-	For example, individual $i$ may believe that act $a^i_t\in A^i(s^n_t)$ is consistent with the actualization of $s_{t+1}$ even though $a^i_t$ is not in the profile $\mathbf{a}_t$ that leads from $s_t$ to $s_{t+1}$.
-	We do not examine these cases in this paper.
-}
+	\subsection{Synchronic events}
+	
+	The term `event' is used differently in philosophy than it is in probability theory. 
+	Since we are writing to audiences familiar with one or the other, it is important to clarify this difference. 
+	In probability theory, `event' is used similarly to the term `property' in philosophy, where properties are understood intensionally. 
+	Philosophers typically use `event' to mean a spatiotemporal particular extended over time. 
+	We refer to events associated with states at a moment in time (the game theory usage) as \textit{synchronic events}, and those associated with properties unfolding through time (the philosophy usage) as \textit{diachronic events}.
+	We begin with synchronic events.
+	
+	In probability theory, events are subsets of state spaces. 
+	For example, the event ``Mike intends to get a cup of coffee includes \textit{all} states in which getting a cup of coffee is the intention of Mike. 
+	In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee,} where the intension of the property is all the states of the world in which the world exemplifies that property.
+	Our usage will be consistent with the standard probability theoretic one.
+	
+	In the Brian's child example in Figure \ref{Diag: p-02}, $(A^\ast)$ is a state in $i$'s awareness when $i$ is in Nature's state $(C,A^\ast)$.
+	This state corresponds to the event in Nature's state space $\{(R,A^\ast),(C,A^\ast)\}$. 
+	To be precise, it is the event ``$A$ is the best toy.'' 
+	If someone of impeccable integrity tells a fully aware individual (one whose awareness space is equivalent to Nature's state space), ``$A$ is the best toy,'' then that individual would know that   $(R,A^\ast)$ or $(C,A^\ast)$ is true.
+	However, when $i$ in state $(C,A^\ast)$ is told, ``$A$ is the best toy,'' she  knows only that $(A^\ast)$ is true because she is unaware of the weather---she is not thinking about it.
+	
+	Notice that, because $r$ is surjective, $i$'s awareness \textit{states} in $S^i$ always correspond to \textit{events} in $S^n$.
+	Specifically, for all $s^n_t\in S^n$, $r^{-1}(s^i_k|s^n_t)\subseteq S^n_k$ is the event in Nature's state space associated with $s^i_k$.
+	Nature's states elaborate all the features of the world.
+	Therefore, Nature's state space contains all the states required to account for all the potentially realizable instantiations of features.
+	In any given moment, individuals are typically aware neither of all the possible features nor of all the realizable instantiations of those features of which they are aware. 
+	%Hence, for example, $A$ truly being the best toy corresponds to two states of Nature that are distinguished according to the weather, either one of which could  account for the fact that $A$ is best.
 	
 	
-The set of all \textit{feasible histories at time $t$} is $\mathbf{H}_T$ and the set of all subsets of histories is $\mathcal{H}_T$.
-An arbitrary \textit{history at time $t$} is denoted $\mathbf{h}_t\in \mathbf{H}_t$, where we start with the \textit{null history} $\mathbf{h}^n_0=(s^n_0)$ at the beginning of time (so, $\mathbf{H}^n_0=\{\mathbf{h}^n_0\}$ and  $S^n_0=\{s^n_0\}$).   
-Because there is a single root node and $\omega$ is a bijection, the set of paths in $\mathbf{H}_T$ form a tree.
-Thus, $S^n$ can be partitioned according to  subsets of states corresponding to time periods: $S^n=S^n_0\cup\cdots\cup S^n_T$ and $S^n_0\cap\cdots\cap S^n_T = \emptyset$.
-Note also that each $S_t$ implies a partition of $\mathbf{H}_T$ according to the sets of paths intersecting the states in $S_t$.
-
-% As we elaborate below, we assume that the status of one's mental attitudes at time $t$ is a feature of the actualized state $s_t$. 
-	% First, we define \textit{beliefs} as subjective conjectures about the likelihood of past events, the present state, and future events. 
-	% Second, \textit{desires} are the individual's attitudes toward histories, represented as a partial order relation on $\mathcal{H}_T$. 
-	% In other words, individuals consider both the sequences of states they experience as well as the acts that induce them.
-	% For example, even though a junior faculty member may have the same degree of desire for tenure at her present institution in all states of the world in which that happens, some paths to tenure may be more costly than others depending upon the acts required to get there (both her own and others, including those by Nature).
-	% Making  the desire relation a partial order on $\mathcal{H}_T$ implies a partial order on $H_T$ but also allows individuals to compare events in $\mathcal{H}_T$ (e.g., the event of gaining tenure vs.\ not).
-	% Third, \textit{intentions} represent an agent's commitment to undertake a plan of action designed to actualize an event in $\mathcal{H}_T$. 
-	% As we will see, others' perceptions of one's intentions will play a social role in our framework.
-
-
-% When $t$ is a future state, an ``awareness of awareness'' complication arises.
-% That is, does $r^{0\rightarrow i}_t(s^n_t)$ represent the all the features of $s^n_t$ of which $i$  would be aware in an objective sense?
-% Or, does it represent the all the features of the world that $i$, in the present period, subjectively imagines she  could be aware of in period $t$?
-% For example, Sam may believe that in the next moment, she can become aware of the temperature outside by checking the internet. 
-% Yet, suppose Nature is going to crash her internet service with certainty.
-% Then, Sam's presumption of future awareness is not correct. 
-% The answer, according to our logic, is that $i$'s awareness of her future potential for awareness is a mental attitude that is also embedded within the \textit{present} state.
-% Thus, if need be, we can extend $r^{0\rightarrow i}_t$ so that, for any $T\ge w\ge t$, $s^i_w=r^{0\rightarrow i}_t(s^n_t,s^n_w)$ represents $i$'s awareness in state $s^n_t$ about the future state $s^n_w$.
-
-
-
-	 +++++++++++++++++++++++++++++++++++STOPPED HERE++++++++++++++++++++++
 	
-
-\subsubsection{Diachronic events}
+	Because individual $i$'s state spaces are related to fully elaborated reality, it will be helpful to define a kind of ``event'' that  accounts for states of awareness \textit{as well as} their associated states of Nature.
+	For an event of which $i$ is aware in state $s^n_t$, say $B\subseteq S^i(s^n_t)$, let $B^{\uparrow}=B\bigcup r^{-1}(B|s^n_t)$ be the extension of $B$ to include all states in Nature's state space that project into $B$.
+	Then, a \textit{synchronic event in state $s^n_t$} is a set of the form $B^{\uparrow}$ for some $B\subseteq S^i(s^n_t)$.
+	We refer to  $B$ as the \textit{basis} of the sychronic event $E=B^{\uparrow}$.
+	Let $\Sigma(s^n_t)$ be the collection of all synchronic events in state $s^n_t$.
+	If $E\in \Sigma(s^n_t)$ with basis $B$, then $\neg E\equiv(S^i(s^n_t)\setminus B)\uparrow$. 
+	By this definition, not every subset of $S^n$ is the extension of some basis in $S^i(s^n_t)$.
+	Nevertheless, by these definitions,  $\lnot\lnot B^\downarrow = B^\downarrow$.
 	
-	A \textit{diachronic event} is a subset $D\in 2^{\mathbf{H}_T}$; i.e., a subset of paths in the tree associated with $\mathbf{H}_T$.\
-	Note that diachronic events are subsets of whole paths from $s^n_0$ to subsets of states in $S^n_T$. 
-	Therefore, they do not have time subscripts.
-	Let $\mathcal{D}\equiv 2^{\mathbf{H}_T}$ be the set of all diachronic events.
-	Given the preceding discussion, every synchronic event $\sigma_t\in\Sigma_t$ is associated with a unique event $E\in \mathcal{E}$. 
-
 	
-	To see how we use states and understand how these objects work, consider the canonical example of rolling a six-sided die. 
-	We use functions on $S^n$ to ``extract'' information from the states. 
-	Here, for example, we can let $d(s^n_t)$ indicate the outcome of a die roll in state $s^n_t$: for all $s^n_t\in S^n_t$, $d(s^n_t)\in\{1,2,3,4,5,6\}$; i.e., $d$ maps from each state in $S^n_t$ to a number between 1 and 6, indicating the side of the die that landed up in that state (where $s^n_t$ includes \textit{all} features of the world besides how the die landed).
-	Now, the synchronic event ``the die roll is even'' is described by $\sigma_t\in\Sigma_t$ such that $\Sigma_t\equiv\{s^n_t\in S^n_t|d(s^n_t)=2,4\text{ or }6\}$. 
-	Alternatively, suppose $T=2$.
-	Then, the diachronic event, ``snake-eyes were rolled'' is described by $E\in\mathcal{E}$ such that $E\equiv\{(s^n_0,s^n_1,s^n_2)\in \mathbf{H}_T|d(s^n_1)=d(s^n_2)=1\}$.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics*[page=4,trim = 0in 3.5in 1.5in 0in,scale=.7]{Awareness_Diagrams_All}
+		\caption{Synchronic events in the Brian's Infant example\label{Diag: p-04}}%trim: L B R TxPer
+	\end{figure}
 	
-
-
+	To see how this definition works, consider the illustration in Figure \ref{Diag: p-04}. 
+	This shows Nature's state space and the child's  awareness space when the actualized state is $(C,A^\ast)$. 
+	The potential basis events in $S^i_0(C,A^\ast)$ are $\{(A^\ast)\},\{(B^\ast)\},\{(A^\ast),(B^\ast)\}$, and $\emptyset^i$ (where we use the ``$i$'' superscript to indicate the reference to $S^i_0$, i.e., as opposed to $S^n_0$). 
+	Then, $\{(A^\ast)\}\uparrow = \{(A^\ast), (R,A^\ast),(C,A^\ast)\}$. 
+	Working through all four possibilities, we see that $\Sigma(C,A^\ast)$ contains the following synchronic events:
+	\begin{align*}
+		&	\{(A^\ast), (R,A^\ast),(C,A^\ast)\},\\
+		&	\{(B^\ast), (R,B^\ast),(C,B^\ast)\},\\
+		&	\{(A^\ast), (B^\ast), (R,A^\ast),(C,A^\ast), (R,B^\ast),(C,B^\ast)\},\\
+		&	\{\emptyset^i,\emptyset^n\}.
+	\end{align*}
+	It is worth noting that there are several subsets in $S^n_0$ that are not implied by any basis and, therefore, are not included as part of a synchronic event in $\Sigma(C,A^\ast)$. Examples include $\{(R,A^\ast),(R,B^\ast)\}$, $\{(C,A^\ast),(R,B^\ast)\}$, $\{(R,A^\ast),(C,A^\ast),(R,B^\ast)\}$ and so on. 
 	
+	
+	\subsection{Beliefs and uncertainty}
+	
+	In addition to the states about which $i$ can think about, consistent with $S^i$, we wish to account for uncertainty on the part of the individual decision maker. 
+	To begin, for each state of Nature $s^n_t\in S^n$, define the\textit{ information partition at} $s^n_t$, denoted $\mathcal{I}^i(s^n_t)$,  to be a partition of $S^i(s^n_t)$. 
+	We refer to an event in $I^i\in\mathcal{I}^i(s^n_t)$ as an \textit{information set}. 
+	Information sets serve to distinguish states about which 	$i$ is aware but uncertain. 
+	In keeping with time consistency, we require that for each $I^i\in\mathcal{I}^i(s^n_t)$, there exists a $S^i_t(s^i_t)$ that contains $I^i$; i.e., information sets do not span time periods.  
+	The information set $I^i$ corresponds to the synchronous event $I^i\uparrow$.
+	
+	\begin{figure}[h!]
+		\centering
+		\includegraphics*[page=5,trim = 0in 3.5in .8in 0in,scale=.6]{Awareness_Diagrams_All}
+		\caption{Fully aware child is uncertain about the weather\label{Diag: p-05}}%trim: L B R TxPer
+	\end{figure}
+	
+	Information sets are illustrated for the Brian's Infant example in Figure \ref{Diag: p-05}. 
+	In this scenario, $i$ is fully aware of all the states of Nature (her awareness space is as refined as Nature's). The information sets are shown by the double-dotted dashed lines. 
+	The interpretation is as follows. 
+	The true state of the world is $(C,A^\ast)$ and knows that $A$ is the best toy. 
+	However, although $i$ is aware that the weather could be cloudy or raining, she is unable to discern which is true. 
+	She knows the best toy but is uncertain about the state of the weather. 
+	At the same time, she can reason about counterfactuals: $B$ could have been the best toy and, had it been, she still would have been uncertain about the weather. 
+	In this case, $\mathcal{I}^i(C,A^\ast)=\{I^i_{0.1},I^i_{0.2}\}$, such that
+	\begin{align*}
+		I^i_{0.1}&=\{(R,A^\ast),(C,A^\ast)\},\\
+		I^i_{0.2}&=\{(R,B^\ast),(C,B^\ast)\},
+	\end{align*}
+	where we indicate  the time period and numeric label in the subscript.
+	
+	When an information set is not a singleton (i.e., $i$ is uncertain about something), we assume she has beliefs about which state is true that are represented by a probability distribution on the states in the information set. 
+	We use $\rho^i$ to indicate these assessments. 
+	In the preceding example, assuming $s^n_t=(C,A^\ast)$ is understood from the context, $\rho^i_{0.1}(R,A^\ast)$ is the probability $i$ assigns to the possibility that the true state is $(R,A^\ast)$.
 \subsection{Mental attitudes\label{sec:attitudes}}
 
 \paragraph{Beliefs \label{para: beliefs}}
@@ -564,7 +655,7 @@ Note also that each $S_t$ implies a partition of $\mathbf{H}_T$ according to the
 	All of individual $i$'s speculation with respect to the history, state and unfolding of events is summarized by $\mu_i$.
 
 
-Like in the case of incomplete information, we proceed by introducing probability distributions on state-spaces. For any state space $S \in \mathcal{S}$, let $\Delta(S)$ be the set of probability distributions on $S$. Even though we consider probability distributions on each space $S \in \mathcal{S}$, we can talk about probability of events that, as we just have seen, are defined across spaces. To extend probabilities to events of our lattice structure, let $S_{\mu}$ denote the space on which $\mu$ is a probability measure. Whenever for some event $E \in \Sigma$ we have $S_{\mu} \succeq S(E)$ (i.e., the event $E$ can be expressed in space $S_{\mu}$) then we abuse notation slightly and write
+Like in the case of incomplete information, we proceed by introducing probability distributions on state-spaces. For any state space $S \in \mathcal{S}$, let $\Delta(S)$ be the set of probability distributions on $S$. Even though we consider probability distributions on each space $S \in \mathcal{S}$, we can talk about probability of events that, as we just have seen, are defined across spaces. To extend probabilities to events of our lattice structure, let $S_{\mu}$ denote the space on which $\mu$ is a probability measure. Whenever for some event $E \in S$ we have $S_{\mu} \succeq S(E)$ (i.e., the event $E$ can be expressed in space $S_{\mu}$) then we abuse notation slightly and write
 \begin{equation*}
 \mu \left( E \right) = \mu \left( E\cap S_{\mu}\right).
 \end{equation*}
