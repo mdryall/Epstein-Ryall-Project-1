@@ -697,30 +697,40 @@ Finally, Condition 5 is met as well: $i$ is able to recall her own act $p_1$, wh
 	%	\caption{Simplified awareness space diagrams for each of Nature's four states\label{Diag: p-03}}%trim: L B R TxPer
 	%\end{figure}
 	
+\section{Mental attitudes}
 	
-	
-\section{Uncertainty}
+\subsection{Uncertainty}
 	
 In addition to the states about which $i$ is aware, we wish to account for uncertainty. 
 Uncertainty is not the same as unawareness.
 For example, in the Brian's Infant example, $i$ could be aware that $A^\ast$ and $B^\ast$ are possible yet harbor uncertainty about which is consistent with the true state of the world---and all the while be utterly unaware of the weather.
 
-\subsection{Information sets}
-For $t=0,\ldots, T$ and each pair $s\in S_t$,  $s^\prime\in S^\ominus_{t,s}$, define the\textit{ information set at} $s^\prime$, denoted $I_{s^\prime,s}$,  to be a subset of $S^\ominus_{t,s}$.  
-Information sets serve to distinguish states about which $i$ is aware but uncertain. Information sets are assumed to meet the following conditions:	
+\subsubsection{Information sets}
+For each objective state $s\in S^\oplus$, define the\textit{ information set at subjective state} $s^\prime\in S_s$, denoted $I_{s^\prime,s}$,  to be a subset of $S_s$.  
+Information sets serve to distinguish states about which $i$ is aware but uncertain. 
+Information sets are assumed to meet the following conditions:	
 \begin{enumerate}
 	\setcounter{enumi}{5}
 	\item No-delusion: $s^\prime\in I_{s^\prime,s}$.
 	\item Introspection: if $s^{\prime\prime}\in I_{s^\prime,s}$, then $I_{s^{\prime\prime},s}=I_{s^\prime,s}$.
 	\item Act consistency: For all $s^\prime,s^{\prime\prime}\in S_s$, if $A^i_{s^\prime,s}\cap A^i_{s^{\prime\prime},s}\ne \emptyset$ then $A^i_{s^\prime,s}= A^i_{s^{\prime\prime},s}$.
 	\item Distinct acts at disjoint information sets: if $s^{\prime\prime}\in S^\ominus_{t,s}$ and $A^i_{s^\prime,s}= A^i_{s^{\prime\prime},s}$, then $I_{s^\prime,s}=I_{s^{\prime\prime},s}$.
+	\item Time clarity: if $s^\prime,s^{\prime\prime}\in I_{s^\prime,s}$ and $s^\prime\in S_{t,s}$, then $s^{\prime\prime}\in S_{t,s}$.
 \end{enumerate}
 
 Condition 6 is self-explanatory. 
 Condition 7 prevents states from being in more than one information set (which would make no sense: if $i$ is uncertain about whether $s^{\prime}$ or $s^{\prime\prime}$ is true and about whether $s^{\prime\prime}$ or $s^{\prime\prime\prime}$ is true, then he must also be uncertain about whether $s^{\prime}$ or $s^{\prime\prime\prime}$ is true).
 Condition 8  partitions the states in $S^\ominus_{t,s}$ into equivalence classes according to the acts available to $i$.
 Then, Condition 9 is required because, otherwise, $i$ could discern states based upon differences in their feasible acts.
-Notice the implication that a state space in a given period is partitioned by its information sets.
+Condition 10, which is similar to Condition 1 for awareness, ensures that all the states in a given information set are possibilities at a specific time $t$.
+The idea is that $i$ is always aware of the time and, therefore, never places any weight on the proposition that he is presently in a state occurring at a time different than the one he is in. 
+
+
+Notice the implication that, for each $s\in S^\oplus$, a state space in a given period, $S_{t,s}$ is partitioned by its information sets.
+Moreover, since the time-stamped state spaces $S_{t,s}$ themselves partition $S_s$, the information sets also partition $S_s$.
+Therefore, let $\mathcal{I}_s$ denote the collection of all information sets associated with $g_s$.
+This allows us to refer to an arbitrary information set simply as $I\in\mathcal{I}_s$.
+Then, because Condition 9 also allows us to refer to the feasible actions of which $i$ is aware at a given information set, $I\in\mathcal{I}_s$, we can write $A^i_I$ without ambiguity.
 	
 \paragraph{Example: Brian's Infant, Part 3}	Information sets are illustrated for the Brian's Infant example in Figure \ref{Diag: p-03}. 
 In this scenario, $i$ is in objective state $s_{1.3}$ and has the same awareness as in Figure \ref{Diag: p-02}. 
@@ -730,14 +740,14 @@ These are indicated by the double-dotted dashed lines.
 \begin{figure}[h!]
 	\centering
 	\includegraphics*[page=3,trim = 0in 6in 6.5in 0in,scale=.8]{Awareness_Diagrams_All}
-	\caption{Fully aware child is uncertain about which toy is best\label{Diag: p-03}}%trim: L B R TxPer
+	\caption{Partially aware infant is also uncertain about which toy is best\label{Diag: p-03}}%trim: L B R TxPer
 \end{figure}
 	
 When an information set is not a singleton (i.e., $i$ is uncertain about something), we assume she has beliefs about which state is true that are represented by a probability distribution on the states in the information set. 
 We use $\rho^i$ to indicate these assessments. 
 In the preceding example, assuming $s^\oplus_t=(C,A^\ast)$ is understood from the context, $\rho^i_{0.1}(R,A^\ast)$ is the probability $i$ assigns to the possibility that the true state is $(R,A^\ast)$.
 	
-\subsection{Beliefs} \label{sec: beliefs}
+\subsubsection{Beliefs} \label{sec: beliefs}
 Given an objective state $s\in S^\oplus$, let $\Delta(H^\ominus_s)$ denote the set of all probability distributions on the set of subjective terminal histories. 
 Then,  $\mu_s\in \Delta(H^\ominus_s)$ $i$ is $i$'s belief about how dynamics play out, with $\mu_s(h)$ indicating the probability $i$ places on terminal history $h\in H^\ominus_s$. 
 Because act profiles and states imply events in $H^\ominus_s$ by the terminal histories that pass through them, $\mu_s$ can be used to compute conditions probabilities.
@@ -789,50 +799,66 @@ For now, it is sufficient to understand that they are probability distributions 
 %	
 
 
-*****STOP HERE*****
-
-\section{Desires} \label{sec: desires}
-	For all $i\in N$, define the state-dependent \textit{desire relation} such that, for all $s\in S$,   $D_i^s\subset P\times P$ where, $(p^\prime,p^{\prime\prime})\in D_i^s$ means that  individual $i$ in state $s$ desires the path $p^{\prime\prime}$ at least as much as the path $p^\prime$. 
-	Having described the mathematical structure of desires, we use the more intuitive notation $p^\prime\preceq_i^s p^{\prime\prime}$, which is defined to mean $(p^\prime,p^{\prime\prime})\in D_i^s$. 
-	We use $\prec_i^s$ and $\approx_i^s$ to indicate strict preference and indifference, respectively. 
+\subsection{Desires} \label{sec: desires}
+For all $s\in S^\oplus$, define the state-dependent \textit{desire relation}    $D_s\subset H^\ominus_s\times H^\ominus_s$ where, $(h,h^{\prime})\in D_s$ means that  $i$ in objective state $s$ desires the subjective terminal history $h^{\prime}$ at least as much as the history $h$. 
+Having described the mathematical structure of desires, we use the more intuitive notation $h\preceq_s h^{\prime}$, which is defined to mean $(h,h^{\prime})\in D_s$. 
+We use $\prec_s$ and $\approx_s$ to indicate strict preference and indifference, respectively. 
 	
-	Why make preferences over paths? Because we assume individuals care about how they get to an end as well as the end itself. 
-	To take a canonical example, a homeowner may have a renovated kitchen in mind as the desired end. 
-	However, even if the kitchen specs are provided in extensive detail (so the owner knows exactly what the end will be), there may be many contractors who can deliver it. 
-	In this case, assuming there are several contractors from which to choose, each of which identify with a different path with states encoding costs  at each step of the way and the final quality of the work, the owner's choice will be based upon the path (costs) as well as the final state (quality). 
-	Similarly, an individual sensitive to the time value of money will prefer shorter paths to longer ones, other things equal. 
-	Or, individuals may value portions of the paths themselves.
-	For example, even though a student drops out of school (thereby, not completing the degree), he or she may nevertheless value the portion of the education that was completed. 
-	Our approach allows for special cases in which all these details are elaborated as primitives of the situation. For our discussion, we simply assume preferences are over paths.    %When $s$ is understood from the context, we simply write, e.g., $E^\prime\preceq_i E^{\prime\prime}$, dropping the superscript. 
+Why make preferences over histories? Because we assume individuals care about how they get to an end as well as the end itself. 
+To take a canonical example, a homeowner may have a renovated kitchen in mind as the desired end. 
+However, even if the kitchen specs are provided in extensive detail (so the owner knows exactly what the end will be), there may be many contractors who can deliver it. 
+In this case, assuming there are several contractors from which to choose, each of which identify with a different path with states encoding costs  at each step of the way and the final quality of the work, the owner's choice will be based upon the path (costs) as well as the final state (quality). 
+Similarly, an individual sensitive to the time value of money will prefer shorter paths to longer ones, other things equal. 
+Or, individuals may value portions of the paths themselves.
+For example, even though a student drops out of school (thereby, not completing the degree), he or she may nevertheless value the portion of the education that was completed. 
+Our approach allows for special cases in which all these details are elaborated as primitives of the situation. For our discussion, we simply assume preferences are over paths.    
 	
 	
-\section{Intentions} \label{sec: intentions}
+\subsection{Intentions} \label{sec: intentions}
 	
-	Finally, define the state-contingent \textit{intention} for individual $i$ as a function $\gamma_i:S\rightarrow \mathcal{S}$, where $\gamma_i(s)=E$ means that in state $s$ individual $i$ intends event $E$. 
-	We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
-	The idea here is that, e.g., in some states Mike intends the end ``Mike has a cup of coffee'' and in others, Mike has yet to form intentions.
-	We adopt the convention that $\gamma_i(s)=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
-	We highlight that states may be differentiated only by changes in mental attitudes. 
-	For example, it may be that the only change from $s_t$ to $s_{t+1}$ is $\gamma_i^{s_t}=\emptyset$ to $\gamma_i^{s_{t+1}}=E$.
-	This suggests that the interval between time periods may be very short (measured in milliseconds).
+For all $s\in S^\oplus$, define the state-dependent \textit{intention} for the individual as $\gamma_s\subseteq H^\ominus_s$, where $\gamma_s=E$ means that in objective state $s$ individual $i$ intends subjective event $E$. 
+We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
+The idea here is that, e.g., in some states Mike intends the end ``Mike has a cup of coffee'' and in others, Mike has yet to form intentions.
+We adopt the convention that $\gamma_s=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
+We highlight that states may be differentiated only by changes in mental attitudes. 
+For example, it may be that the only change from $s_t$ to $s_{t+1}$ is $\gamma_{s_t}=\emptyset$ to $\gamma_{s_{t+1}}=E\ne\emptyset$.
+This suggests that the interval between time periods may be very short (measured in milliseconds).
 	
-	This raises the question of how an individual moves from being in a state without an intention to one in which the intention is formed. 
-	Here, we can require an act of commitment to cement the intention. 
-	That is, if $s_t$ is a state in which $i$ does not have an intention, then the set of feasible acts, $A^{s_t}_i$, can include an \textit{act to form the intention} to ``get a cup of coffee,'' which would then take him to a state $s_{t+1}$ in which $\gamma_i^{s_{t+1}}=X$ where $X$ contains all the states consistent with $i$ having a cup of coffee.
+This raises the question of how an individual moves from being in a state without an intention to one in which the intention is formed. 
+Here, we can require an act of commitment to cement the intention. 
+That is, if $s_t$ is an objective time $t$ state in which $i$ does not have an intention, then the set of objective feasible acts, $A^i_{s_t}$, can include an \textit{act to form the intention} to ``get a cup of coffee,'' which would then take him to a state $s_{t+1}$ in which $\gamma_{s_{t+1}}=E$ where $E$ contains all the states consistent with $i$ having a cup of coffee.
 	
-	For all $i\in N$, individual $i$'s \textit{mental attitudes} are summarized by a triple denoted $\theta_i\equiv(\mu_i,D_i,\gamma_i)$.\footnote
-	{
-		In setting up mental features in this way, we are following a version of the familiar ``type-space'' approach used in game theory \citep[See][]{Harsanyi1967, Mertens1985a}. 
-	} 
-	A \textit{profile of mental features} for all the individuals is given by the profile $\theta\equiv(\theta_1,\ldots,\theta_n)$. 
-	Given our conventions, we can write $\theta_i(s)$ and $\theta^s$ without ambiguity.
-	%The set of all such profiles is $\Theta$.
+Summing up, in each objective state, individual $i$'s \textit{mental attitudes} are summarized by a triple denoted $\theta_s\equiv(\mu_s,D_s,\gamma_s)$.
+In setting up mental features in this way, we are following a version of the familiar ``type-space'' approach used in game theory \citep[See][]{Harsanyi1967, Mertens1985a} in which $\theta_s$ is $i$'s mental type in objective state $s$. 
+	
 	
 	
 \section{Plans}
-	Others have suggested that, in addition to helping us think through how to attain a desired end, plans serve the additional function of unencumbering the mind of some portion of its cognitive load. 
-	We agree and incorporate this aspect of planning explicitly into our analysis.
-	
+Others have suggested that, in addition to helping us think through how to attain a desired end, plans serve the additional function of unencumbering the mind of some portion of its cognitive load. 
+We agree and incorporate this aspect of planning explicitly into our analysis.
+
+For each objective state $s\in S^\oplus$, a \textit{state-contingent plan} is a list 
+\[
+	\sigma^i_s\in\Sigma^i_s\equiv \prod_{I\in \mathcal{I}_s}A^i_{I}
+\]
+that specifies an act at every information set of which $i$ is aware when facing the tree $g_s$.
+The plan is intentionally developed by $i$ to achieve an intention consistent with his desires and beliefs.
+Notice that, in particular, $\sigma^i_{s^\prime,s}$ specifies an act for $i$ at $I_{s^\prime,s}$ where $s^\prime=r(s|s)$ is the subjective state into which  $s$ projects when $i$ is in $s$.
+Therefore,  we write $\sigma^i_s$ to indicate the act $i$ will take at the objective state $s$ as implied by his subjective plan.
+
+Although we do not assume Nature is similarly intentional, we can nevertheless describe her behavior in the same way. 
+That is, Nature's ``plan'' is also a list
+\[
+\sigma^n\in\Sigma^n\equiv \prod_{s\in S^\oplus}A^n_s.
+\]
+Nature does not have uncertainty, so all of her information sets are singletons.
+Therefore, Nature's plan is a description of her behavior at every objective state.
+At state $s$, $\sigma^n_s\in A^n_s$ is the act Nature takes at $s$.
+
+Putting Nature and the individual together, at every objective state $s\in S^\oplus$, we have a state-contingent plan profile $\sigma_s=(\sigma^n_s,\sigma^i_s)$.
+Then, with the $\sigma_s$s in hand and starting with $s_0\in S^\oplus$, the analyst can run out the actual evolution of the states of the world from $t=0$ to $t=T$. 
+
+*****STOP HERE*****
 	
 	\subsection{Consistency conditions\label{sec:consistencies}}
 	
