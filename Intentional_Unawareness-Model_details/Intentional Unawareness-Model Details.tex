@@ -556,23 +556,23 @@ For example, the synchronic event, ``$A$ is the best toy in $t=1$,'' corresponds
 	
 \section{Awareness}
 Our basic approach is to assume that, in each objective state of the world, the individual has in mind a subjective version of $\Gamma^\oplus$. 
-Specifically, for each $s\in S^\oplus$, define \textit{$i$'s awareness tree at $s$}, $\Gamma_s\equiv(S_s,\precdot_s)$, which is also a rooted, directed tree that represents $i$'s subjective awareness of $\Gamma^\oplus$ when he is in $s$.
-Let $S^\ominus\equiv \bigcup_{s\in S^\oplus}S_s$ be the set of all subjective states in which $i$ could potentially find himself.
-Note that each set of subjective states, $S_s$,  is distinct from the others; i.e., the sets $S_s$ form a partition of $S^\ominus$.
+Specifically, for each $s\in S^\oplus$, define \textit{$i$'s awareness tree at $s$}, $\Gamma^\ominus_s\equiv(S^\ominus_s,\precdot_s)$, which is also a rooted, directed tree that represents $i$'s subjective awareness of $\Gamma^\oplus$ when he is in $s$.
+Let $S^\ominus\equiv \bigcup_{s\in S^\oplus}S^\ominus_s$ be the set of all subjective states in which $i$ could potentially find himself.
+Note that each set of subjective states, $S^\ominus_s$,  is distinct from the others; i.e., the sets $S^\ominus_s$ form a partition of $S^\ominus$.
 The set $S^\ominus_t\subset S^\ominus$ is the collection of \textit{all} the subjective states that could occur in period $t$, depending upon which actual state arises.
-When we know the objective state is $s$, then $S_{t,s}\subset S_s$ is \textit{the set of period $t$ states of which $i$ is aware according to $\Gamma_s$ when $i$ is in $s$}.
+When we know the objective state is $s$, then $S^\ominus_{t,s}\subset S^\ominus_s$ is \textit{the set of period $t$ states of which $i$ is aware according to $\Gamma^\ominus_s$ when $i$ is in $s$}.
 
 Most of the notation for objective objects transfers to their subjective counterparts without ambiguity provided we identify which states are objective and which subjective (or understand these from the context).
-For example, $H^\ominus_s$ is the set of full-length histories according to $\Gamma_s$.
+For example, $H^\ominus_s$ is the set of full-length histories according to $\Gamma^\ominus_s$.
 In some cases, double state references are required, one for a subjective state and one for the objective state with which it is associated.
-Thus, given $s\in S^\oplus$ and $s^\prime\in S_s$, $A_{s^\prime,s}$ indicates the feasible act profiles available at subjective state $s^\prime$ according to $i$'s awareness as specified by the objective state $s$.
-Similarly, we extend the state-contingent actualization function so that for $s\in S^\oplus$ and $s^\prime\in S_s$, $\omega(a_{s^\prime})=s^{\prime\prime}$ indicates that, according to $i$'s awareness  in objective state $s$, the subjectively feasible act profile $a_{s^\prime}\in A_{s^\prime}$ actualizes the succeeding subjective state $s^{\prime\prime}$ according to $\Gamma_s$.
-Assume that $\omega$ meets the same bijectivity conditions for each $\Gamma_s$ as for $\Gamma^\oplus$.
+Thus, given $s\in S^\oplus$ and $s^\prime\in S^\ominus_s$, $A_{s^\prime,s}$ indicates the feasible act profiles available at subjective state $s^\prime$ according to $i$'s awareness as specified by the objective state $s$.
+Similarly, we extend the state-contingent actualization function so that for $s\in S^\oplus$ and $s^\prime\in S^\ominus_s$, $\omega(a_{s^\prime})=s^{\prime\prime}$ indicates that, according to $i$'s awareness  in objective state $s$, the subjectively feasible act profile $a_{s^\prime}\in A_{s^\prime}$ actualizes the succeeding subjective state $s^{\prime\prime}$ according to $\Gamma^\ominus_s$.
+Assume that $\omega$ meets the same bijectivity conditions for each $\Gamma^\ominus_s$ as for $\Gamma^\oplus$.
 	
 This brings us to the issue of how objective states and actions correspond to $i$'s awareness of them.
 To that end, we assume that $i$'s awareness is a limited but accurate version of reality.
 In particular, we  operate from the assumption that, although $i$ is not aware of all the features of reality,  those of which he \textit{is} aware are correct.  	
-To this end, for each $s,s^\prime\in S^\oplus$, define the surjective \textit{awareness mapping} $r(\cdot|s):S^\oplus\rightarrow S_s$ where $s^{\prime\prime}=r(s^\prime|s)$ means that---when $i$ is in objective state $s$---the subjective state $s^{\prime\prime}$  represents his awareness of some other objective state $s^\prime$.
+For each $s,s^\prime\in S^\oplus$, define the surjective \textit{awareness mapping} $r(\cdot|s):S^\oplus\rightarrow S^\ominus_s$ where $s^{\prime\prime}=r(s^\prime|s)$ means that---when $i$ is in objective state $s$---the subjective state $s^{\prime\prime}$  represents his awareness of some other objective state $s^\prime$.
 
 In another minor abuse of notation, given an objective history $h_s=(s_0,\ldots,s)$, let $r(h_s)\equiv(r(s_0|s),\ldots,r(s|s))$ denote the history in $\Gamma_s$ to which it corresponds.
 Alternatively, given $h\in H^\ominus_s$, $r^{-1}_s(h)\subseteq H^\oplus$ is the diachronic event corresponding to the history $h$ of which $i$ is aware.
@@ -584,10 +584,10 @@ Importantly, to the individual, this is not an event, but a state of the world a
 The subjective state is an impoverished version of the objective states that project into it: the individual is unaware of the additional features of world that would allow him to refine his ability to think about his situation. 
 We impose the following consistency conditions on $r$:
 \begin{enumerate}
-	\item Time consistency: if $s^\prime\in S_t\subset S^\oplus$ then $s^{\prime\prime}\in S_{t,s}$; e.g., $i$ does not mistake something that happened yesterday with something happening today.
+	\item Time consistency: if $s^\prime\in S_t\subset S^\oplus$ then $s^{\prime\prime}\in S^\ominus_{t,s}$; e.g., $i$ does not mistake something that happened yesterday with something happening today.
 	\item Act independence: for all $s\in S^\oplus$ and $s^\prime\in S_s$, $A_{s^\prime,s}\equiv A^n_{s^\prime,s}\times A^i_{s^\prime,s}$; i.e., the set of act profiles includes all combinations of the acts by $n$ and $i$ of which $i$ is aware.
 	\item No imaginary acts for $i$: if $s^{\prime\prime}=r(s^\prime|s)$, then $A^i_{s^{\prime\prime},s}\subseteq A^i_{s^{\prime\prime}}$; i.e., although $i$ may not be aware of all the feasible acts available to him in a particular state, the acts of which he is aware are truly feasible.
-	\item Dynamic consistency: the terminal histories in $\Gamma_s$ correspond to a partition of the terminal histories in $\Gamma^\oplus$. That is, $\{s\in S_T|r^{-1}(h_s)\}$ is a partition of $H^\oplus$.
+	\item Dynamic consistency: the terminal histories in $\Gamma_s$ correspond to a partition of the terminal histories in $\Gamma^\oplus$. That is, $\{s\in S^\ominus_T|r^{-1}(h_s)\}$ is a partition of $H^\oplus$.
 	\item Perfect recall: the individual has perfect recall of his own past acts. Formally, given the objective period $t$ state  $s_t\in S_t$, if $r(h_{s_t})=h_{s^\prime_t}=(s^\prime_0,\ldots,s^\prime_t)$, then for each $s^\prime_j,j>0$ in the sequence $h_{s^\prime_t}$, the action profiles $\omega^{-1}(s^\prime_j)=a^\prime_{j-1}$ and $\omega^{-1}(s_j)=a_{j-1}$ agree on the $i$-act components. That is, if $a^\prime_{j-1}=(a^{n\prime}_{j-1},a^{i\prime}_{j-1})$ and $a_{j-1}=(a^n_{j-1},a^i_{j-1})$, then $a^{i\prime}_{j-1}=a^i_{j-1}$.
 \end{enumerate}
 
@@ -744,11 +744,11 @@ For now, it is sufficient to understand that they are probability distributions 
 
 
 \subsection{Desires} \label{sec: desires}
-For all $s\in S^\oplus$, define the state-dependent \textit{desire relation}    $D_s\subset H^\ominus_s\times H^\ominus_s$ where, $(h,h^{\prime})\in D_s$ means that  $i$ in objective state $s$ desires the subjective terminal history $h^{\prime}$ at least as much as the history $h$. 
-Having described the mathematical structure of desires, we use the more intuitive notation $h\preceq_s h^{\prime}$, which is defined to mean $(h,h^{\prime})\in D_s$. 
+For all $s\in S^\ominus$, define the state-dependent \textit{desire relation}    $D^\ominus_s\subset H^\ominus_s\times H^\ominus_s$ where, $(h,h^{\prime})\in D^\ominus_s$ means that  $i$ in objective state $s$ desires the subjective terminal history $h^{\prime}$ at least as much as the history $h$. 
+Having described the mathematical structure of desires, we use the more intuitive notation $h\preceq_s h^{\prime}$, which is defined to mean $(h,h^{\prime})\in D^\ominus_s$. 
 We use $\prec_s$ and $\approx_s$ to indicate strict preference and indifference, respectively. 
-Assume that each $D_s$ is complete ()in the sense that any pairs of histories $h,h^{\prime}\in H^\ominus_s$ are comparable) and transitive. 
-Then, the desire relation $D_s$ can be represented by a numerical function $d_s:H^\ominus_s\rightarrow \mathbb{R}$ , where $d_s(h)< d_s(h^\prime)$ and $d_s(h)= d_s(h^\prime)$ if and only if  $h\prec_s h^{\prime}$ and $h\approx_s h^{\prime}$, respectively.
+Assume that each $D^\ominus_s$ is complete ()in the sense that any pairs of histories $h,h^{\prime}\in H^\ominus_s$ are comparable) and transitive. 
+Then, the desire relation $D^\ominus_s$ can be represented by a numerical function $d^\ominus_s:H^\ominus_s\rightarrow \mathbb{R}$ , where $d^\ominus_s(h)< d^\ominus_s(h^\prime)$ and $d^\ominus_s(h)= d^\ominus_s(h^\prime)$ if and only if  $h\prec_s h^{\prime}$ and $h\approx_s h^{\prime}$, respectively.
 
 Finally, we wish to impose some consistency between $i$'s desires over the histories of which he is aware in a given state and his desires over the histories that might actually occur.\footnote
 {
@@ -757,7 +757,7 @@ Finally, we wish to impose some consistency between $i$'s desires over the histo
 	This raises the question of how consistent with reality his perceptions should be.
 }
 To this end, let $d^\oplus:H^\oplus\rightarrow \mathbb{R}$ be the desire function for $i$ under conditions of perfect awareness (i.e., a situation in which $i$ is aware of all the terminal histories and, hence, can assess each one).
-Then, we assume that, for all $h\in H^\ominus_s$, $d_s$ meets the following consistency condition:
+Then, we assume that, for all $s\in S^\oplus,h\in H^\ominus_s$, $d^\ominus_s$ meets the following consistency condition:
 \begin{enumerate}
 	\setcounter{enumi}{10}
 	\item Let 
@@ -768,14 +768,18 @@ Then, we assume that, for all $h\in H^\ominus_s$, $d_s$ meets the following cons
 	 \[
 	 	y=\max_{h^\prime\in r^{-1}(h)}d^\oplus(h^\prime).
 	 \]
-	 Then $d_s(h)=\alpha x + (1-\alpha)y$ for some $\alpha\in[0,1]$.
+	 Then $d^\ominus_s(h)=\alpha x + (1-\alpha)y$ for some $\alpha\in[0,1]$. 
 \end{enumerate}
 The interpretation is as follows. Individual $i$ is equipped with desires ($d^\oplus$) at the beginning of time that permit him to compare his preferences with respect to any two objective histories, \textit{were he to be made aware of them}.
 Since each history of which he is aware in any particular state corresponds to diachronic event, Condition 11 says that the value he assigns to that history corresponds to a convex combination of the values of the objective histories constituting that diachronic event. 
+
+
 The key consistency point is that, whatever value $i$ assigns to a history of which he is aware, it is never less than the minimum or greater than the maximum values that could be realized should an outcome in the associated diachronic event be actualized.\footnote
 {
 	Beyond this, our setup allows for a wide variety of preference formulations---from accurate expectations to biases of various kinds. For example, ambiguity aversion can be modelled by setting $\alpha=1$.
 } 
+Note also that because the min and max are taken over all $h^\prime\in r^{-1}(h)$, $d^\ominus_s$ is constant for all the $s^\prime\in r^{-1}(s|s)$; i.e., although the desire function is a function on the objective states, it does not vary over those that project into the same awareness state.
+  
 
 	
 Why consider desires over histories? 
@@ -853,10 +857,19 @@ The phases are: 1) Problem Selection; 2) Deliberation; 3) Planning; and 4) Actin
 Each phase requires completion of the preceding phases before it can begin.
 As we elaborate the phases, we also add certain consistency conditions which are pertinent to them.
 
+\begin{figure}[h!]
+	\centering
+	\includegraphics*[page=8,trim = 0in 3in 0in 0in,scale=.65]{Awareness_Diagrams_All}
+	\caption{Overview of states and decision phases.\label{Diag: p-08}}%trim: L B R TxPer
+\end{figure}
+
 The objective tree $\Gamma^\oplus$ elaborates all the ways in which the world can evolve.
 Consistent with $\Gamma^\oplus$, $H^\oplus$ contains all the terminal histories, each of which elaborates a particular evolution from the beginning state, $s_0$, to some terminal state $T$ periods later.
 The elements of $A^\oplus$ describe the feasible act profiles at every state.
 The act mapping $\omega$ connects the act profiles available in one state lead to the new states in the following period which they actualize.
+See Figure \ref{Diag: p-08} for a summary.
+
+
 
 \paragraph{Brian's Infant, Part IV}
 Figure \ref{Diag: p-04} illustrates $\Gamma^\oplus$ for the Brian's Infant example. 
@@ -892,12 +905,14 @@ The number of states are expanding through time, from a single state at $t=0$ to
 
 Finally, let us quantify $d\oplus$ in this example as follows:
 \begin{enumerate}
-	\item $d\oplus(h)=100$ if $h$ includes successfully obtaining the best toy;
-	\item $d\oplus(h)=50$ if $h$ includes successfully choosing the best TV show;
-	\item $d\oplus(h)=-10$ if $h$ includes failing to do either 1 or 2.
+	\item $d^\oplus(h)=100$ if $h$ includes successfully obtaining the best toy;
+	\item $d^\oplus(h)=20$ if $h$ includes successfully obtaining the second best toy;
+	\item $d^\oplus(h)=50$ if $h$ includes successfully choosing the best TV show;
+	\item $d^\oplus(h)=10$ if $h$ includes successfully choosing the best TV show;
+	\item $d^\oplus(h)=-10$ if $h$ includes failing to achieve any of the above.
 \end{enumerate}
-Since the states in $S_4$ each correspond to a terminal history, we can write, e.g., $d\oplus(s_{4.1})$ without ambiguity.
-Thus, we have $d\oplus(s_{4.1})=100$, $d\oplus(s_{4.2})=-10$, $d\oplus(s_{4.31})=50$, $d\oplus(s_{4.32})=-10$, and so on.
+Since the states in $S_4$ each correspond to a terminal history, we can write, e.g., $d^\oplus(s_{4.1})$ without ambiguity.
+Thus, $d^\oplus(s_{4.1})=100$, $d^\oplus(s_{4.2})=-10$,  $d^\oplus(s_{4.7})=25$, $d^\oplus(s_{4.31})=50$, and so on.
 
 
 \subsection{Problem Selection}
@@ -948,16 +963,27 @@ She does realize that, at the conclusion of her efforts, she may succeed of fail
 	\caption{Complete awareness tree for Brian's Infant at the beginning of time $s_{0}$.\label{Diag: p-06}}%trim: L B R TxPer
 \end{figure}
 
-Notice that the histories of which she is aware actually correspond directly to distinct payoffs consistent with reality.
-For every objective history in $h\in r^{-1}_{s_0}(s_{4.1}^\prime)$, $d^\oplus(h)=100$ because $s_{4.1}^\prime$ corresponds to the objective diachronic event ``obtain the best toy,'' all objective histories in which have the desire value 100, as described above.
-Therefore, the $\alpha$ parameter discussed above is irrelevant (because the min and max values in these events are all equal).
-Thus, 
+Notice that the histories of which she is aware each correspond to two distinct histories in reality.
+For example, the objective event associated with $s_{4.1}^\prime$ is
+\[ 
+	r^{-1}_{s_0}(s_{4.1}^\prime)=\{s_{4.1},s_{4.3},s_{4.5},s_{4.7},s_{4.9},s_{4.11},s_{4.13},s_{4.15}\}.
+\]
+These correspond to the diachronic event ``the infant chose  to solve $p_1$ and succeeds in her intended outcome.''
+In terms of payoff values, this event includes two kinds of histories: i) those that include success in obtaining the best toy ($d^\oplus(h)=100$); and ii) those that include success in obtaining the second best toy ($d^\oplus(h)=20$).
+With respect to Item (ii), note that at $t=1$ the infant is free to choose either toy as her intended plaything, even though she knows which toy is, in fact, best.
+Intending second best is a \textit{feasible} act at that point (even if her desires motivate her to intend otherwise).
+
+This means that the $\alpha$ consistency parameter discussed above is relevant (at both $s^\prime_{1.1}$ and $s^\prime_{1.2})$).
+In the  $p_1$/success event, the min value is $20$ and max value is $100$, whereas in the corresponding $p_2$ event, the min value is $10$ and the max value is $50$.
+Suppose $\alpha=0.5$. 
+Then, the terminal history through $s^\prime_{4.1}$ in Figure \ref{Diag: p-06} has value $d^\ominus_{s_0}(s^\prime_{4.1})=60$ and the one through  $s^\prime_{4.3}$  has value $d^\ominus_{s_0}(s^\prime_{4.3})=30$.
+The fail histories, terminating in $s^\prime_{4.2}$ and $s^\prime_{4.4}$,  both have value of $-10$.
+
 
 To choose between $p_1$ and $p_2$, $i$'s beliefs must come into play.
 Specifically, $i$ must assess the probability of success or failure associated with each problem. 
 Suppose that in state $s_0$, $i$  believes the probability of success is 0.5 for both problems. 
-Then, the expected value of choosing $p_1$ is $0.5*d_{s_0}(s^\prime_{4.1})+0.5*d_{s_0}(s^\prime_{4.2})=0.5*100-0.5*10=45$.
-Similarly, the expected value of choosing $p_1$ is $20$.
+Then, the expected value of choosing $p_1$ is $0.5*60-0.5*10=25$ and the expected value of choosing $p_2$ is $10$.
 Therefore, $i$ chooses $p_1$.
 
 
@@ -989,7 +1015,7 @@ She is not thinking about anything having to do with which show to watch.
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics*[page=7,trim = 3in 0in 0in 0in,scale=.7]{Awareness_Diagrams_All}
+	\includegraphics*[page=7,trim = 3in 0in 1in 0in,scale=.7]{Awareness_Diagrams_All}
 	\caption{Complete awareness tree for Brian's Infant at state $s_{1.3}=((B^\ast,W^\ast),p_1)$.\label{Diag: p-07}}%trim: L B R TxPer
 \end{figure}
 
