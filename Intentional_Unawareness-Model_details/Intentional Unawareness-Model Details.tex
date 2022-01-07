@@ -332,12 +332,14 @@ As outlined in the Introduction, at time $t$, individual $i$ finds himself in a 
 This state corresponds to objective reality, including the status \textit{of all features of the world} in that moment. 
 Importantly, these include both the  mind-independent features of the world as well as the \textit{mental attitude} of the individual acting in that world. 
 Let $S^\oplus$ denote the \textit{objective state space}.
-$S^\oplus$ is a (finite) set of all the objective states  that can possibly be instantiated from $t=0$ to $t=T$, with typical element $s\in S^\oplus$.
-The elements of $S^\oplus$ allow us to consider counterfactuals and future possibilities---that is, it permits description of the way the world was and is, the way it might have been, and the way it could be.
+$S^\oplus$ is a (finite) set of all the objective states  that can possibly be instantiated from $t=0$ to $t=T$.
 
-Let $S^\oplus_t\subset S^\oplus$ denote the collection of states that constitute the \textit{objective state space at time $t$}. 
-If $t$ is the present or some historic time, then some  $s\in S^\oplus_t$ is factual and the others are counterfactual. 
-If $t$ is some future time, then $S_t$ elaborates all the possibilities that could occur at $t$.
+The states themselves are indexed by the time to which they correspond and, for a particular time, by an identifying index number.
+We indicate these with subscripts: $s_{t.k}\in S^\oplus$ refers to the $k_{th}$ state associated with time $t$.
+Intuitively, if there are $z$ states associated with time $t$, then $S^\oplus_t\equiv\{s_{t.1},\dots,s_{t.z}\}$.
+With an eye toward reducing notational clutter, arbitrary states are written $s\in S^\oplus_t$ or $s_t\in S^\oplus_t$ in cases where doing so introduces no ambiguities.
+If $t$ is the present or some historic time, then \textit{one}  $s_t$ is factual and the others are counterfactual. 
+If $t$ is some future time, then $S^\oplus_t$ elaborates all the possibilities that could occur at $t$.
 
 In terms of interpretation, it does no harm to imagine that a state, $s\in S^\oplus$, elaborates an uncountably infinite number of features of the world.
 However,  we have assumed that the the number of states in $S^\oplus$ is finite.
@@ -355,7 +357,7 @@ Second, even  though we lose a measure of generality by making this assumption, 
 	
 \subsection{Acts}\label{sec:acts}
 	
-In our approach the acts of Nature and the decision maker jointly cause the system to evolve from a state $s\in S^\oplus_t$ to a new state $s^\prime\in S^\oplus_{t+1}$.
+In our approach the acts of Nature and the decision maker jointly cause the system to evolve from a state $s_t$ to a new state $s_{t+1}$.
 Acts of Nature represent all the causes that, in conjunction with the act of the individual, co-determine the actualization of a particular state from an immediately preceding, previously actualized state.
 	
 For each  $s\in S^\oplus$, let $A^j_s$ indicate the set of \textit{feasible acts available to actor $j$ in state $s$} with arbitrary element $a^j_s\in A^j_s$, where $j\in\{i,n\}$.\footnote
@@ -374,7 +376,7 @@ Also, keep in mind that the act profiles in $A_s$ are unique.\footnote
 The set of \textit{all possible objective act profiles at time $t$} is  $A^\oplus_t\equiv \bigcup_{s\in S^\oplus_t} A_s$; and the set of \textit{all possible objective act profiles} is $A^\oplus\equiv \bigcup_{s\in S^\oplus} A_s$.
  
  We wish to represent the uncertainty associated with Nature's acts as well as to allow for situations in which the individual randomizes over acts (e.g., $i$ decides to ``flip a coin'' to determine what to do).
- Then, for each objective state $s\in S^\oplus$, a \textit{mixed state-contingent act for $j\in\{n,i\}$} is a probability distribution over feasible acts at $s$, denoted $\sigma^j_s\in \Delta(A^j_{s})$.\footnote
+ Therefore, for each objective state $s\in S^\oplus$, a \textit{mixed state-contingent act for $j\in\{n,i\}$} is a probability distribution over feasible acts at $s$, denoted $\sigma^j_s\in \Delta(A^j_{s})$.\footnote
  {
  	Where $\Delta(A^j_{s})$ is the set of probability distributions over actor $j$'s feasible acts at $s$. 
  } 
@@ -401,13 +403,13 @@ To formalize this,  let $\Gamma^\oplus\equiv( S^\oplus,\precdot)$ be the elabora
 Specifically, assume $\Gamma^\oplus$ is a directed, rooted tree with nodes $S^\oplus$ ordered by the precedence relation $\precdot$; i.e., the predecessors of each $s\in S^\oplus$ are totally ordered by $\precdot$. 
 Thus, $S^\oplus_0=\{s_0\}$, where $s_0$ is the root node at the beginning of time.
 Let $\omega:A^\oplus\rightarrow S^\oplus$ be a function mapping act profiles available at a given state to its children.	
-Thus, if $\omega(a_s)=s^\prime$, it means that when the act profile $a_s$ is taken at $s$, it actualizes the immediately following state $s^\prime$; e.g., if $s\in S_t$, then $\omega(a_s)\in S_{t+1}$.
+Thus, if $\omega(a_{s_t})=s_{t+1}$, it means that when the act profile $a_{s_t}$ is taken at $s_t$, it actualizes the immediately following state $s_{s_{t+1}}$.
 Assume $\omega$ is bijective from $A_s$ to the immediate successors of $s$ (the elements in $A_s$ uniquely label the edges from $s$ to its successors, one-to-one with no extras or shortfalls).
 This means there is no state in which a specific act profile can lead from one state to more than one successor state.\footnote
 { 
 	Two or more states may yet have the same the set of feasible act profiles. That is, for $s\ne s^\prime$ it it is possible that $A_s=A_{s^\prime}$. For example, at 11am $i$ may be finished with  work and get a cup of coffee or, alternatively, may not be finished with work and, yet, still have the option to get a cup of coffee. However, it is never the case---holding Nature's acts constant---that getting a cup of coffee in one state has an ambiguous effect on the future.
 }
-Because the relationship is bijective, we can also consider $\omega^{-1}(s^\prime)=a_s$.
+Because the relationship is bijective, we can also identify the acts leading to states; i.e., $\omega^{-1}(s_{t+1})=a_{s_t}$.
 
 Assume that at the beginning of time, in state $s_0$, $i$ must choose one from  a number of mutually exclusive act-problems.
 In future periods, $i$ is generally free to continue working on the current problem or abandon it and take up another. 
@@ -422,7 +424,7 @@ For each state $s$, let $h_s=(s_0,\ldots,s)$ denote the \textit{history at} $s$;
 Because $\omega$ is bijective on $A_s$, which contains no duplicates, each history $h_s$ is also associated with the unique sequence of act profiles that actualize it.
 Abusing notation a bit, let this be represented by  $\omega^{-1}(h_s)\equiv(\omega^{-1}(s_0),\ldots,\omega^{-1}(s))$.
 
-Let $H^\oplus$ denote the set of objective \textit{terminal histories}; i.e., of the form $h_s=(s_0,\ldots,s)$ where $s\in S_T$.
+Let $H^\oplus$ denote the set of  \textit{objective terminal histories}; i.e., of the form $h_s=(s_0,\ldots,s)$ where $s\in S_T$.
 It is not difficult to show that each $\sigma\in\Sigma^\oplus$ implies a probability distribution on the set of terminal histories.
 We will abuse notation some more and write $\sigma(h)$ to be the probability of terminal history $h$ implied by $\sigma$.
 		
@@ -487,11 +489,11 @@ Diachronic events are defined as subsets of the set of terminal histories, $H^\o
 These refer to sequences of events over time and, correspondingly, the sequences of action profiles that cause them.
 For example, the set of terminal histories in the Brian's child example is
 \[
-	H^\oplus=\{(s_0,S_{1.1}),\ldots,(s_0,S_{1.8})\}.
+	H^\oplus=\{(s_0,s_{1.1}),\ldots,(s_0,s_{1.8})\}.
 \]
 The diachronic event, ``$i$'s period 0 act is $a^i_0=p_1$,'' is given by the subset
 \[
-	\{(s_0,S_{1.1}),(s_0,S_{1.2}),(s_0,S_{1.3}),(s_0,S_{1.4})\}\subset H^\oplus.
+	\{(s_0,s_{1.1}),(s_0,s_{1.2}),(s_0,s_{1.3}),(s_0,s_{1.4})\}\subset H^\oplus.
 \] 
 Diachronic events that will be of interest are individual acts, sequences of act profiles, and features of the world that persist through time---all of which are associated with sequences of states which, themselves, are associated with subsets of $H^\oplus$.
 For example, the diachronic event \textit{state $s$ occurred} is the set of terminal histories that include state $s$ as a component.
@@ -507,9 +509,11 @@ For example, the synchronic event, ``$A$ is the best toy in $t=1$,'' corresponds
 	
 \section{Awareness}
 Our basic approach is to assume that, in each objective state of the world, the individual has in mind a subjective version of $\Gamma^\oplus$. 
-Specifically, for each $s\in S^\oplus$, define \textit{$i$'s awareness tree at $s$}, $\Gamma^\ominus_s\equiv(S^\ominus_s,\precdot_s)$, which is also a rooted, directed tree that represents $i$'s subjective awareness of $\Gamma^\oplus$ when he is in $s$.
-The elements of subjective state space $S^\ominus_s$ describe the features of the world of which $i$ is aware in objective state $s$.
+Specifically, for each $s\in S^\oplus$, define \textit{$i$'s awareness graph at $s$}, $\Gamma^\ominus_s\equiv(S^\ominus_s,\precdot_s)$, which represents $i$'s subjective awareness of $\Gamma^\oplus$ when he is in $s$.
+The elements of \textit{awareness state space} $S^\ominus_s$ are subjective states that describe the features of the world of which $i$ is aware when $i$ is in objective state $s$.
 These include $i$'s awareness of the world's features in past actualized states, the present state, counterfactuals to these, and future states.
+Unlike $\Gamma^\oplus$, $\Gamma^\ominus_s$ is not required to be a tree (as we explain below).
+
 Thus, for $s\ne s^\prime,S^\ominus_s\cap S^\ominus_{s^\prime}=\emptyset$ because even if $i$ is aware of the same features of the world in both $s$ and $s^\prime$, the fact that these objective states are themselves distinct implies that the corresponding subjective states are also distinct.
 For example, $i$ may be completely absorbed by the same cat meme on his computer even though in one state the day is overcast and in the other it is raining. 
 We count these as distinct subjective states.
