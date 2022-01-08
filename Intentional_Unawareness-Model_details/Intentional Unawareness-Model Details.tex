@@ -305,7 +305,7 @@ All sets are assumed to be finite unless otherwise indicated.\footnote
 }
 	
 	
-\section{Objective Reality ($\oplus$)}\label{sec:world}
+\section{Objective Reality}\label{sec:world}
 	
 In this section, we describe the status and dynamics of reality---the world as it actually is, could have been, or might yet be along with the causes that drive it to unfold in a particular way. 
 Once we describe the way the world works here, we move on to the next section to describe the way a single decision maker understands and thinks about it.
@@ -318,10 +318,10 @@ Nature is included to account for  a God's-eye view of the status of the world i
 We focus on the action over a fixed period, from $t=0$ to $t=T$. 
 Time is indicated with subscripts.
 	
-We attach ``$\oplus$'' superscripts mathematical objects to indicate they correspond to objective reality.
-The ``$\ominus$'' superscript is used to indicate an object corresponds to the perceptions of the individual.
-In general, $\oplus$-objects are richer and more refined than $\ominus$-objects. 
-We use $n$ and $i$ superscripts to indicate that an object belongs to or is chosen by Nature ($n$) or the individual ($i$).
+%We attach ``$\oplus$'' superscripts mathematical objects to indicate they correspond to objective reality.
+%The ``$s$'' superscript is used to indicate an object corresponds to the perceptions of the individual.
+%In general, $\oplus$-objects are richer and more refined than $s$-objects. 
+%We use $n$ and $i$ superscripts to indicate that an object belongs to or is chosen by Nature ($n$) or the individual ($i$).
 	
 	
 	
@@ -331,27 +331,23 @@ We use $n$ and $i$ superscripts to indicate that an object belongs to or is chos
 As outlined in the Introduction, at time $t$, individual $i$ finds himself in a particular situation, which we term an \textit{objective state of the world}.
 This state corresponds to objective reality, including the status \textit{of all features of the world} in that moment. 
 Importantly, these include both the  mind-independent features of the world as well as the \textit{mental attitude} of the individual acting in that world. 
-Let $S^\oplus$ denote the \textit{objective state space}.
-$S^\oplus$ is a (finite) set of all the objective states  that can possibly be instantiated from $t=0$ to $t=T$.
+Let $S$ denote the \textit{objective state space}.
+$S$ is a (finite) set of all the objective potential states  that can could be actualized from $t=0$ to $t=T$, $T>0$.
 
 The states themselves are indexed by the time to which they correspond and, for a particular time, by an identifying index number.
-We indicate these with subscripts: $s_{t.k}\in S^\oplus$ refers to the $k_{th}$ state associated with time $t$.
-Intuitively, if there are $z$ states associated with time $t$, then $S^\oplus_t\equiv\{s_{t.1},\dots,s_{t.z}\}$.
-With an eye toward reducing notational clutter, arbitrary states are written $s\in S^\oplus_t$ or $s_t\in S^\oplus_t$ in cases where doing so introduces no ambiguities.
+We indicate these with subscripts: $s_{t.k}\in S$ refers to the $k_{th}$ state associated with time $t$.
+Intuitively, if there are $z$ states associated with time $t$, then $S_t\equiv\{s_{t.1},\dots,s_{t.z}\}\subset S$ is the set of states that could actualize in period $t$.
+With an eye toward reducing notational clutter, arbitrary states are written without their full identifying subscripts, e.g., $s\in S_t$ or $s_t\in S_t$, when doing so introduces no ambiguities.
 If $t$ is the present or some historic time, then \textit{one}  $s_t$ is factual and the others are counterfactual. 
-If $t$ is some future time, then $S^\oplus_t$ elaborates all the possibilities that could occur at $t$.
+If $t$ is some future time, then $S_t$ elaborates all the possibilities that could occur at $t$.
 
-In terms of interpretation, it does no harm to imagine that a state, $s\in S^\oplus$, elaborates an uncountably infinite number of features of the world.
-However,  we have assumed that the the number of states in $S^\oplus$ is finite.
+In terms of interpretation, it does no harm to imagine that each state elaborates an uncountably infinite number of features of the world.
+However,  we have assumed that the the number of states in $S$ is finite.
 The rationale for this is two-fold.
 First, the number of features of the world that are relevant to an individual decision maker in a specific state is often finite (though, possibly quite large).
 Moreover, the number of possible instantiations of each feature may be finite or effectively approximated by a finite number of  categories (e.g., profits in dollars or temperature ranges).
 If so, then the number of states required to elaborate all the possibilities is also finite.
 Second, even  though we lose a measure of generality by making this assumption, doing so eliminates a substantial amount of mathematical complexity that, were it included to account for an uncountably infinite number of states, would add little in the way of philosophical insight.
-
-%Therefore, assume that there is a finite number $m$ of features of the world relevant to the analysis at hand. Assume that the (finite) set of instantiations of feature $1\le k\le m$ is given by $F_k$ with typical element $f_k$. 
-%Then, $F\subseteq F_1\times\cdots\times F_m$ is a set of profiles (possibly correlated) listing \textit{all the potential configurations of features of the world} from $t=1$ to $t=T$.
-%Given a state $s\in S^\oplus$, $f_s\in F$ denotes the status of all features of the world in state $s$. 
 	
 	
 	
@@ -360,7 +356,7 @@ Second, even  though we lose a measure of generality by making this assumption, 
 In our approach the acts of Nature and the decision maker jointly cause the system to evolve from a state $s_t$ to a new state $s_{t+1}$.
 Acts of Nature represent all the causes that, in conjunction with the act of the individual, co-determine the actualization of a particular state from an immediately preceding, previously actualized state.
 	
-For each  $s\in S^\oplus$, let $A^j_s$ indicate the set of \textit{feasible acts available to actor $j$ in state $s$} with arbitrary element $a^j_s\in A^j_s$, where $j\in\{i,n\}$.\footnote
+For each  $s\in S$, let $A^j_s$ indicate the set of \textit{feasible acts available to actor $j$ in state $s$} with arbitrary element $a^j_s\in A^j_s$, where $j\in\{i,n\}$.\footnote
 {
 	Because we consider the intentional formation of some mental attitudes as choices available to individuals, we use the term ``act'' to describe the choices available to someone in a broad way.
 	We think of ``action'' as describing the narrower category of act associated with physical movement.
@@ -369,14 +365,13 @@ We adopt the convention that $A^j_s=\emptyset$ indicates that actor $j$ has no f
 An \textit{objective act profile at $s$}  is a pair of acts, $a_s\equiv(a^i_s,a^n_s)$, one by Nature and one by the individual, respectively. 
 The set of \textit{all objective act profiles at state $s$} is $A_s\equiv A^i_s\times A^n_s$.
 Note the implication that the acts of $i$ and $n$ at $s$ are simultaneous---that is, while $i$ is in the process of acting, there are other things going on in the world that may also have an impact on the features of the world of interest to $i$.
-Also, keep in mind that the act profiles in $A_s$ are unique.\footnote
-{
-	To reduce clutter, we do not include $\oplus$ and $\ominus$ superscripts when the association is clear from the context. Thus, $A_s$ when $s\in S^\oplus$ is the objective set of act profiles---implying that adding a superscript, as in ``$A^\oplus_s$,'' is unnecessary.
-} 
-The set of \textit{all possible objective act profiles at time $t$} is  $A^\oplus_t\equiv \bigcup_{s\in S^\oplus_t} A_s$; and the set of \textit{all possible objective act profiles} is $A^\oplus\equiv \bigcup_{s\in S^\oplus} A_s$.
+Because they are sets, the acts in each $A^j_s$ are unique.
+This implies the act profiles in each $A_s$ are also unique.
+The set of \textit{all possible objective act profiles at time $t$} is  $A_t\equiv \bigcup_{s\in S_t} A_s$; and the set of \textit{all possible objective act profiles} is $A\equiv \bigcup_{s\in S} A_s$.
+The uniqueness of act profiles in each $A_s$ does not imply the same for $A_t$ or $A$: an actor may have the same feasible acts in different states.
  
  We wish to represent the uncertainty associated with Nature's acts as well as to allow for situations in which the individual randomizes over acts (e.g., $i$ decides to ``flip a coin'' to determine what to do).
- Therefore, for each objective state $s\in S^\oplus$, a \textit{mixed state-contingent act for $j\in\{n,i\}$} is a probability distribution over feasible acts at $s$, denoted $\sigma^j_s\in \Delta(A^j_{s})$.\footnote
+ Therefore, for each objective state $s\in S$, a \textit{mixed state-contingent act for $j\in\{n,i\}$} is a probability distribution over feasible acts at $s$, denoted $\sigma^j_s\in \Delta(A^j_{s})$.\footnote
  {
  	Where $\Delta(A^j_{s})$ is the set of probability distributions over actor $j$'s feasible acts at $s$. 
  } 
@@ -387,8 +382,8 @@ Thus, mixed acts are general in the sense that they can represent both determini
 Mirroring the objective act objects, define:
 \begin{enumerate}
 	\item $\Sigma_s\equiv \Delta(A^n_{s})\times\Delta(A^i_{s})$, the \textit{set of mixed act profiles at $s$} (where the membership of $s$ in an objective or subjective state space will be clear from the context), with typical element $\sigma_s=(\sigma^i_s,\sigma^n_s)$;
-	\item $\Sigma^\oplus_t\equiv \bigcup_{s\in S^\oplus_t} \Sigma_s$, the set of \textit{all possible mixed act profiles at $t$}, with typical element $\sigma_t$; and
-	\item $\Sigma^\oplus\equiv \bigcup_{s\in S^\oplus} \Sigma_s$, the set of \textit{all possible mixed act profiles}, with typical element $\sigma$.
+	\item $\Sigma_t\equiv \bigcup_{s\in S_t} \Sigma_s$, the set of \textit{all possible mixed act profiles at $t$}, with typical element $\sigma_t$; and
+	\item $\Sigma\equiv \bigcup_{s\in S} \Sigma_s$, the set of \textit{all possible mixed act profiles}, with typical element $\sigma$.
 \end{enumerate}
 
  
@@ -399,11 +394,11 @@ Mirroring the objective act objects, define:
 	
 As indicated above, the act profiles summarize all the conditions required to actualize one state from the previously actualized state. 	It may be helpful to think of act profiles as the ``flow'' variables between states---the activities that occur over a unit of time that cause the world to move from one state to the next.
 	
-To formalize this,  let $\Gamma^\oplus\equiv( S^\oplus,\precdot)$ be the elaboration of all objectively possible sequences of states.
-Specifically, assume $\Gamma^\oplus$ is a directed, rooted tree with nodes $S^\oplus$ ordered by the precedence relation $\precdot$; i.e., the predecessors of each $s\in S^\oplus$ are totally ordered by $\precdot$. 
-Thus, $S^\oplus_0=\{s_0\}$, where $s_0$ is the root node at the beginning of time.
-Let $\omega:A^\oplus\rightarrow S^\oplus$ be a function mapping act profiles available at a given state to its children.	
-Thus, if $\omega(a_{s_t})=s_{t+1}$, it means that when the act profile $a_{s_t}$ is taken at $s_t$, it actualizes the immediately following state $s_{s_{t+1}}$.
+To formalize this,  define the \textit{dynamic objective state graph},  $\Gamma\equiv( S,\precdot)$ which elaborates of all objectively possible sequences of states.
+Specifically, assume $\Gamma$ is a directed, rooted tree with nodes $S$ ordered by the precedence relation $\precdot$; i.e., the predecessors of each $s\in S$ are totally ordered by $\precdot$. 
+Thus, $S_0=\{s_0\}$, where $s_0$ is the root node at the beginning of time.
+Let $\omega:A\rightarrow S$ be a function mapping act profiles available at a given state to its children.	
+Thus, if $s_t\precdot s_{t+1}$, then $\omega(a_{s_t})=s_{t+1}$ means  $a_{s_t}$ is the act profile that causes the world to evolve from $s_t$ to $s_{s_{t+1}}$.
 Assume $\omega$ is bijective from $A_s$ to the immediate successors of $s$ (the elements in $A_s$ uniquely label the edges from $s$ to its successors, one-to-one with no extras or shortfalls).
 This means there is no state in which a specific act profile can lead from one state to more than one successor state.\footnote
 { 
@@ -411,21 +406,22 @@ This means there is no state in which a specific act profile can lead from one s
 }
 Because the relationship is bijective, we can also identify the acts leading to states; i.e., $\omega^{-1}(s_{t+1})=a_{s_t}$.
 
-Assume that at the beginning of time, in state $s_0$, $i$ must choose one from  a number of mutually exclusive act-problems.
+At the beginning of time, in state $s_0$, $i$ must choose one from  a number of mutually exclusive act-problems.
 In future periods, $i$ is generally free to continue working on the current problem or abandon it and take up another. 
 In $s_0$, however, $i$'s only feasible act is to choose a problem to get started upon. 
 Therefore, $A^i_{s_0}=\{p_1,\ldots,p_k\}$ is the indexed set of $k$ act-problems objectively available to $i$ in state $s_0$.
-To refer to \textit{the act-problems available in an arbitrary state, $s$},we define $P_s\equiv \{p_1,\ldots,p_k\}$.\footnote
+To refer to \textit{the act-problems available in an arbitrary state, $s$}, we define $P_s\equiv \{p_1,\ldots,p_k\}$.\footnote
 {
 	In later periods, $t>0$, $A^i_s$ may contain numerous acts in addition to choosing a problem from $P_s$. Hence, the distinction is helpful.
 }
 	
-For each state $s$, let $h_s=(s_0,\ldots,s)$ denote the \textit{history at} $s$; i.e., the unique path from $s_0$ to $s$ in $\Gamma^\oplus$.
+For each state $s$, let $h_s=(s_0,\ldots,s)$ denote the \textit{history at} $s$; i.e., the unique path from $s_0$ to $s$ in $\Gamma$.
 Because $\omega$ is bijective on $A_s$, which contains no duplicates, each history $h_s$ is also associated with the unique sequence of act profiles that actualize it.
 Abusing notation a bit, let this be represented by  $\omega^{-1}(h_s)\equiv(\omega^{-1}(s_0),\ldots,\omega^{-1}(s))$.
 
-Let $H^\oplus$ denote the set of  \textit{objective terminal histories}; i.e., of the form $h_s=(s_0,\ldots,s)$ where $s\in S_T$.
-It is not difficult to show that each $\sigma\in\Sigma^\oplus$ implies a probability distribution on the set of terminal histories.
+Let $H_T$ denote the set of  \textit{objective terminal histories}; i.e., of the form $h_s=(s_0,\ldots,s)$ where $s\in S_T$.
+Note that the relationship between $H_T$ and $S_T$ is bijective: every terminal state corresponds to a unique history in $\Gamma$.
+It is not difficult to show that each $\sigma\in\Sigma$ implies a probability distribution on the set of terminal histories.
 We will abuse notation some more and write $\sigma(h)$ to be the probability of terminal history $h$ implied by $\sigma$.
 		
 \paragraph{Example: Brian's Infant, objective reality}	
@@ -475,27 +471,27 @@ The term `event' is used differently in philosophy than it is in probability the
 Since we are writing to audiences familiar with one or the other, it is important to clarify this difference. 
 In probability theory, `event' is used similarly to the term `property' in philosophy, where properties are understood intensionally. 
 Philosophers typically use `event' to mean a spatiotemporal particular extended over time. 
-We refer to events associated with states at a moment in time (the probability theory usage) as \textit{synchronic events}, and those associated with properties extended through time (closer to the philosophy usage) as \textit{diachronic events}.
+We refer to events associated with states at a moment in time (the probability theory usage) as \textit{synchronic events}, and those associated with properties extended through time (the philosophy usage) as \textit{diachronic events}.
 
 We define synchronic events as subsets of a state space at a moment in time. 
 For example, the event ``Mike intends to get a cup of coffee at $t$,'' includes \textit{all} the states in $S_t$ in which getting a cup of coffee is the intention of Mike. 
 In philosophical terminology, this is equivalent to the property \textit{being in a state in which Mike intends to get a cup of coffee}, where the intension of the property is all the states of the world in which the world exemplifies that property.
 
 In the Brian's child example in Figure \ref{Diag: p-01}, the synchronic event ``$A$ is the best toy,'' is the subset $\{s_{1.1},s_{1.2},s_{1.5},s_{1.6}\}\subset S_1$.
-Alternatively, the event, ``$i$ is solving the play-indoors problem," is $\{s_{1.1},s_{1.2},s_{1.3},s_{1.4}\}$.
-Thus, if $i$ is aware of all the states in $S_1$ and knows that ``$A$ is the best toy,'' and that she is solving the play-indoors problem, then she knows that one of $\{s_{1.1},s_{1.2}\}$ is the actual state of the world.
+Alternatively, the event, ``$i$ is solving $p_1$," is $\{s_{1.1},s_{1.2},s_{1.3},s_{1.4}\}$.
+Thus, if $i$ is aware of all the states in $S_1$ and knows that ``$A$ is the best toy,'' and that she is solving $p_1$, then she knows that one of $\{s_{1.1},s_{1.2}\}$ is the actual state of the world.
 
-Diachronic events are defined as subsets of the set of terminal histories, $H^\oplus$.
-These refer to sequences of events over time and, correspondingly, the sequences of action profiles that cause them.
+Diachronic events are defined as subsets of the set of terminal histories, $H_T$.
+These refer to sequences of events over time and, implicitly, the sequences of action profiles that cause them.
 For example, the set of terminal histories in the Brian's child example is
 \[
-	H^\oplus=\{(s_0,s_{1.1}),\ldots,(s_0,s_{1.8})\}.
+	H=\{(s_0,s_{1.1}),\ldots,(s_0,s_{1.8})\}.
 \]
 The diachronic event, ``$i$'s period 0 act is $a^i_0=p_1$,'' is given by the subset
 \[
-	\{(s_0,s_{1.1}),(s_0,s_{1.2}),(s_0,s_{1.3}),(s_0,s_{1.4})\}\subset H^\oplus.
+	\{(s_0,s_{1.1}),(s_0,s_{1.2}),(s_0,s_{1.3}),(s_0,s_{1.4})\}\subset H_T.
 \] 
-Diachronic events that will be of interest are individual acts, sequences of act profiles, and features of the world that persist through time---all of which are associated with sequences of states which, themselves, are associated with subsets of $H^\oplus$.
+Diachronic events that will be of interest are individual acts, sequences of act profiles, and features of the world that persist through time---all of which are associated with sequences of states which, themselves, are associated with subsets of $H$.
 For example, the diachronic event \textit{state $s$ occurred} is the set of terminal histories that include state $s$ as a component.
 These are 
 
@@ -505,74 +501,124 @@ For example, the synchronic event, ``$A$ is the best toy in $t=1$,'' corresponds
 	A synchronic event is a subset of states at some time $t$. Its diachronic counterpart is the subset of all terminal histories that pass through those states.
 }
 
-
+\subsection{Summing up reality}
+Pulling together the key parts of the formalism, mind-independent reality is described by a triple $\Xi\equiv(\Gamma,A,\omega)$.
+These elaborate the objective state space, $S$, and their dynamic interrelationships, $\precdot$, as specified by the dynamic objective state graph $\Gamma$, all the available act profiles, $A$, and the mapping from these to edges in the dynamic tree according to $\omega$ to indicate which act profiles cause transitions from one state to another. 
+Along with $A$ and $\omega$, $\Gamma$ describes dynamic reality in all its detail---including each potential state of the world in each period and the sequences of act profiles that are required to actualize them. 
 	
 \section{Awareness}
-Our basic approach is to assume that, in each objective state of the world, the individual has in mind a subjective version of $\Gamma^\oplus$. 
-Specifically, for each $s\in S^\oplus$, define \textit{$i$'s awareness graph at $s$}, $\Gamma^\ominus_s\equiv(S^\ominus_s,\precdot_s)$, which represents $i$'s subjective awareness of $\Gamma^\oplus$ when he is in $s$.
-The elements of \textit{awareness state space} $S^\ominus_s$ are subjective states that describe the features of the world of which $i$ is aware when $i$ is in objective state $s$.
+We begin to structure the individual's mental attributes by assuming that---in each objective state of the world---the individual has in mind a subjective version of $\Xi$ plus some additional cognitional components that allow him to navigate through act problems. 
+Specifically,for each $s\in S$,  let $\Xi^s\equiv(\Gamma^s,A^s,\omega^s)$ be $i$'s mental representation of $\Xi$.\footnote
+{
+	Our notational convention going forward is that state superscripts indicate the subjective objects that correspond to the indicated objective state.
+}
+Each element in $\Xi^s$represents $i$'s subjective awareness of the corresponding element in $\Xi$.
+In particular, the elements of \textit{awareness state space} $S^s$ (as specified by $\Gamma^s$) are subjective states that describe the features of the world as $i$ is aware them when $i$ is in $s$.
 These include $i$'s awareness of the world's features in past actualized states, the present state, counterfactuals to these, and future states.
-Unlike $\Gamma^\oplus$, $\Gamma^\ominus_s$ is not required to be a tree (as we explain below).
+To avoid additional complexities for now, we assume that $i$ does not reflect on his awareness\footnote
+{ 
+	That is, in this analysis we do not raise the issue of awareness of awareness. 
+	This will be an important issue in the multi-agent case, but we sidestep it for now.
+}
+Thus, like $S$, $S^s$ is partitioned by the subsets of states corresponding to each time period, $S^s_t$.
 
-Thus, for $s\ne s^\prime,S^\ominus_s\cap S^\ominus_{s^\prime}=\emptyset$ because even if $i$ is aware of the same features of the world in both $s$ and $s^\prime$, the fact that these objective states are themselves distinct implies that the corresponding subjective states are also distinct.
-For example, $i$ may be completely absorbed by the same cat meme on his computer even though in one state the day is overcast and in the other it is raining. 
-We count these as distinct subjective states.
+The awareness graph $\Gamma^s$ describes the individual's subjective organization of reality when he finds himself in objective state $s$. 
+This construct is part of the reality elaborated by  $s$.
+This raises the central question of how (ontological) reality, as described by $\Gamma$, corresponds to $i$'s (epistemological) perception of it in a given state, as described by $\Gamma^s$.
+What we assume is that $i$ is aware of a limited but accurate version of reality: although $i$ may not be aware of all its features,  those of which he \textit{is} aware are correct. 
 
-Let $S^\ominus\equiv \bigcup_{s\in S^\oplus}S^\ominus_s$ be the set of all subjective states in which $i$ could potentially find himself.
-Because the subjective state spaces are distinct from one another, the spaces $S^\ominus_s$ form a partition of $S^\ominus$.
-The set $S^\ominus_t\subset S^\ominus$ is the collection of \textit{all} the subjective states that could occur in period $t$, depending upon which actual state arises.
-When we know the objective state is $s$, then $S^\ominus_{t,s}\subset S^\ominus_s$ is \textit{the set of period $t$ states of which $i$ is aware according to $\Gamma^\ominus_s$ when $i$ is in $s$}.
+To formalize this, for each objective state $s\in S$, define the surjective \textit{state-$s$ awareness mapping} $r^s(\cdot):S\rightarrow S^s$ where $s^{\prime\prime}=r^s(s^\prime)$ means that---when $i$ is in objective state $s\in S$---the subjective state $s^{\prime\prime}\in S^s$ describes the features  of the world of which he is aware regarding some other objective state $s^\prime\in S$.
+For any time $t$, we assume that $r^s$ is surjective (onto) from $S_t$ to $S^s_t$.
+This means that the elements of $S^s_t$ typically represent a coarsening of reality.
 
-Most of the notation for objective objects transfers to their subjective counterparts without ambiguity provided we identify which states are objective and which subjective (or understand these from the context).
-For example, $H^\ominus_s$ is the set of full-length histories according to $\Gamma^\ominus_s$.
-In some cases, double state references are required, one for a subjective state and one for the objective state with which it is associated.
-Thus, given $s\in S^\oplus$ and $s^\prime\in S^\ominus_s$, $A_{s^\prime,s}$ indicates the feasible act profiles available at subjective state $s^\prime$ according to $i$'s awareness as specified by the objective state $s$.
-Similarly, we define the \textit{subjective actualization function} for $s\in S^\oplus$, $\omega_s$, such that, for each $s^\prime\in S^\ominus_s$, $\omega_s(a_{s^\prime})=s^{\prime\prime}$ indicates that when $i$  is in objective state $s$ and thinking about some subjective state $s^\prime$ and a feasible act profile that he imagines is available in that state, $a_{s^\prime}\in A_{s^\prime,s}$, then he is aware that the resulting subjective state actualized is $s^{\prime\prime}$.
-Assume that $\omega_s$ meets the same bijectivity conditions with respect to $\Gamma^\ominus_s$ as $\omega$ does with respect to $\Gamma^\oplus$.
-	
-This brings us to the issue of how objective states and actions correspond to $i$'s awareness of them.
-To that end, we assume that $i$'s awareness is a limited but accurate version of reality.
-In particular, we  operate from the assumption that, although $i$ is not aware of all the features of reality,  those of which he \textit{is} aware are correct.  	
-For each $s,s^\prime\in S^\oplus$, define the surjective \textit{awareness mapping} $r(\cdot|s):S^\oplus\rightarrow S^\ominus_s$ where $s^{\prime\prime}=r(s^\prime|s)$ means that---when $i$ is in objective state $s$---the subjective state $s^{\prime\prime}$  represents his awareness of some other objective state $s^\prime$.
+\paragraph{Example} 
+\emph{
+	To see the idea, suppose $s\in S_t$ is a state in which $i$'s coffee is too hot to drink and this is the only feature of reality of which $i$ is aware.
+Presumably, $S_t$ is huge, with each state capturing features of the world beyond the temperature of the coffee---such as the weather, where $i$ is geographically located, what is on TV, the level of gas in the car, and so on, many of which feature coffee that is too hot to drink.
+Then, $r^s$ projects all the states in which the coffee is too hot to drink into a subjective awareness state, say $s^{\prime}\in S^s_t$. 
+Now, suppose $i$ is also be able to reason about (is aware of) a state in which the coffee is not too hot to drink.
+Then, $r^s$ would project all the other states into a counterfactual subjective awareness state, say $s^{\prime\prime}\in S^s_t$, in which this is true.
+Because $r^s$ is surjective when restricted to $S_t$, the inverse $r^{s^{-1}}$ exists on this part of its domain: e.g., $r^{s^{-1}}(s^{\prime})\subset S_t$ is the objective synchronic event, ``the coffee is too hot to drink.'' 
+Suppose $s^{\prime\prime\prime}\in S_t$ is an objective state in which the coffee is not too hot to drink. 
+Then, $s^{\prime\prime}=r^s(s^{\prime\prime\prime})$.
+}
 
-In yet another minor abuse of notation, given an objective history $h_s=(s_0,\ldots,s)$, let $r(h_s)\equiv(r(s_0|s),\ldots,r(s|s))$ denote the history in $\Gamma_s$ to which it corresponds.
-Alternatively, given $h\in H^\ominus_s$, $r^{-1}_s(h)\subseteq H^\oplus$ is the diachronic event corresponding to the history $h$ of which $i$ is aware.
-
-The idea is that, typically, the individual is aware of only some subset of features of the objective state of the world at any given moment.
-Thus, $r$ projects all the objective states with those features into a single subjective state that includes only those features.
-From this perspective, we can think of $r$ as projecting the objective states associated with a particular synchronic event (which would be given by $r^{-1}$) into a single subjective state that represents the individual's awareness of that event.
-Importantly, to the individual, this is not an event, but a state of the world as he is aware of it.
-The subjective state is an impoverished version of the objective states that project into it: the individual is unaware of the additional features of world that would allow him to refine his ability to think about his situation.
-
-To elaborate on this, suppose $s\in S^\oplus_t$.
-Then,  $s^{\prime}=r(s|s)$ means that $s^\prime$ elaborates only the features of the world of which $i$ is aware in $t$ given the actualization of objective state $s$ in that period; it is what $i$ is aware of regarding his current state when that state is $s$.
-For example, suppose $s,s^{\prime\prime}\in S^\oplus$ are objective states in which it is raining and sunny outside, respectively.
-Further, assume that in both states,  $i$ is aware of a cat meme on his computer, but not the weather. 
-Then, $s^{\prime}=r(s|s)\in S^\ominus_s$ is the subjective state in which $i$ is aware of a cat meme on his computer.
-Here, it is also the case that $s^{\prime}=r(s^{\prime\prime}|s)$: being in state $s$, $i$ cannot distinguish his present actualized  state in which it is raining from the counterfactual state in which it is sunny.
-In the fully-elaborated objective world, $r^{-1}(s^{\prime})$ is the synchronic event ``$i$ is aware of a cat meme''---i.e., all the states in which this is true.
-Now, in the present state $s$, $i$ may also be aware that, tomorrow, he will be aware of a new meme---corresponding to a different subjective state $s^{\prime\prime\prime}\in S^\ominus_s$.
-His awareness of this alternative subjective state corresponds to a synchronic event $r^{-1}(s^{\prime\prime\prime})$ in reality.
- 
-
-We impose the following consistency conditions on $r$:
-\begin{enumerate}
-	\item Time consistency: if $s^\prime\in S_t\subset S^\oplus$ then $s^{\prime\prime}\in S^\ominus_{t,s}$; e.g., $i$ does not mistake something that happened yesterday with something happening today.
-	\item Act independence: for all $s\in S^\oplus$ and $s^\prime\in S^\ominus_s$, $A_{s^\prime,s}\equiv A^n_{s^\prime,s}\times A^i_{s^\prime,s}$; i.e., the set of act profiles includes all combinations of the acts by $n$ and $i$ of which $i$ is aware in state $s$.
-	\item No imaginary acts for $i$: if $s^{\prime\prime}=r(s^\prime|s)$, then $A^i_{s^{\prime\prime},s}\subseteq A^i_{s}$; i.e., although $i$ may not be aware of all the feasible acts available to him in a particular state, the acts of which he is aware are truly feasible.
-	\item Dynamic consistency: the terminal histories in $\Gamma_s$ correspond to a partition of the terminal histories in $\Gamma^\oplus$. That is, $\{s\in S^\ominus_T|r^{-1}(h_s)\}$ is a partition of $H^\oplus$.
-	\item Perfect recall: the individual has perfect recall of his own past acts. Formally, given the objective period $t$ state  $s_t\in S_t$, if $r(h_{s_t})=h_{s^\prime_t}=(s^\prime_0,\ldots,s^\prime_t)$, then for each $s^\prime_j,j>0$ in the sequence $h_{s^\prime_t}$, the action profiles $\omega^{-1}(s^\prime_j)=a^\prime_{j-1}$ and $\omega^{-1}(s_j)=a_{j-1}$ agree on the $i$-act components. That is, if $a^\prime_{j-1}=(a^{n\prime}_{j-1},a^{i\prime}_{j-1})$ and $a_{j-1}=(a^n_{j-1},a^i_{j-1})$, then $a^{i\prime}_{j-1}=a^i_{j-1}$.
-\end{enumerate}
-
-
-%We assume time consistency.
-%That is, 
+%Thus, $\Gamma^s$ 
+%
+%Unlike $\Gamma$, $\Gamma^s_s$ is \textit{not} required to be a tree (as we explain below).
+%
+%Most of the notation for objective objects transfers to their subjective counterparts without ambiguity provided we identify which states are objective and which subjective (or understand these from the context).
+%For example, $H^s_T$ is the set of full-length histories according to $\Gamma^s$.
+%In some cases, double state references are required, one for a subjective state and one for the objective state with which it is associated.
+%Thus, given $s\in S$ and $s^\prime\in S^s_s$, $A_{s^\prime,s}$ indicates the feasible act profiles available at subjective state $s^\prime$ according to $i$'s awareness as specified by the objective state $s$.
+%Similarly, we define the \textit{subjective actualization function} for $s\in S$, $\omega_s$, such that, for each $s^\prime\in S^s_s$, $\omega_s(a_{s^\prime})=s^{\prime\prime}$ indicates that when $i$  is in objective state $s$ and thinking about some subjective state $s^\prime$ and a feasible act profile that he imagines is available in that state, $a_{s^\prime}\in A_{s^\prime,s}$, then he is aware that the resulting subjective state actualized is $s^{\prime\prime}$.
+%Assume that $\omega_s$ meets the same bijectivity conditions with respect to $\Gamma^s_s$ as $\omega$ does with respect to $\Gamma$.
+%
+%Thus, for $s\ne s^\prime,S^s\cap S^{s^\prime}=\emptyset$ because even if $i$ is aware of the same features of the world in both $s$ and $s^\prime$, the fact that these objective states are themselves distinct implies that the corresponding subjective states are also distinct.
+%For example, $i$ may be completely absorbed by the same cat meme on his computer even though in one state the day is overcast and in the other it is raining. 
+%We count these as distinct subjective states.
 %	
-%We also impose certain consistency conditions on $i$'s awareness over time.
-%If $h^\oplus_t=(s^\oplus_0,\ldots,s^\oplus_t)$ is the objective history at $t$, then $i$ is aware of the corresponding history as he experienced it, namely, $(s^\ominus_0,\ldots,s^\ominus_t)$ where $s^\ominus_0=r(s^\oplus_0|s^\oplus_0),\ldots, s^\ominus_t=r(s^\oplus_t|s^\oplus_t)$.
-%We assume that, at $s^\oplus_t$, $i$ has perfect recall of his own actions corresponding to  $h^\oplus_t$.
-%We do not require $i$ to be aware of Nature's acts (though, he may well be so).
-%Instead, $i$ may speculate or hypothesize about what Nature's acts are that, in combination with his own, get from $s^\ominus_0$ to $s^\ominus_t$.
+%	
+%
+%
+%In yet another minor abuse of notation, given an objective history $h_s=(s_0,\ldots,s)$, let $r(h_s)\equiv(r(s_0|s),\ldots,r(s|s))$ denote the history in $\Gamma_s$ to which it corresponds.
+%Alternatively, given $h\in H^s_s$, $r^{-1}_s(h)\subseteq H$ is the diachronic event corresponding to the history $h$ of which $i$ is aware.
+
+
+Here,   $s^{\prime}=r^{s_t}(s_t)$ means that $s^\prime$ elaborates only the features of the world of which $i$ is aware in $t$ given the actualization of objective state $s_t$ in that period; it is what $i$ is aware of regarding his current state when that state is $s_t$.
+Here, it is important to point out that each $\Gamma^s$ is considered to be a distinct mental (and mathematical) object.
+Therefore, we often add decorations of some kind to distinguish states in one awareness graph from another.
+For example, we might write $s^\prime_0=r^{s_0}(s_0)$ to emphasize that the features of which $i$ is aware when he is in $s_0$ is captured by the awareness state $s^\prime_{s_0}$.
+Even if $i$ is perfectly aware in objective state $s_0$, we would not write $s^\prime_0=s_0$ because this would amount to equating apples and oranges: the former represents a mental construct while the latter represents reality.
+This rule also holds for comparisons across subjective awareness graphs.
+Suppose $i$ is in a second-period state, say $s_{2.k}$, reflecting back on what he knew about the world in period 0: $s^{\prime\prime}_0=r^{s_{2.k}}(s_0)$.
+Even if his recollection of his awareness of $s_0$ in $s_0$ is exactly the same in $s_{2.k}$, it is still technically incorrect to write $s^{\prime\prime}_0=s^{\prime}_0$. 
+The mental constructs of $i$ in $s_0$ and $s_{2.k}$ are distinct, even though the \textit{contents} of some of their elements may be identical.
+
+
+\paragraph{Example}
+\emph
+{
+	For example, suppose $s,s^{\prime\prime}\in S$ are objective states in which it is raining and sunny outside, respectively.
+Further, assume that in both states,  $i$ is aware of a cat meme on his computer, but not the weather. 
+Then, $s^{\prime}=r^s(s)\in S^s_t$ is the subjective state in which $i$ is aware of a cat meme on his computer.
+Here, it is also the case that $s^{\prime}=r^s(s^{\prime\prime})$: being in state $s$, $i$ cannot distinguish his present actualized  state in which it is raining from the counterfactual state in which it is sunny---the weather is simply not on his mind.
+In the fully-elaborated objective world, $r^{s^{-1}}(s^{\prime})$ is the synchronic event ``$i$ is aware of a cat meme''---i.e., all the states in which this is true.
+Now, in the present state $s$, $i$ may also be aware that, tomorrow, he will be engrossed by a new meme---which must correspond to a different subjective state, say $s^{\prime\prime\prime}\in S^s_{t+1}$.
+}
+ 
+At this point, we have said: i) the collection of states in the individual's awareness graph correspond to a partition of the objective state space; and ii)  this correspondence maintains time consistency in the sense that real world states at $t$ never map to awareness states in some other period. We have said nothing about consistency with respect to feasible acts or dynamic consistency. 
+
+The structure of feasible act profiles at awareness state $s^\prime\in S^s$ is assumed to be $A^s_{s^\prime}\equiv A^{s.n}_{s^\prime}\times A^{s.i}_{s^\prime}$, where $A^{s.j}_{s^\prime}$ is the set of feasible acts available to actor $j$ at $s^\prime$ of which $i$ is aware when $i$ is in objective state $s$.
+The product structure implies \textit{Act Independence}:  the set of act profiles includes \textit{all combinations} of the feasible acts for $n$ and $i$ at $s^\prime$ of which $i$ is aware. 
+As in the objective case, for each $s^\prime\in S^s$, we require $\omega^s$ to be bijective (one-to-one and onto) from $A^s_{s^\prime}$ to the immediate successors of $s^\prime$.
+
+We impose two consistency conditions on the relationship between $A^s$ and $A$.
+First,  if $s^\prime=r^s(s)$, then $A^s_{s^\prime}\subseteq A_s$.
+In other words, when $i$ is in objective state $s$, the feasible acts of which he is aware is a subset of the feasible acts that really are available to him.
+We permit (though, do not require) the possibility that $i$ is unaware of some his feasible acts. 
+However, the feasible acts of which he \textit{is} aware really \textit{are} feasible.
+Second, if $s^\prime=r^s(s)$, then $\omega^{s^{-1}}(h^s(s^\prime))=\omega^{-1}(h(s))$. 
+In other words, along the actualized history, $i$ labels the edges with their correct act profile labels.
+This will come up later when we assume that $i$ does not forget the actualized act profiles that got him to his present state (see the discussion in the Uncertainty section).
+
+Outside of the preceding restrictions on act profile names and mapping, $i$ is free to label edges in $\Gamma^s$ as he wishes.
+In many cases, edges in his awareness space will be an amalgam of edges in reality. 
+Outside of the actualized act profiles that $i$ has observed and those that are presently feasible to him, the names he assigns to other (i.e., counterfactual or future)  edges in $\Gamma^s$ is not crucial.
+Rather, the mapping function $r$ is the central determinant of the relationship between reality and $i$'s perception of it (i.e., between  $\Gamma$ and $\Gamma^s$, respectively). 
+With this in mind, we impose the following consistency conditions on $r^s$:
+\begin{enumerate}
+	\item Dynamic consistency: for $s,s^\prime,s^{\prime\prime}\in S$ such that $s^\prime\precdot s^{\prime\prime} $, if $s^{\prime\prime\prime}=r^s(s^\prime)$ and $s^{\prime\prime\prime\prime}=r^s(s^{\prime\prime})$, then $s^{\prime\prime\prime}\precdot^s s^{\prime\prime\prime\prime}$ in $\Gamma^s$.
+	\item No contemplation of future unawareness: for $s\in S$, if $s^{\prime}=r^s(s)$, then the subgraph in $\Gamma^s$ starting at $s^\prime$ is a tree rooted rooted at $s^\prime$.
+	\item Awareness of counterfactuals:  for $s\in S_t$, $t>0$, if $s^{\prime}=r^s(s)\in S^s_t$, then there exists at least one $s^{\prime\prime}\in S^s_t$ such that  $s^{\prime}\ne s^{\prime\prime}$.
+\end{enumerate}
+Item 1 is important as it implies that terminal histories in the real world correspond to histories in the awareness graph (i.e., as $i$ is thinking about them).
+Thus, histories in $H^s_T$ correspond to diachronic events in $H_T$.
+Item 2 is intuitive in the sense that, as $i$ look looks to the future while contemplating how he will solve his  act-problem, he does not envision becoming unaware of what he is doing as he travels along one of his potential paths.
+The last item says that, whatever $i$ is aware of with respect to his actualized state (at any period beyond the the start of time), he is also aware that things could have turned out differently (perhaps in the very rough sense of, ``the state of the world that is NOT the one I am presently in'').
+
+Finally, it is worth noting that awareness graphs need not be trees. 
+Typically, as $i$ moves forward in time, his awareness of certain parts of reality becomes more refined while other parts fade into unawareness (with the recall caveats described above and in the section on mental attitudes).
 	
 \paragraph{Example: Brian's Infant, Part 2}	
 Picking up the example of Brian's Infant where we left off, let consider the infant's awareness of reality.
@@ -581,14 +627,14 @@ According to Figure \ref{Diag: p-01}, this brings the world to objective state $
 Assume that, having decided to solve the toy-choice problem, $i$ becomes aware of which toy is best.
 In this state, $i$ can reason about $B$ being the best toy and the counterfactual that $A$ could have been the best toy.
 Here, we see that $i$ is also aware that she could have chosen to solve $p_2$, which would have put her in a different state of the world. 
-Then, $S^\ominus_0=\{s^\prime_0\}$, such that $P_{s^\prime_0}=P_{s_0}$, and  $S^\ominus_1=\{(A^\ast,p_1),(B^\ast,p_1),(p_2)\}$.\footnote
+Then, $S^s_0=\{s^\prime_0\}$, such that $P_{s^\prime_0}=P_{s_0}$, and  $S^s_1=\{(A^\ast,p_1),(B^\ast,p_1),(p_2)\}$.\footnote
 {
-	Keep in mind, the states in $i$'s subjective, state-contingent awareness trees are mathematically distinct from each other and from the objective states. So, we write  $S^\ominus_0=\{s^\prime_0\}$ rather than $S^\ominus_0=\{s_0\}$ even though $P_{s^\prime_0}=P_{s_0}$ because $s^\prime_0$ is not the same object as $s_0$
+	Keep in mind, the states in $i$'s subjective, state-contingent awareness trees are mathematically distinct from each other and from the objective states. So, we write  $S^s_0=\{s^\prime_0\}$ rather than $S^s_0=\{s_0\}$ even though $P_{s^\prime_0}=P_{s_0}$ because $s^\prime_0$ is not the same object as $s_0$
 }
 
-In this state, her awareness tree is $\Gamma^\ominus_{s_{1.3}}$, as depicted in Figure \ref{Diag: p-02}.
-In this diagram, the top half shows $\Gamma^\oplus$ tipped on its side. 
-The bottom half illustrates $\Gamma^\ominus_{s_{1.3}}$.
+In this state, her awareness tree is $\Gamma^s_{s_{1.3}}$, as depicted in Figure \ref{Diag: p-02}.
+In this diagram, the top half shows $\Gamma$ tipped on its side. 
+The bottom half illustrates $\Gamma^s_{s_{1.3}}$.
 Several of the awareness mappings are labelled.
 For example, $i$ finds herself in $r(s_{1.3}|s_{1.3})=(B^\ast)$.
 Notice that $r^{-1}((B^\ast)|s_{1.3})=\{s_{1.3},s_{1.4}\}$, which corresponds to the objective event, ``$B$ is the best toy and $i$ chooses to solve the indoor-play problem.
@@ -596,16 +642,16 @@ The diagram labels several of the other awareness mappings associated with state
 
 The central take-away from Figure \ref{Diag: p-02} is that $i$ is completely unaware of the TV show choices.
 In particular, it is \textit{not} the case that $i$ is \textit{uncertain} about the best TV show.
-Rather, according to $\Gamma^\ominus_{s_{1.3}}$, $i$ is simply not thinking about TV shows at all---they are not in her field of awareness and, therefore, are not a factor in her future deliberations.
+Rather, according to $\Gamma^s_{s_{1.3}}$, $i$ is simply not thinking about TV shows at all---they are not in her field of awareness and, therefore, are not a factor in her future deliberations.
 
 We can also check the conditions on the awareness mapping. 
-Condition 1 is met because each objective state $s\in S_t$ maps to a state in $S^\ominus_t$.
-Condition 2 is met because all combinations of the acts of which $i$ is aware are included as act profiles in $\Gamma^\ominus_{s_{1.3}}$.\footnote
+Condition 1 is met because each objective state $s\in S_t$ maps to a state in $S^s_t$.
+Condition 2 is met because all combinations of the acts of which $i$ is aware are included as act profiles in $\Gamma^s_{s_{1.3}}$.\footnote
 {
 	The acts of which $i$ is aware are $\{p_1,p_2\}$ for herself and $\{A^\ast,B^\ast\}$ for Nature. The set of act profiles is  $\{A^\ast,B^\ast\}\times \{p_1,p_2\}$. These are all included as branches in $i$'s awareness tree. 
 }
 Condition 3 is clearly met. 
-Condition 4 is met, which can be seen from the fact the terminal states in $S^\ominus$ imply a partition of the terminal states in $S_1$ (and, hence, of $H^\oplus$).
+Condition 4 is met, which can be seen from the fact the terminal states in $S^s$ imply a partition of the terminal states in $S_1$ (and, hence, of $H$).
 Finally, Condition 5 is met as well: $i$ is able to recall her own act $p_1$, which co-actualized her present state along with Nature's act (of which she is partially aware).
 
 \begin{figure}[h!]
@@ -613,6 +659,8 @@ Finally, Condition 5 is met as well: $i$ is able to recall her own act $p_1$, wh
 	\includegraphics*[page=2,trim = 0in 0in 0in 0in,scale=.6]{Awareness_Diagrams_All}
 	\caption{Awareness tree for Brian's Infant in objective state $s_{1.3}=((B^\ast,W,p_1)) $.\label{Diag: p-02}}%trim: L B R TxPer
 \end{figure}
+
+
 	
 \section{Mental attitudes}
 	
@@ -623,30 +671,30 @@ Uncertainty is not the same as unawareness.
 For example, in the Brian's Infant example, $i$ could be aware that $A^\ast$ and $B^\ast$ are possible yet harbor uncertainty about which is consistent with the true state of the world---and all the while be utterly unaware of the weather.
 
 \subsubsection{Information sets}
-For each objective state $s\in S^\oplus$, define the\textit{ information set at subjective state} $s^\prime\in S^\ominus_s$, denoted $I_{s^\prime,s}$,  to be a subset of $S^\ominus_s$.  
+For each objective state $s\in S$, define the\textit{ information set at subjective state} $s^\prime\in S^s$, denoted $I^s_{s^\prime}$,  to be a subset of $S^s_s$.  
 Information sets serve to distinguish states about which $i$ is aware but uncertain. 
 Information sets are assumed to meet the following conditions:	
 \begin{enumerate}
 	\setcounter{enumi}{5}
-	\item No-delusion: $s^\prime\in I_{s^\prime,s}$.
-	\item Introspection: if $s^{\prime\prime}\in I_{s^\prime,s}$, then $I_{s^{\prime\prime},s}=I_{s^\prime,s}$.
-	\item Feasible act consistency: For all $s^\prime,s^{\prime\prime}\in S^\ominus_s$, if $A^i_{s^\prime,s}\cap A^i_{s^{\prime\prime},s}\ne \emptyset$ then $A^i_{s^\prime,s}= A^i_{s^{\prime\prime},s}$.
-	\item Distinct acts at disjoint information sets: if $s^{\prime\prime}\in S^\ominus_{t,s}$ and $A^i_{s^\prime,s}= A^i_{s^{\prime\prime},s}$, then $I_{s^\prime,s}=I_{s^{\prime\prime},s}$.
-	\item Time consistency: if $s^\prime,s^{\prime\prime}\in I_{s^\prime,s}$ and $s^\prime\in S_{t,s}$, then $s^{\prime\prime}\in S_{t,s}$.
+	\item No-delusion: $s^\prime\in I^s_{s^\prime}$.
+	\item Introspection: if $s^{\prime\prime}\in I^s_{s^\prime}$, then $I^s_{s^{\prime\prime}}=I^s_{s^\prime}$.
+	\item Feasible act consistency: For all $s^\prime,s^{\prime\prime}\in S^s$, if $A^{s.i}_{s^\prime}\cap A^{s.i}_{s^{\prime\prime}}\ne \emptyset$ then $A^{s.i}_{s^\prime}= A^{s.i}_{s^{\prime\prime}}$.
+	\item Distinct acts at disjoint information sets: if $s^\prime,s^{\prime\prime}\in S^s_t$ and $A^{s.i}_{s^\prime}= A^{s.i}_{s^{\prime\prime}}$, then $I^s_{s^\prime}=I^s_{s^{\prime\prime}}$.
+	\item Time consistency: if $s^\prime,s^{\prime\prime}\in I^s_{s^\prime}$ and $s^\prime\in S^s_t$, then $s^{\prime\prime}\in S^s_t$.
 \end{enumerate}
 
 Condition 6 is self-explanatory. 
 Condition 7 prevents states from being in more than one information set (which would make no sense: if $i$ is uncertain about whether $s^{\prime}$ or $s^{\prime\prime}$ is true and about whether $s^{\prime\prime}$ or $s^{\prime\prime\prime}$ is true, then he should also be uncertain about whether $s^{\prime}$ or $s^{\prime\prime\prime}$ is true).
-Condition 8  partitions the states in $S^\ominus_{t,s}$ into equivalence classes according to the acts available to $i$.
+Condition 8  partitions the states in $S^s_{t}$ into equivalence classes according to the acts available to $i$.
 Condition 9 implies that $i$ can distinguish between states based upon differences in their feasible acts.
 Condition 10, which is similar to Condition 1 for awareness, ensures that all the states in a given information set are possibilities at a specific time $t$.
 The idea is that $i$ is always aware of the time and, therefore, never places any weight on the proposition that he is presently in a state occurring at a time different than the one he is in. 
 
 
-Notice the implication that, for each $s\in S^\oplus$, a state space in a given period, $S_{t,s}$ is partitioned by its information sets.
+Notice the implication that, for each $s\in S$, a state space in a given period, $S^s_{t}$ is partitioned by its information sets.
 Moreover, since the time-stamped state spaces $S_{t,s}$ themselves partition $S_s$, the information sets also partition $S_s$.
-Therefore, let $\mathcal{I}_s$ denote the collection of all information sets associated with $\Gamma_s$.
-This allows us to refer to an arbitrary information set simply as $I\in\mathcal{I}_s$.
+Therefore, let $\mathcal{I}^s$ denote the collection of all information sets associated with $\Gamma^s$.
+This allows us to refer to an arbitrary information set simply as $I\in\mathcal{I}^s$.
 Then, because Condition 9 says that all states in the same information set have the same feasible actions (of which $i$ is aware), we can write $A^i_I$ without ambiguity.
 	
 \paragraph{Example: Brian's Infant, Part 3}	Information sets are illustrated for the Brian's Infant example in Figure \ref{Diag: p-03}. 
@@ -664,19 +712,19 @@ She is aware that should could have known that she was working on $p_2$ had she 
 	
 When an information set is not a singleton (i.e., $i$ is uncertain about something), we assume she has beliefs about which state is true that are represented by a probability distribution on the states in the information set. 
 We use $\rho^i$ to indicate these assessments. 
-In the preceding example, assuming $s^\oplus_t=(C,A^\ast)$ is understood from the context, $\rho^i_{0.1}(R,A^\ast)$ is the probability $i$ assigns to the possibility that the true state is $(R,A^\ast)$.
+In the preceding example, assuming $s_t=(C,A^\ast)$ is understood from the context, $\rho^i_{0.1}(R,A^\ast)$ is the probability $i$ assigns to the possibility that the true state is $(R,A^\ast)$.
 	
 \subsubsection{Beliefs} \label{sec: beliefs}
-Given an objective state $s\in S^\oplus$, let $\Delta(H^\ominus_s)$ denote the set of all probability distributions on the set of subjective terminal histories. 
-Then,  $\mu_s\in \Delta(H^\ominus_s)$ $i$ is $i$'s belief about how dynamics play out, with $\mu_s(h)$ indicating the probability $i$ places on terminal history $h\in H^\ominus_s$. 
-Because act profiles and states imply events in $H^\ominus_s$ by the terminal histories that pass through them, $\mu_s$ can be used to compute conditional probabilities.
-In particular, when $i$ is in subjective state $s^\prime\in S^\ominus_s$, the probability $i$ assigns to $s^\prime$ is  $\mu_s(s^\prime|I_{s^\prime,s})$.
-We adopt the convention that if  $\mu_s(I_{s^\prime,s})=0$, then  $\mu_s(s^\prime|I_{s^\prime,s})=0$.
+Given an objective state $s\in S$, let $\Delta(H^s_T)$ denote the set of all probability distributions on the set of subjective terminal histories. 
+Then,  $\mu^s\in \Delta(H^s_T)$  is $i$'s belief about how dynamics play out, with $\mu^s(h)$ indicating the probability $i$ places on terminal history $h\in H^s_T$. 
+Because act profiles and states imply events in $H^s_T$ by the terminal histories that pass through them, $\mu^s$ can be used to compute conditional probabilities.
+In particular, when $i$ is in subjective state $s^\prime\in S^s$, the probability $i$ assigns to $s^\prime$ is  $\mu^s(s^\prime|I^s_{s^\prime})$.
+We adopt the convention that if  $\mu^s(I_{s^\prime})=0$, then  $\mu^s(s^\prime|I^s_{s^\prime})=0$.
 
-For example, consider $S^\ominus_1$ in Figure \ref{Diag: p-02} in which each state is in its own, singleton, information set.
-Then,  $\mu_{s_{1.3}}((B^\ast,p_1)|(B^\ast,p_1))=1$: $i$ knows she is at $(B^\ast,p_1)$.
-Instead, suppose the situation is identical except that the information sets are as shown in Figure \ref{Diag: p-03}, with $\mu_{s_{1.3}}$ assigning equal probability to both states in $I$.
-Then, $\mu_{s_{1.3}}((A^\ast,p_1)|I)=\mu_{s_{1.3}}((B^\ast,p_1)|I)=0.5$.
+For example, consider $S^s_1$ in Figure \ref{Diag: p-02} in which each state is in its own, singleton, information set.
+Then,  $\mu^{s_{1.3}}((B^\ast,p_1)|(B^\ast,p_1))=1$: $i$ knows she is at $(B^\ast,p_1)$.
+Instead, suppose the situation is identical except that the information sets are as shown in Figure \ref{Diag: p-03}, with $\mu^{s_{1.3}}$ assigning equal probability to both states in $I$.
+Then, $\mu^{s_{1.3}}((A^\ast,p_1)|I)=\mu^{s_{1.3}}((B^\ast,p_1)|I)=0.5$.
 
 %Eventually, we will describe how these beliefs can be constructed from the plans of the individual and the behavior of Nature. 
 For now, it is sufficient to understand that they are probability distributions on terminal histories and that they may vary state by objective state.
@@ -715,11 +763,11 @@ For now, it is sufficient to understand that they are probability distributions 
 
 
 \subsection{Desires} \label{sec: desires}
-For all $s\in S^\oplus$, define the state-dependent \textit{desire relation}    $D^\ominus_s\subset H^\ominus_s\times H^\ominus_s$ where, $(h,h^{\prime})\in D^\ominus_s$ means that  $i$ in objective state $s$ desires the subjective terminal history $h^{\prime}$ at least as much as the history $h$. 
-We use the intuitive notation $h\preceq_s h^{\prime}$, which is defined to mean $(h,h^{\prime})\in D^\ominus_s$. 
-We use $\prec_s$ and $\approx_s$ to indicate strict preference and indifference, respectively. 
-Assume that each $D^\ominus_s$ is complete (in the sense that any pairs of histories $h,h^{\prime}\in H^\ominus_s$ are comparable) and transitive. 
-Then, the desire relation $D^\ominus_s$ can be represented by a numerical function $d^\ominus_s:H^\ominus_s\rightarrow \mathbb{R}$ , where $d^\ominus_s(h)< d^\ominus_s(h^\prime)$ and $d^\ominus_s(h)= d^\ominus_s(h^\prime)$ if and only if  $h\prec_s h^{\prime}$ and $h\approx_s h^{\prime}$, respectively.
+For all $s\in S$, define the state-dependent \textit{desire relation}    $D^s\subset H^s_T\times H^s_T$ where, $(h,h^{\prime})\in D^s$ means that  $i$ in objective state $s$ desires the subjective terminal history $h^{\prime}$ at least as much as the history $h$. 
+We use the intuitive notation $h\preceq^s h^{\prime}$, which is defined to mean $(h,h^{\prime})\in D^s$. 
+We use $\prec^s$ and $\approx^s$ to indicate strict preference and indifference, respectively. 
+Assume that each $D^s$ is complete (in the sense that any pairs of histories $h,h^{\prime}\in H^s_T$ are comparable) and transitive. 
+Then, the desire relation $D^s$ can be represented by a numerical function $d^s:H^s_T\rightarrow \mathbb{R}$ , where $d^s(h)< d^s(h^\prime)$ and $d^s(h)= d^s(h^\prime)$ if and only if  $h\prec^s h^{\prime}$ and $h\approx^s h^{\prime}$, respectively.
 
 Note the implication that desires may change from objective state to objective state.
 The objective state provides a fully-featured snapshot of the world, including the status of $i$'s cognition. 
@@ -731,37 +779,37 @@ We wish to impose some consistency between $i$'s desires over the terminal histo
 	Although $i$'s awareness limitations coarsen his perception of reality, the consequences of his actions will correspond to the actual unfolding of a specific objective history. 
 	This raises the question of how consistent with reality his desires should be.
 }
-To this end, let $d^\oplus:H^\oplus\rightarrow \mathbb{R}$ be the desire function for $i$ under conditions of perfect awareness (i.e., a situation in which $i$ is aware of all the terminal histories and, hence, can assess each one).
-Then, we assume that, for all $s\in S^\oplus,h\in H^\ominus_s$, $d^\ominus_s$ meets the following consistency condition:
+To this end, let $d:H_T\rightarrow \mathbb{R}$ be the desire function for $i$ under conditions of perfect awareness (i.e., a situation in which $i$ is aware of all the terminal histories and, hence, can assess each one).
+Then, we assume that, for all $s\in S,h\in H^s_T$, $d^s$ meets the following consistency condition:
 \begin{enumerate}
 	\setcounter{enumi}{10}
 	\item Let 
 	\[
-		x=\min_{h^\prime\in r^{-1}(h)}d^\oplus(h^\prime),
+		x=\min_{h^\prime\in r^{-1}(h)}d(h^\prime),
 	\]
 	 and  
 	 \[
-	 	y=\max_{h^\prime\in r^{-1}(h)}d^\oplus(h^\prime).
+	 	y=\max_{h^\prime\in r^{-1}(h)}d(h^\prime).
 	 \]
-	 Then $d^\ominus_s(h)\equiv\alpha x + (1-\alpha)y$ for some $\alpha\in[0,1]$. 
+	 Then $d^s(h)\equiv\alpha x + (1-\alpha)y$ for some $\alpha\in[0,1]$. 
 \end{enumerate}
 The interpretation is as follows. 
-We imagine that $i$ is equipped with desires ($d^\oplus$) at the beginning of time which would permit him to compare his desires with respect to any two objective histories, \textit{were he aware of $H^\oplus$}.
+We imagine that $i$ is equipped with desires ($d$) at the beginning of time which would permit him to compare his desires with respect to any two objective histories, \textit{were he aware of $H$}.
 When he is not perfectly aware, each history of which he is aware corresponds to a diachronic event.
-Thus, $d^\oplus$ implies an interval of values $[x,y]$ for each such event.
-Then, the structure of $d^\ominus_s$ means that $i$'s desires at lower levels of awareness provide an implicit ranking of the objective intervals determined by   $d^\oplus$.
+Thus, $d$ implies an interval of values $[x,y]$ for each such event.
+Then, the structure of $d^s_s$ means that $i$'s desires at lower levels of awareness provide an implicit ranking of the objective intervals determined by   $d$.
 Notice that the $\alpha$ parameter does not vary by state. 
 It is a constant primitive of $i$'s desires through time.\footnote
 {
 	Allowing for, i.e., $\alpha_s$ could be done, but with a greater number of consistency conditions.
 }
-That said, because $i$'s awareness may change from objective state $s$ to objective state $s^\prime$, the partitions on $H^\oplus$ implied by $H^\ominus_s$ and $H^\ominus_{s^\prime}$ may vary, thereby implying the possibility of variation in the structure of desires from $d^\ominus_s$ to $d^\ominus_{s^\prime}$. 
+That said, because $i$'s awareness may change from objective state $s$ to objective state $s^\prime$, the partitions on $H$ implied by $H^s_T$ and $H^{s^\prime}_T$ may vary, thereby implying the possibility of variation in the structure of desires from $d^s$ to $d^{s^\prime}$. 
 
-Again, $i$'s desires over objective histories under perfect awareness ($d^\oplus$) can be thought of as a cognitive primitive that assigns numerical intervals to the subjective histories under imperfect awareness,
-Then, in objective state $s$, the ranking of subjective histories provided by $d^\ominus_s$ is consistent with a ranking function on these intervals. 
+Again, $i$'s desires over objective histories under perfect awareness ($d$) can be thought of as a cognitive primitive that assigns numerical intervals to the subjective histories under imperfect awareness,
+Then, in objective state $s$, the ranking of subjective histories provided by $d^s$ is consistent with a ranking function on these intervals. 
 This is the key consistency condition. 
 
-%Note also that because the min and max are taken over all $h^\prime\in r^{-1}(h)$, $d^\ominus_s$ is constant on $r^{-1}(s|s)$; i.e., although the desire function is a function on the objective states, it does not vary over those that project into the same awareness state.
+%Note also that because the min and max are taken over all $h^\prime\in r^{-1}(h)$, $d^s_s$ is constant on $r^{-1}(s|s)$; i.e., although the desire function is a function on the objective states, it does not vary over those that project into the same awareness state.
   
 
 	
@@ -780,20 +828,21 @@ Our approach allows for special cases in which all these details are elaborated 
 	
 \subsection{Intentions} \label{sec: intentions}
 	
-For all $s\in S^\oplus$, define the state-dependent \textit{intention} for the individual as $\gamma_s\subseteq H^\ominus_s$, where $\gamma_s=E$ means that in objective state $s$ individual $i$ intends subjective event $E$. 
+For all $s\in S$, define the state-dependent \textit{intention} for the individual as $\gamma^s\subseteq H^s_T$, where $\gamma^s=E$ means that in objective state $s$ individual $i$ intends subjective event $E$. 
 We assume that individuals have desires and beliefs in all states, but not necessarily intentions. 
 The idea here is that, e.g., in some states Mike intends the end ``Mike has a cup of coffee'' and in others, Mike has yet to form intentions.
-We adopt the convention that $\gamma_s=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
+We adopt the convention that $\gamma^s=\emptyset$ means that $s$ is a state in which individual $i$ has not formed an intention. 
 We highlight that states may be differentiated only by changes in mental attitudes. 
-For example, it may be that the only change from $s_t$ to $s_{t+1}$ is $\gamma_{s_t}=\emptyset$ to $\gamma_{s_{t+1}}=E\ne\emptyset$.
+For example, it may be that the only change from $s_t$ to $s_{t+1}$ is $\gamma^{s_t}=\emptyset$ to $\gamma^{s_{t+1}}=E\ne\emptyset$.
 This suggests that the interval between time periods may be very short (measured in milliseconds).
 	
 This raises the question of how an individual moves from being in a state without an intention to one in which the intention is formed. 
 Here, we can require an act of commitment to cement the intention. 
-That is, if $s_t$ is an objective state in which $i$ does not have an intention, then the set of objective feasible acts, $A^i_{s_t}$, can include an \textit{act to form the intention} (e.g., to ``get a cup of coffee''), which would then take him to a state $s_{t+1}$ in which $\gamma_{s_{t+1}}=E$ where $E$ contains all the states consistent with $i$'s intention (e.g., having a cup of coffee).
+That is, if $s_t$ is an objective state in which $i$ does not have an intention, then the set of objective feasible acts, $A^i_{s_t}$, can include an \textit{act to form the intention} (e.g., to ``get a cup of coffee''), which would then take him to a state $s_{t+1}$ in which $\gamma^{s_{t+1}}=E$ where $E$ contains all the states consistent with $i$'s intention (e.g., having a cup of coffee).
 	
-Summing up, in each objective state, individual $i$'s \textit{mental attitudes} are summarized by a triple denoted $\theta_s\equiv(\mu_s,D_s,\gamma_s)$.
+Summing up, in each objective state, individual $i$'s \textit{mental attitudes} are summarized by a triple denoted $\theta^s\equiv(\mu^s,D^s,\gamma^s)$.
 In setting up mental features in this way, we are following a version of the familiar ``type-space'' approach used in game theory \citep[See][]{Harsanyi1967, Mertens1985a} in which $\theta_s$ is $i$'s mental type in objective state $s$. 
+Thus, $i$'s mental life  in state $s\in S$ is fully described by $\Xi^s$ and $\theta^s$.
 	
 	
 	
@@ -810,28 +859,30 @@ Table \ref{Tab: Notation} elaborates all the mathematical objects used in the pa
 Object                                             & \multicolumn{1}{c}{Description}                       & \multicolumn{1}{c}{Comments}\\ \midrule
 %$N\equiv \{1,\dots,n\}$                            & The set of $n$ individuals                            & \\
 %$i\in N$                                           & An arbitrary individual                               & $i=0$ is Nature\\
-$S^\oplus$                                         & All objective states of the world       & $S^\oplus$ contains all possible states\\
+$S$                                         & All objective states of the world       & $S$ contains all possible states\\
 %$S_s$                                       & An arbitrary state in $S^i$                           & $s_t$ the state in period $t$,\\
-%$S^\ominus$                   & states of which                & \\
-%$\mathcal{S}\equiv \{S^\emptyset,S^\oplus,\ldots,S^\oplus\}$ & Lattice of awareness spaces                           & Maximum is $S^\oplus$ and minimum is $S^\emptyset$\\
+%$S^s$                   & states of which                & \\
+%$\mathcal{S}\equiv \{S^\emptyset,S,\ldots,S\}$ & Lattice of awareness spaces                           & Maximum is $S$ and minimum is $S^\emptyset$\\
 %												   &													   & $\mathcal{S}_t,S^i_t$ lattice \& state spaces in $t$\\
 %$S^i\succeq S^j$                                   & Individual $i$ is at least as aware as $j$            & \\
 %$S\equiv\bigcup_{i\in N}S^i$                  & Union of the individual spaces                        & \\
 %$r^{i\rightarrow j}(s^i)$                          & Impoverished version of $s^i$ perceived by $j$        & Only defined if  $S^i\succeq S^j$\\
-%$B^{\downarrow}$                                   & A synchronic event $B^{\downarrow}\subseteq S$   & $B^{\downarrow}=\bigcup_{S^j\in \mathcal{S}}\left(r^{0\rightarrow j}\right)^{-1}(B)$, $B\subseteq S^\oplus$\\
-$A^i_s$                                           & $i$'s feasible acts in state $s\in S^\oplus$               & $a^i_s\in A^i_s$,  arbitrary act by $i$ in $s$\\
+%$B^{\downarrow}$                                   & A synchronic event $B^{\downarrow}\subseteq S$   & $B^{\downarrow}=\bigcup_{S^j\in \mathcal{S}}\left(r^{0\rightarrow j}\right)^{-1}(B)$, $B\subseteq S$\\
+$A^i_s$                                           & $i$'s feasible acts in state $s\in S$               & $a^i_s\in A^i_s$,  arbitrary act by $i$ in $s$\\
 $a_s$                                       & A profile of acts in $s$, $a_s\equiv(a^n_s,a^i_s)$ & \\
 $A_s$                                    & All act profiles in $s$                               & \\
-%$A_t$                                     & All act profiles at time $t$                          & $A_t\equiv \cup_{s\in S^\oplus_t} A(s)$\\
-%$A$                                       & All possible act profiles                             & $A\equiv \cup_{s\in S^\oplus} A(s)$\\
-%$\omega(a_t,s^\oplus_t)$                       & State actualized in $t+1$ from $s^\oplus_t$ given $a_t$    & e.g., $s^\oplus_{t+1}=\omega(a_t,s^\oplus_t)$\\
-$h_s$                                & History at $s\in S^\oplus$                                    &  \\
+%$A_t$                                     & All act profiles at time $t$                          & $A_t\equiv \cup_{s\in S_t} A(s)$\\
+%$A$                                       & All possible act profiles                             & $A\equiv \cup_{s\in S} A(s)$\\
+%$\omega(a_t,s_t)$                       & State actualized in $t+1$ from $s_t$ given $a_t$    & e.g., $s_{t+1}=\omega(a_t,s_t)$\\
+$h_s$                                & History at $s\in S$                                    &  \\
 $\mathcal{H}_t$                                    & Set of all subsets of histories at $t$                & \\
 \bottomrule
 \end{tabular}
 \caption{Notation Reference (NEEDS TO BE UPDATED AND EXPANDED)}\label{Tab: Notation}
 \end{table*}
 \pagebreak
+
+
 
 \section{Four-Phase Model of Action}
 
@@ -847,16 +898,16 @@ As we elaborate the phases, we also add certain consistency conditions which are
 	\caption{Overview of states and decision phases.\label{Diag: p-09}}%trim: L B R TxPer
 \end{figure}
 
-The objective tree $\Gamma^\oplus$ elaborates all the ways in which the world can evolve.
-Consistent with $\Gamma^\oplus$, $H^\oplus$ contains all the terminal histories, each of which elaborates a particular evolution from the beginning state, $s_0$, to some terminal state $T$ periods later.
-The elements of $A^\oplus$ describe the feasible act profiles at every state.
+The objective tree $\Gamma$ elaborates all the ways in which the world can evolve.
+Consistent with $\Gamma$, $H$ contains all the terminal histories, each of which elaborates a particular evolution from the beginning state, $s_0$, to some terminal state $T$ periods later.
+The elements of $A$ describe the feasible act profiles at every state.
 The act mapping $\omega$ connects the act profiles available in one state lead to the new states in the following period which they actualize.
 See Figure \ref{Diag: p-08} for a summary.
 
 
 
 \paragraph{Brian's Infant, Part IV}
-Figure \ref{Diag: p-04} illustrates $\Gamma^\oplus$ for the Brian's Infant example. 
+Figure \ref{Diag: p-04} illustrates $\Gamma$ for the Brian's Infant example. 
 Here, we introduce some further details.
 First, to illustrate the four phases of the decision-act process, we extend the tree through $T=4$.
 Next, we add the details of what could happen at each phase.
@@ -885,7 +936,7 @@ With the plan in place at the start of $t=3$, $i$ acts according to the plan.
 At this point, we assume Nature acts once again to determine the success of $i$'s act with respect to the intention commitment at $t=1$.
 For example, failure could involve $i$ dropping the toy or Brian entering the room, sweeping up the toys, and placing them into a toy box out of $i$'s reach.
 
-To avoid clutter, Figure \ref{Diag: p-04} does not illustrate every history in $\Gamma^\oplus$.
+To avoid clutter, Figure \ref{Diag: p-04} does not illustrate every history in $\Gamma$.
 Still, there should be enough detail elaborated in the diagram to infer the entire structure of the objective tree.
 The number of states are expanding through time, from a single state at $t=0$ to thirty-two at $t=4$.
 Also omitted from each state's feasible actions for $i$ is the option to halt solving a particular act-problem and begin another.
@@ -895,14 +946,14 @@ With this option included, the number of histories would multiply significantly,
 
 Finally, let us quantify $d\oplus$ in this example as follows:
 \begin{enumerate}
-	\item $d^\oplus(h)=100$ if $h$ includes successfully obtaining the best toy;
-	\item $d^\oplus(h)=20$ if $h$ includes successfully obtaining the second best toy;
-	\item $d^\oplus(h)=50$ if $h$ includes successfully choosing the best TV show;
-	\item $d^\oplus(h)=10$ if $h$ includes successfully choosing the best TV show;
-	\item $d^\oplus(h)=-10$ if $h$ includes failing to achieve any of the above.
+	\item $d(h)=100$ if $h$ includes successfully obtaining the best toy;
+	\item $d(h)=20$ if $h$ includes successfully obtaining the second best toy;
+	\item $d(h)=50$ if $h$ includes successfully choosing the best TV show;
+	\item $d(h)=10$ if $h$ includes successfully choosing the best TV show;
+	\item $d(h)=-10$ if $h$ includes failing to achieve any of the above.
 \end{enumerate}
-Since the states in $S_4$ each correspond to a terminal history, we can write, e.g., $d^\oplus(s_{4.1})$ without ambiguity.
-Thus, $d^\oplus(s_{4.1})=100$, $d^\oplus(s_{4.2})=-10$,  $d^\oplus(s_{4.7})=25$, $d^\oplus(s_{4.31})=50$, and so on.
+Since the states in $S_4$ each correspond to a terminal history, we can write, e.g., $d(s_{4.1})$ without ambiguity.
+Thus, $d(s_{4.1})=100$, $d(s_{4.2})=-10$,  $d(s_{4.7})=25$, $d(s_{4.31})=50$, and so on.
 
 
 \subsection{Problem Selection}
@@ -927,7 +978,7 @@ In this state, $i$ consults his desires and chooses a problem that maximizes $d_
 \paragraph{Brian's Infant, Part V}
 Figure \ref{Diag: p-05} illustrates  a partial illustration of the situation in $s_0$ (shown are periods $t=0,1$).
 The purpose of this diagram is to show how the state projections work.
-The objective tree $\Gamma^\oplus$ is shown on the top half of the diagram which accounts for all the feasible acts by Nature and $i$.
+The objective tree $\Gamma$ is shown on the top half of the diagram which accounts for all the feasible acts by Nature and $i$.
 The bottom half illustrates the corresponding parts of $i$'s awareness tree $\Gamma_{s_0}$
 Here, $i$ is aware of both act-problems that are available to her at the beginning of the decision process.
 However, at this early stage, she is only vaguely aware of what each of these problems entail.
@@ -959,14 +1010,14 @@ For example, the terminal synchronic event associated with $s_{4.1}^\prime$ is
 	r^{-1}_{s_0}(s_{4.1}^\prime)=\{s_{4.1},s_{4.3},s_{4.5},s_{4.7},s_{4.9},s_{4.11},s_{4.13},s_{4.15}\}.
 \]
 These correspond to the diachronic event ``the infant chose  to solve $p_1$ and succeeds in her intended outcome.''
-In terms of payoff values, this event includes two kinds of histories: i) those that include success in obtaining the best toy ($d^\oplus(h)=100$); and ii) those that include success in obtaining the second best toy ($d^\oplus(h)=20$).
+In terms of payoff values, this event includes two kinds of histories: i) those that include success in obtaining the best toy ($d(h)=100$); and ii) those that include success in obtaining the second best toy ($d(h)=20$).
 With respect to Item (ii), note that at $t=1$ the infant is free to choose either toy as her intended plaything, even though she knows which toy is, in fact, best.
 Notice that intending second best \textit{is} a feasible act at that point (even if her desires motivate her to intend otherwise).
 
 %This means that the $\alpha$ consistency parameter discussed above is relevant (at both $s^\prime_{1.1}$ and $s^\prime_{1.2})$).
 In the  $p_1$/success event, the min value is $20$ and max value is $100$, whereas in the corresponding $p_2$ event, the min value is $10$ and the max value is $50$.
 Suppose $\alpha=0.5$. 
-Then, the terminal history through $s^\prime_{4.1}$ in Figure \ref{Diag: p-06} has value $d^\ominus_{s_0}(s^\prime_{4.1})=60$ and the one through  $s^\prime_{4.3}$  has value $d^\ominus_{s_0}(s^\prime_{4.3})=30$.
+Then, the terminal history through $s^\prime_{4.1}$ in Figure \ref{Diag: p-06} has value $d^s_{s_0}(s^\prime_{4.1})=60$ and the one through  $s^\prime_{4.3}$  has value $d^s_{s_0}(s^\prime_{4.3})=30$.
 The fail histories, terminating in $s^\prime_{4.2}$ and $s^\prime_{4.4}$,  both have value of $-10$.
 
 
@@ -984,13 +1035,13 @@ Typically, the awareness tree in $t=1$ will refine certain aspects of the origin
 In the new awareness tree, $i$ is aware of the history of his own moves.
 He considers the terminal histories that are reachable from his present state and, based upon his preferences and beliefs, forms a concrete intention.
 
-Intentions take the form $\gamma_{s_1}\subset H^\ominus_{s_1}$.
+Intentions take the form $\gamma_{s_1}\subset H^s_{s_1}$.
 \textit{An intention is the output of the Deliberation phase}.
 Here, it is worth reminding ourselves that the awareness state in which $i$ finds himself is given by $s^\prime_1=r(s_1|s_1)$.
 We assume the intention must be subjectively feasible.
 That is, the subjective histories included in $\gamma_{s_1}$ must all pass through $s^\prime_1$.\footnote
 {
-	In most cases, the intention will be to effect a single terminal awareness history; i.e., $\gamma_{s_1}=\{h\}, h\in H^\ominus_{s_1}$. 
+	In most cases, the intention will be to effect a single terminal awareness history; i.e., $\gamma_{s_1}=\{h\}, h\in H^s_{s_1}$. 
 	However, this is not required. 
 	For example, the intention ``Mike obtains a fresh cup of coffee,'' may be a diachronic event that includes many states (e.g., in which Mike's work being complete may or may not be true).
 }
@@ -1012,7 +1063,7 @@ she does not imagine that she will be thinking about that going forward.
 \end{figure}
 
 There are a number of items of which to take notice at this point.
-First, referring to Figure \ref{Diag: p-07}, in $\Gamma^\ominus_{s_{1.3}} $, $i$ is aware of being in state $s^{\prime\prime}_{1.2}$.
+First, referring to Figure \ref{Diag: p-07}, in $\Gamma^s_{s_{1.3}} $, $i$ is aware of being in state $s^{\prime\prime}_{1.2}$.
 This state is the projection of the state  $s_{1.3}$ depicted in Figure \ref{Diag: p-04}.
 As such, $i$ is also aware of the subjective history that leads to $s^{\prime\prime}_{1.2}$.
 From this point, the feasible histories are the ones terminating in $s^{\prime\prime}_{4.1}$ through $s^{\prime\prime}_{4.4}$.
@@ -1043,10 +1094,10 @@ Even when $i$ is certain about his state (i.e., is at a singleton information se
 Although we do not assume Nature is similarly intentional, we can nevertheless describe her behavior in the same way. 
 That is, Nature's ``plan'' is also a list
 \[
-\sigma^n\in\Sigma^n\equiv \prod_{s\in S^\oplus}\Delta(A^n_s).
+\sigma^n\in\Sigma^n\equiv \prod_{s\in S}\Delta(A^n_s).
 \]
 Whereas, we imagine individuals typically choose their acts with certainty, Nature's choices almost surely involve some measure of randomness.
-At the same time, Nature is never ``uncertain'' about where she is in $\Gamma^\oplus$---all her information sets are singletons.
+At the same time, Nature is never ``uncertain'' about where she is in $\Gamma$---all her information sets are singletons.
 Therefore, Nature's plan is a description of her behavior at every objective state.
 At state $s$, $\sigma^n_s\in (A^n_s)$ is the random act Nature takes at $s$.
 
