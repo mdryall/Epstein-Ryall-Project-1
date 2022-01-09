@@ -615,10 +615,14 @@ With this in mind, we impose the following consistency conditions on $r^s$:
 Item 1 is important as it implies that terminal histories in the real world correspond to histories in the awareness graph (i.e., as $i$ is thinking about them).
 Thus, histories in $H^s_T$ correspond to diachronic events in $H_T$.
 Item 2 is intuitive in the sense that, as $i$ look looks to the future while contemplating how he will solve his  act-problem, he does not envision becoming unaware of what he is doing as he travels along one of his potential paths.
-The last item says that, whatever $i$ is aware of with respect to his actualized state (at any period beyond the the start of time), he is also aware that things could have turned out differently (perhaps in the very rough sense of, ``the state of the world that is NOT the one I am presently in'').
+Item 3 says that, whatever $i$ is aware of with respect to his actualized state (at any period beyond the the start of time), he is also aware that things could have turned out differently (perhaps in the very rough sense of, ``there could have been a state of the world that is NOT the one I am presently in'').
 
-Finally, it is worth noting that awareness graphs need not be trees. 
+It is worth noting that awareness graphs need not be trees. 
 Typically, as $i$ moves forward in time, his awareness of certain parts of reality becomes more refined while other parts fade into unawareness (with the recall caveats described above and in the section on mental attitudes).
+
+Finally, one interesting possibility is to impose some hard constraints on awareness graphs and actions. 
+For example, although this might be arbitrary, we could analyze individuals capable of: i) 10 awareness histories in any $\Gamma^4$; and ii) one act per period consistent with phases I through IV  in Figure \ref{Diag: p-09} plus conducting acts according to an established plan (discussed below).
+While the constraints so imposed would, barring findings from cognitional science, be arbitrary, they would allow us to analyze intentional unawareness in the sense of an individual  trying to use the cognitional resources in an optimal fashion.
 	
 \paragraph{Example: Brian's Infant, Part 2}	
 Picking up the example of Brian's Infant where we left off, let consider the infant's awareness of reality.
@@ -675,7 +679,7 @@ For each objective state $s\in S$, define the\textit{ information set at subject
 Information sets serve to distinguish states about which $i$ is aware but uncertain. 
 Information sets are assumed to meet the following conditions:	
 \begin{enumerate}
-	\setcounter{enumi}{5}
+	\setcounter{enumi}{3}
 	\item No-delusion: $s^\prime\in I^s_{s^\prime}$.
 	\item Introspection: if $s^{\prime\prime}\in I^s_{s^\prime}$, then $I^s_{s^{\prime\prime}}=I^s_{s^\prime}$.
 	\item Feasible act consistency: For all $s^\prime,s^{\prime\prime}\in S^s$, if $A^{s.i}_{s^\prime}\cap A^{s.i}_{s^{\prime\prime}}\ne \emptyset$ then $A^{s.i}_{s^\prime}= A^{s.i}_{s^{\prime\prime}}$.
@@ -782,7 +786,7 @@ We wish to impose some consistency between $i$'s desires over the terminal histo
 To this end, let $d:H_T\rightarrow \mathbb{R}$ be the desire function for $i$ under conditions of perfect awareness (i.e., a situation in which $i$ is aware of all the terminal histories and, hence, can assess each one).
 Then, we assume that, for all $s\in S,h\in H^s_T$, $d^s$ meets the following consistency condition:
 \begin{enumerate}
-	\setcounter{enumi}{10}
+	\setcounter{enumi}{8}
 	\item Let 
 	\[
 		x=\min_{h^\prime\in r^{-1}(h)}d(h^\prime),
@@ -793,21 +797,23 @@ Then, we assume that, for all $s\in S,h\in H^s_T$, $d^s$ meets the following con
 	 \]
 	 Then $d^s(h)\equiv\alpha x + (1-\alpha)y$ for some $\alpha\in[0,1]$. 
 \end{enumerate}
-The interpretation is as follows. 
-We imagine that $i$ is equipped with desires ($d$) at the beginning of time which would permit him to compare his desires with respect to any two objective histories, \textit{were he aware of $H$}.
-When he is not perfectly aware, each history of which he is aware corresponds to a diachronic event.
-Thus, $d$ implies an interval of values $[x,y]$ for each such event.
-Then, the structure of $d^s_s$ means that $i$'s desires at lower levels of awareness provide an implicit ranking of the objective intervals determined by   $d$.
+We imagine that $i$ is equipped with primitive desires ($d$) at the beginning of time which would permit him to compare his desires with respect to any two objective histories, \textit{were he aware of them all} ($H_T$).
+When he is not perfectly aware, each history of which he is aware corresponds to an objective diachronic event.
+THus, the desire function $d$ implies an interval of values $[x,y]$ for each such event (which may be trivial in some cases---i.e., $x=y$).
+Then, the structure of $d^s$ means that $i$'s desires at lower levels of awareness provide an implicit ranking of the objective intervals determined by   $d$.
 Notice that the $\alpha$ parameter does not vary by state. 
-It is a constant primitive of $i$'s desires through time.\footnote
+It is a constant primitive of $i$'s desires from state to state.\footnote
 {
-	Allowing for, i.e., $\alpha_s$ could be done, but with a greater number of consistency conditions.
+	That is $\alpha$ does not vary by $s$.
 }
-That said, because $i$'s awareness may change from objective state $s$ to objective state $s^\prime$, the partitions on $H$ implied by $H^s_T$ and $H^{s^\prime}_T$ may vary, thereby implying the possibility of variation in the structure of desires from $d^s$ to $d^{s^\prime}$. 
+That said, as $i$'s awareness  changes from objective state $s$ to objective state $s^\prime$, the partitions on $H_T$ implied by $H^s_T$ and $H^{s^\prime}_T$ also vary, thereby implying the possibility of variation in the structure of desires from $d^s$ to $d^{s^\prime}$. 
 
 Again, $i$'s desires over objective histories under perfect awareness ($d$) can be thought of as a cognitive primitive that assigns numerical intervals to the subjective histories under imperfect awareness,
 Then, in objective state $s$, the ranking of subjective histories provided by $d^s$ is consistent with a ranking function on these intervals. 
 This is the key consistency condition. 
+One interpretation is that this structure ensures that $i$'s desires under unawareness do not depart too far from reality
+That is, the individual's valuations of awareness histories are required to be roughly aligned with the evaluations of the objective histories with which they are associated.
+This alignment is systematic ($\alpha$ is constant on $S$) and within the bounds of the values that could actually happen ($0\le\alpha\le1$). 
 
 %Note also that because the min and max are taken over all $h^\prime\in r^{-1}(h)$, $d^s_s$ is constant on $r^{-1}(s|s)$; i.e., although the desire function is a function on the objective states, it does not vary over those that project into the same awareness state.
   
@@ -842,6 +848,7 @@ That is, if $s_t$ is an objective state in which $i$ does not have an intention,
 	
 Summing up, in each objective state, individual $i$'s \textit{mental attitudes} are summarized by a triple denoted $\theta^s\equiv(\mu^s,D^s,\gamma^s)$.
 In setting up mental features in this way, we are following a version of the familiar ``type-space'' approach used in game theory \citep[See][]{Harsanyi1967, Mertens1985a} in which $\theta_s$ is $i$'s mental type in objective state $s$. 
+
 Thus, $i$'s mental life  in state $s\in S$ is fully described by $\Xi^s$ and $\theta^s$.
 	
 	
